@@ -4,6 +4,21 @@ Türkmen dilinde matematika: kalkulýatorlar, sapaklar, oýunlar we Amatly AI.
 
 **Saýt:** https://ccnacisco964-sys.github.io/Amatly/
 
+## Programmalary ýüklemek
+
+- **Android (telefon):** https://github.com/ccnacisco964-sys/Amatly/releases/latest/download/Amatly.apk
+- **Windows (kompýuter):** https://github.com/ccnacisco964-sys/Amatly/releases/latest/download/Amatly-Windows.exe
+
+Programmalar saýty öz içinde saklaýar, şonuň üçin internetsiz hem işleýär (AI-dan başga).
+Her `git push`-dan soň GitHub Actions (`.github/workflows/build-apps.yml`) olary täzeden gurýar we täze "Release" çykarýar.
+
+- `android/` — Android WebView programmasy (`gradle assembleRelease`)
+- `desktop/` — Windows programmasy (Electron, `npm run dist`)
+- `scripts/copy-site.js` — saýtyň faýllaryny programmalaryň içine göçürýär
+
+`android/amatly-sideload.keystore` gizlin açar däl: ol diňe APK-ny täzelemek mümkin bolar ýaly hemişe şol bir gol bilen gol çekmek üçin.
+Google Play-e ýüklemek üçin özüňiziň gizlin açaryňyzy dörediň.
+
 ## GitHub Pages
 
 Saýt GitHub Pages arkaly (Settings → Pages → "Deploy from a branch") hemmeler üçin açyk.

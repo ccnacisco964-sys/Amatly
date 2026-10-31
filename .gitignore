@@ -1,0 +1,9 @@
+# Gurluşyk faýllary
+android/.gradle/
+android/build/
+android/app/build/
+android/app/src/main/assets/www/
+android/local.properties
+desktop/node_modules/
+desktop/www/
+desktop/dist/

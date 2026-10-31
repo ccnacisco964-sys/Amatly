@@ -1,0 +1,32 @@
+{
+  "name": "amatly",
+  "productName": "Amatly",
+  "version": "1.0.0",
+  "description": "Amatly.com — matematika öz diliňde",
+  "author": "Amatly",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win portable --publish never"
+  },
+  "devDependencies": {
+    "electron": "33.2.1",
+    "electron-builder": "25.1.8"
+  },
+  "build": {
+    "appId": "com.amatly.app",
+    "productName": "Amatly",
+    "files": [
+      "main.js",
+      "www/**/*"
+    ],
+    "win": {
+      "target": "portable",
+      "icon": "www/icons/icon-512.png"
+    },
+    "portable": {
+      "artifactName": "Amatly-Windows.exe"
+    }
+  }
+}

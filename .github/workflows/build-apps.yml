@@ -1,0 +1,71 @@
+name: Programmalary gur (Android APK we Windows)
+
+on:
+  push:
+    branches: [claude/indi-g8ai5x, main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  android:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.11.1'
+      - name: Saýty programma göçürmek
+        run: node scripts/copy-site.js android/app/src/main/assets/www
+      - name: APK gurmak
+        working-directory: android
+        run: gradle assembleRelease --no-daemon
+      - run: cp android/app/build/outputs/apk/release/app-release.apk Amatly.apk
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Amatly-Android
+          path: Amatly.apk
+
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Saýty programma göçürmek
+        run: node scripts/copy-site.js desktop/www
+      - name: Windows programmasyny gurmak
+        working-directory: desktop
+        run: |
+          npm install --no-audit --no-fund
+          npm run dist
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Amatly-Windows
+          path: desktop/dist/Amatly-Windows.exe
+
+  release:
+    needs: [android, windows]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          merge-multiple: true
+      - uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v1.0.${{ github.run_number }}
+          name: Amatly v1.0.${{ github.run_number }}
+          target_commitish: ${{ github.sha }}
+          make_latest: 'true'
+          body: |
+            **Android:** Amatly.apk — telefonda açyň we guruň.
+            **Windows:** Amatly-Windows.exe — kompýuterde açyň (gurnamak gerek däl).
+          files: |
+            Amatly.apk
+            Amatly-Windows.exe

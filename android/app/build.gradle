@@ -1,0 +1,45 @@
+plugins {
+    id 'com.android.application'
+}
+
+def runNumber = (System.getenv('GITHUB_RUN_NUMBER') ?: '1').toInteger()
+
+android {
+    namespace 'com.amatly.app'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'com.amatly.app'
+        minSdk 24
+        targetSdk 34
+        versionCode runNumber
+        versionName "1.0.${runNumber}"
+    }
+
+    signingConfigs {
+        release {
+            // Bu açar gizlin däl: diňe programmany täzelemek mümkin bolar ýaly hemişe şol bir gol bilen gol çekmek üçin.
+            // Google Play-e ýüklemek üçin özüňiziň gizlin açaryňyzy dörediň.
+            storeFile file('../amatly-sideload.keystore')
+            storePassword 'amatly-sideload'
+            keyAlias 'amatly'
+            keyPassword 'amatly-sideload'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    implementation 'androidx.webkit:webkit:1.12.1'
+}
