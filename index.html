@@ -1,83 +1,322 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="tk">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Amatly</title>
-  <meta name="description" content="Amatly — ýönekeý we amatly web saýt.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2316a34a'/><text x='50' y='70' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>A</text></svg>">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<script src="assets/nav/theme.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amatly.com — matematika öz diliňde: ädimme-ädim çözgüt we AI mugallym</title>
+<meta name="description" content="Amatly.com — türkmen dilinde matematika: ädimme-ädim çözýän kalkulýatorlar, 15 sapakly kalkulus kursy, 61 statistik hasaplaýjy we suratdan mesele çözýän Amatly AI mugallymy.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tk_TM">
+<meta property="og:site_name" content="Amatly.com">
+<meta property="og:title" content="Amatly.com — matematika öz diliňde">
+<meta property="og:description" content="Ädimme-ädim çözýän kalkulýatorlar, sapaklar we suratdan mesele çözýän Amatly AI mugallymy — hemmesi türkmen dilinde.">
+<link rel="canonical" href="https://amatly.com/">
+<meta property="og:url" content="https://amatly.com/">
+<meta property="og:image" content="https://amatly.com/assets/og/amatly.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Amatly.com — matematika öz diliňde: ädimme-ädim çözgüt we AI mugallym">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#172e6e" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1a33" media="(prefers-color-scheme: dark)">
+<link rel="preload" href="assets/fonts/lm-roman-demi.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/instrument-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/nav/nav.css">
+<link rel="stylesheet" href="assets/giris/css/home.css">
+<script src="assets/nav/nav.js" defer></script>
 </head>
-<body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="#" class="logo"><span class="logo-mark">A</span> Amatly</a>
-      <button class="menu-toggle" aria-label="Menýu" aria-expanded="false">☰</button>
-      <nav class="nav" id="nav">
-        <a href="#top">Baş sahypa</a>
-        <a href="#about">Biz barada</a>
-        <a href="#features">Hyzmatlar</a>
-        <a href="#contact">Habarlaşmak</a>
-      </nav>
-    </div>
-  </header>
+<body class="home" data-auth="optional">
+<a class="skip-link" href="#main">Esasy mazmuna geçiň</a>
 
-  <main id="top">
-    <section class="hero">
-      <div class="container">
-        <h1>Hoş geldiňiz <span class="accent">Amatly</span>-a!</h1>
-        <p class="lead">Hemme zat bir ýerde — ýönekeý, çalt we amatly.</p>
-        <div class="hero-actions">
-          <a href="#about" class="btn btn-primary">Giňişleýin</a>
-          <a href="#contact" class="btn btn-ghost">Habarlaşyň</a>
+<nav class="amx-nav amx-nav--home" id="amxNav" aria-label="Esasy menýu"><div class="amx-bar"><button class="amx-burger" type="button" aria-expanded="false" aria-controls="amxPanel" aria-label="Menýuny aç"><span class="amx-burger-lines" aria-hidden="true"><i></i><i></i><i></i></span>Menýu</button><a class="amx-logo" href="index.html" aria-label="Amatly.com — baş sahypa"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16 1.5 20.25 5.75 26.25 5.75 26.25 11.75 30.5 16 26.25 20.25 26.25 26.25 20.25 26.25 16 30.5 11.75 26.25 5.75 26.25 5.75 20.25 1.5 16 5.75 11.75 5.75 5.75 11.75 5.75Z" fill="currentColor" opacity=".14"/><path d="M16 1.5 20.25 5.75 26.25 5.75 26.25 11.75 30.5 16 26.25 20.25 26.25 26.25 20.25 26.25 16 30.5 11.75 26.25 5.75 26.25 5.75 20.25 1.5 16 5.75 11.75 5.75 5.75 11.75 5.75Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M16 10 22 16 16 22 10 16Z" fill="#e9a23b"/></svg><b>Amatly<em>.com</em></b></a><span class="amx-here">Baş sahypa</span><button class="amx-tool amx-bar-tool" type="button" data-theme-toggle aria-label="Gara / açyk temany çalyş" title="Gara / açyk tema"><svg class="amx-ico i-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></svg><svg class="amx-ico i-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6L7 7M17 17l1.4 1.4M18.4 5.6L17 7M7 17l-1.4 1.4"/></svg><span class="amx-lbl">Temany çalyş</span></button><div class="amx-panel" id="amxPanel"><div class="amx-panelhead"><span class="amx-brand">Amatly<em>.com</em></span><button class="amx-close" type="button" aria-label="Menýuny ýap"><svg class="amx-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M5 5l14 14M19 5L5 19"/></svg></button></div><ul class="amx-list"><li><a class="amx-link" href="index.html" aria-current="page"><svg class="amx-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M3.5 11.2L12 4l8.5 7.2M6 9.6V20h12V9.6"/></svg><span>Baş sahypa</span></a></li><li class="amx-has-mega"><button class="amx-link amx-trigger" type="button" aria-expanded="false" aria-controls="amxMega"><svg class="amx-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><rect x="4" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.6"/></svg><span>Bölümler</span><svg class="amx-chev amx-ico" viewBox="0 0 20 20" width="14" height="14" aria-hidden="true" focusable="false"><path d="M5 7.5l5 5 5-5"/></svg></button><div class="amx-mega" id="amxMega"><div class="amx-mega-card"><section class="amx-group"><h3>Algebra we analiz</h3><ul><li><a class="amx-item" href="on-algebra/index.html"><span class="amx-glyph" aria-hidden="true">½</span><span class="amx-txt"><b>Öň-algebra</b><small>Algebra üçin gerek esasy düşünjeler.</small></span></a></li><li><a class="amx-item" href="algebra/index.html"><span class="amx-glyph" aria-hidden="true">x²</span><span class="amx-txt"><b>Algebra</b><small>Deňlemeler, deňsizlikler we n×n ulgamlar.</small></span></a></li><li><a class="amx-item" href="trigonometriya/index.html"><span class="amx-glyph" aria-hidden="true">θ</span><span class="amx-txt"><b>Trigonometriýa</b><small>Birlik töwerek, formulalar we deňlemeler.</small></span></a></li><li><a class="amx-item" href="matrisa/index.html"><span class="amx-glyph" aria-hidden="true">[ ]</span><span class="amx-txt"><b>Matrisa &amp; Wektor</b><small>Matrisa amallary we wektor hasaplamalary.</small></span></a></li><li><a class="amx-item" href="kalkulus/index.html"><span class="amx-glyph" aria-hidden="true">∫</span><span class="amx-txt"><b>Kalkulus</b><small>Diferensial we integral hasaplamalar.</small></span></a></li></ul></section><section class="amx-group"><h3>Hasaplama gurallary</h3><ul><li><a class="amx-item" href="san-usullary/index.html"><span class="amx-glyph" aria-hidden="true">≈</span><span class="amx-txt"><b>San usullary</b><small>Kökler, interpolýasiýa, Ýakobi we Zeýdel.</small></span></a></li><li><a class="amx-item" href="statistika/index.html"><span class="amx-glyph" aria-hidden="true">σ</span><span class="amx-txt"><b>Statistika</b><small>Ortaça, ähtimallyk we beýleki statistiki hasaplamalar.</small></span></a></li><li><a class="amx-item" href="amal-barlagy/index.html"><span class="amx-glyph" aria-hidden="true">→</span><span class="amx-txt"><b>Amal barlagy</b><small>Simpleks, ulag, bellemek, oýunlar, tor meýilnamasy.</small></span></a></li></ul></section><section class="amx-group"><h3>Meseleler we şekiller</h3><ul><li><a class="amx-item" href="soz-meseleleri/index.html"><span class="amx-glyph" aria-hidden="true">?</span><span class="amx-txt"><b>Söz meseleleri</b><small>Gündelik durmuşdaky matematiki meseleler.</small></span></a></li><li><a class="amx-item" href="geometriya/index.html"><span class="amx-glyph" aria-hidden="true">△</span><span class="amx-txt"><b>Geometriýa</b><small>Meýdan, göwrüm we şekilleriň häsiýetleri.</small></span></a></li></ul></section><div class="amx-mega-foot"><a class="amx-soon amx-foot-link" href="#" aria-disabled="true" title="Ýakynda goşular">Biz barada <em>ýakynda</em></a></div></div></div></li><li><a class="amx-link" href="oyunlar/index.html"><svg class="amx-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><rect x="3" y="7.5" width="18" height="10" rx="5"/><path d="M8 10.5v4M6 12.5h4M15.5 11.6h.01M18 13.4h.01"/></svg><span>Oýunlar</span></a></li><li><a class="amx-link" href="taze/index.html"><svg class="amx-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M11 3.5l1.9 5.1 5.1 1.9-5.1 1.9L11 17.5l-1.9-5.1L4 10.5l5.1-1.9zM18.5 16.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z"/></svg><span>Näme täze</span></a></li><li><a class="amx-link" href="pikirler/index.html"><svg class="amx-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4.5 5.5h15v10.2h-7.2L8 19v-3.3H4.5z"/></svg><span>Pikirler</span></a></li><li class="amx-end"><button class="amx-tool" type="button" data-theme-toggle aria-label="Gara / açyk temany çalyş" title="Gara / açyk tema"><svg class="amx-ico i-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></svg><svg class="amx-ico i-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6L7 7M17 17l1.4 1.4M18.4 5.6L17 7M7 17l-1.4 1.4"/></svg><span class="amx-lbl">Temany çalyş</span></button></li><li><a class="amx-link amx-gear" href="sazlamalar/index.html"><svg class="amx-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg><span class="amx-lbl-keep">Sazlamalar</span></a></li></ul></div><div class="amx-scrim"></div><div class="amx-account" id="account"><button type="button" class="amx-signin" id="signInBtn">Girmek</button><div class="amx-user" id="userMenu" hidden><button type="button" class="amx-userbtn" id="userBtn" aria-haspopup="menu" aria-expanded="false" aria-controls="userPop"><span class="amx-av" id="userInitial" aria-hidden="true"></span><span class="amx-uname" id="userName"></span><svg class="amx-ico" viewBox="0 0 20 20" width="14" height="14" aria-hidden="true" focusable="false"><path d="M5 7.5l5 5 5-5"/></svg></button><div class="amx-pop" id="userPop" role="menu" aria-labelledby="userBtn" hidden><p class="amx-pop-h">Salam, <b id="userHello"></b>!</p><button type="button" role="menuitem" id="acctBtn">Hasap we deňleşdirmek</button><a role="menuitem" href="sazlamalar/index.html">Sazlamalar</a><button type="button" role="menuitem" id="logoutBtn">Çykmak</button></div></div></div></div></nav>
+
+<main id="main">
+
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="wrap hero-in">
+      <div class="hero-text">
+        <p class="hero-hi" id="heroHi" hidden></p>
+        <h1 id="hero-h"><span>Matematika</span> <span>öz diliňde,</span> <span>ädimme-ädim.</span></h1>
+        <p class="hero-lead">Meseläňizi ýazyň ýa-da suratyny goşuň. Amatly AI ony çözer, her ädimini türkmençe düşündirer we jogaby saýtyň öz hasaplaýyş motory bilen barlar.</p>
+        <form class="ask" id="askForm" autocomplete="off">
+          <label class="sr-only" for="askInput">Meseläňiz</label>
+          <textarea id="askInput" rows="2" maxlength="6000" placeholder="Mysal: x² − 5x + 6 = 0 deňlemäni çözüň" enterkeyhint="send"></textarea>
+          <div class="ask-bar">
+            <button type="button" class="ask-photo" id="askPhoto"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8.5h3l1.6-2.5h6.8L17 8.5h3v10H4z"/><circle cx="12" cy="13.2" r="3.4"/></svg><span>Surat goş</span></button>
+            <input type="file" id="askFile" accept="image/*" hidden aria-label="Meseläniň suratyny saýlaň">
+            <span class="ask-thumb" id="askThumb" hidden></span>
+            <button type="submit" class="ask-go">Çöz</button>
+          </div>
+        </form>
+        <div class="ask-ex" aria-label="Mysal meseleler">
+          <button type="button" data-q="∫ x·eˣ dx integraly ädimme-ädim çözüň"><i>∫ x·eˣ dx</i></button>
+          <button type="button" data-q="lim (x→0) sin(x)/x limitini düşündiriň"><i>lim</i> sin <i>x</i> / <i>x</i></button>
+          <button type="button" data-q="2x² − 5x + 2 = 0 deňlemäni çözüň"><i>2x² − 5x + 2 = 0</i></button>
+          <button type="button" data-q="y = x³ − 3x funksiýany derňäp, grafigini çyzyň"><i>y = x³ − 3x</i></button>
         </div>
       </div>
-    </section>
+      <figure class="hero-art">
+        <svg class="gul" viewBox="0 0 520 520" role="img" aria-labelledby="gulT gulD"><title id="gulT">Türkmen halysynyň göli — sirkul we çyzgyç bilen gurluş</title><desc id="gulD">Tegelegiň içinde iki inedördül sekiz burçly ýyldyzy emele getirýär; ortasynda dört bölege bölünen sekizburçluk göl. O merkez, r radius, burç 45°.</desc><g class="g-c"><path pathLength="1" style="--d:0s" d="M34 260 a226 226 0 1 0 452 0 a226 226 0 1 0 -452 0"/><path pathLength="1" style="--d:.15s" class="g-axis" d="M16 260 H504"/><path pathLength="1" style="--d:.25s" class="g-axis" d="M260 16 V504"/><path pathLength="1" style="--d:.35s" class="g-diag" d="M93.1 93.1 L426.9 426.9"/><path pathLength="1" style="--d:.45s" class="g-diag" d="M93.1 426.9 L426.9 93.1"/><path pathLength="1" style="--d:0.50s" class="g-tick" d="M239.3 22.9 A238 238 0 0 1 280.7 22.9"/><path pathLength="1" style="--d:0.55s" class="g-tick" d="M413 77.7 A238 238 0 0 1 442.3 107"/><path pathLength="1" style="--d:0.60s" class="g-tick" d="M497.1 239.3 A238 238 0 0 1 497.1 280.7"/><path pathLength="1" style="--d:0.65s" class="g-tick" d="M442.3 413 A238 238 0 0 1 413 442.3"/><path pathLength="1" style="--d:0.70s" class="g-tick" d="M280.7 497.1 A238 238 0 0 1 239.3 497.1"/><path pathLength="1" style="--d:0.75s" class="g-tick" d="M107 442.3 A238 238 0 0 1 77.7 413"/><path pathLength="1" style="--d:0.80s" class="g-tick" d="M22.9 280.7 A238 238 0 0 1 22.9 239.3"/><path pathLength="1" style="--d:0.85s" class="g-tick" d="M77.7 107 A238 238 0 0 1 107 77.7"/><path pathLength="1" style="--d:.9s" class="g-ang" d="M314 260 A54 54 0 0 0 298.2 221.8"/><path pathLength="1" style="--d:1s" class="g-rad" d="M260 260 L51.2 173.5"/></g><g class="g-f"><path pathLength="1" style="--d:.7s" class="g-sq" d="M260 34 L486 260 L260 486 L34 260Z"/><path pathLength="1" style="--d:.95s" class="g-sq" d="M419.8 100.2 L419.8 419.8 L100.2 419.8 L100.2 100.2Z"/><path pathLength="1" style="--d:1.25s" class="g-oct" d="M326.2 100.2 L419.8 193.8 L419.8 326.2 L326.2 419.8 L193.8 419.8 L100.2 326.2 L100.2 193.8 L193.8 100.2Z"/><path pathLength="1" style="--d:1.45s" class="g-gul" d="M309 141.7 L378.3 211 L378.3 309 L309 378.3 L211 378.3 L141.7 309 L141.7 211 L211 141.7Z"/><path class="g-fill g-q1" style="--d:1.90s" d="M260 260 L260 141.7 L309 141.7 L378.3 211 L378.3 260Z"/><path class="g-fill g-q2" style="--d:1.98s" d="M260 260 L378.3 260 L378.3 309 L309 378.3 L260 378.3Z"/><path class="g-fill g-q1" style="--d:2.06s" d="M260 260 L260 378.3 L211 378.3 L141.7 309 L141.7 260Z"/><path class="g-fill g-q2" style="--d:2.14s" d="M260 260 L141.7 260 L141.7 211 L211 141.7 L260 141.7Z"/><path pathLength="1" style="--d:1.6s" class="g-gul g-split" d="M260 141.7 V378.3 M141.7 260 H378.3"/><path class="g-fill g-m1" style="--d:2.10s" d="M305.3 197.7 L322.3 214.7 L305.3 231.7 L288.3 214.7Z"/><path class="g-fill g-m2" style="--d:2.18s" d="M305.3 288.3 L322.3 305.3 L305.3 322.3 L288.3 305.3Z"/><path class="g-fill g-m1" style="--d:2.26s" d="M214.7 288.3 L231.7 305.3 L214.7 322.3 L197.7 305.3Z"/><path class="g-fill g-m2" style="--d:2.34s" d="M214.7 197.7 L231.7 214.7 L214.7 231.7 L197.7 214.7Z"/><path class="g-fill g-core" style="--d:2.4s" d="M260 240 L280 260 L260 280 L240 260Z"/><circle class="g-fill g-dot" style="--d:1.20s" cx="260" cy="34" r="4.5"/><circle class="g-fill g-dot" style="--d:1.24s" cx="419.8" cy="100.2" r="4.5"/><circle class="g-fill g-dot" style="--d:1.28s" cx="486" cy="260" r="4.5"/><circle class="g-fill g-dot" style="--d:1.32s" cx="419.8" cy="419.8" r="4.5"/><circle class="g-fill g-dot" style="--d:1.36s" cx="260" cy="486" r="4.5"/><circle class="g-fill g-dot" style="--d:1.40s" cx="100.2" cy="419.8" r="4.5"/><circle class="g-fill g-dot" style="--d:1.44s" cx="34" cy="260" r="4.5"/><circle class="g-fill g-dot" style="--d:1.48s" cx="100.2" cy="100.2" r="4.5"/></g><g class="g-l"><text class="g-t" x="272" y="290">O</text><text class="g-t" x="139.2" y="200.4">r</text><text class="g-t g-ts" x="332.2" y="236.9">45°</text><text class="g-t" x="254" y="12">A</text><text class="g-t" x="438.8" y="85.2">B</text></g></svg>
+        <figcaption>Türkmen halysynyň göli, sirkul we çyzgyç bilen gurlan</figcaption>
+      </figure>
+    </div>
+  </section>
 
-    <section id="about" class="section">
-      <div class="container narrow">
-        <h2>Biz barada</h2>
-        <p>Amatly — her bir ulanyjy üçin döredilen ýönekeý we amatly web saýt. Biziň maksadymyz — size gerek maglumaty çalt we düşnükli görnüşde hödürlemek.</p>
+  <section class="recent wrap" id="recentSec" aria-labelledby="recent-h" hidden>
+    <h2 class="recent-h" id="recent-h">Soňky açanlaryňyz</h2>
+    <div class="recent-list" id="recentList"></div>
+  </section>
+
+  <section class="toc wrap" id="mazmuny" aria-labelledby="toc-h">
+    <header class="sec-head sec-head--row">
+      <div>
+        <h2 id="toc-h">Mazmuny</h2>
+        <p>Saýtyň ähli bölümleri bir sahypada: kalkulýatorlar, sapaklar we meseleler.</p>
       </div>
-    </section>
+      <form class="amx-search toc-search" data-site-search role="search">
+        <input type="text" placeholder="Bölüm ýa-da tema gözläň" aria-label="Saýtda gözleg" autocomplete="off">
+        <button type="submit" aria-label="Gözläň"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg></button>
+      </form>
+    </header>
+    <div class="toc-cols">
+      <section class="toc-part" aria-labelledby="toc-a">
+        <h3 id="toc-a">Algebra we analiz</h3>
+        <ul class="toc-list">
+          <li><a href="on-algebra/index.html"><span class="toc-g" aria-hidden="true">½</span><span class="toc-n">Öň-algebra</span><span class="toc-l" aria-hidden="true"></span><span class="toc-c">7 tema</span><small>IUUB we IUKS, kesirler, göterim, proporsiýa</small></a></li>
+          <li><a href="algebra/index.html"><span class="toc-g" aria-hidden="true">x²</span><span class="toc-n">Algebra</span><span class="toc-l" aria-hidden="true"></span><span class="toc-c">10 kalkulýator</span><small>Deňlemeler, deňsizlikler, n×n ulgamlar (Gauss, Kramer)</small></a></li>
+          <li><a href="trigonometriya/index.html"><span class="toc-g" aria-hidden="true">θ</span><span class="toc-n">Trigonometriýa</span><span class="toc-l" aria-hidden="true"></span><span class="toc-c">10 bölüm</span><small>Birlik töwerek, formulalar, toždestwolar, deňlemeler</small></a></li>
+          <li><a href="matrisa/index.html"><span class="toc-g toc-g--up" aria-hidden="true">[&#8202;]</span><span class="toc-n">Matrisa we wektor</span><span class="toc-l" aria-hidden="true"></span><span class="toc-c">6 amal</span><small>Kesgitleýji, ters matrisa, rang, häsiýetli sanlar</small></a></li>
+          <li><a href="kalkulus/index.html"><span class="toc-g" aria-hidden="true">∫</span><span class="toc-n">Kalkulus</span><span class="toc-l" aria-hidden="true"></span><span class="toc-c">15 sapak</span><small>Limit, önüm, integral, hatarlar, diff. deňlemeler</small></a></li>
+        </ul>
+      </section>
+      <section class="toc-part" aria-labelledby="toc-b">
+        <h3 id="toc-b">Hasaplama gurallary</h3>
+        <ul class="toc-list">
+          <li><a href="statistika/index.html"><span class="toc-g" aria-hidden="true">σ</span><span class="toc-n">Statistika</span><span class="toc-l" aria-hidden="true"></span><span class="toc-c">61 hasaplaýjy</span><small>Ortaça, medana, ähtimallyk, gipoteza barlagy</small></a></li>
+          <li><a href="san-usullary/index.html"><span class="toc-g" aria-hidden="true">≈</span><span class="toc-n">San usullary</span><span class="toc-l" aria-hidden="true"></span><span class="toc-c">6 usul</span><small>Kökler, interpolýasiýa, Ýakobi we Gauss–Zeýdel</small></a></li>
+          <li><a href="amal-barlagy/index.html"><span class="toc-g" aria-hidden="true">→</span><span class="toc-n">Amal barlagy</span><span class="toc-l" aria-hidden="true"></span><span class="toc-c">11 usul</span><small>Simpleks, ulag, bellemek, oýunlar, CPM/PERT, iň gysga ýol</small></a></li>
+        </ul>
+      </section>
+      <section class="toc-part" aria-labelledby="toc-c">
+        <h3 id="toc-c">Meseleler we şekiller</h3>
+        <ul class="toc-list">
+          <li><a href="soz-meseleleri/index.html"><span class="toc-g" aria-hidden="true">?</span><span class="toc-n">Söz meseleleri</span><span class="toc-l" aria-hidden="true"></span><span class="toc-c">12 bölüm</span><small>Hereket, iş, göterim, garyndy, ýaş</small></a></li>
+          <li><a href="geometriya/index.html"><span class="toc-g" aria-hidden="true">△</span><span class="toc-n">Geometriýa</span><span class="toc-l" aria-hidden="true"></span><span class="toc-c">22 şekil</span><small>Meýdan, perimetr, göwrüm, koordinatalar</small></a></li>
+          <li><a href="oyunlar/index.html"><span class="toc-g" aria-hidden="true">✦</span><span class="toc-n">Oýunlar</span><span class="toc-l" aria-hidden="true"></span><span class="toc-c">4 oýun</span><small>Tiz hasap, sanlary tapmak, sanaw ulgamlary</small></a></li>
+        </ul>
+      </section>
+    </div>
+  </section>
 
-    <section id="features" class="section alt">
-      <div class="container">
-        <h2>Hyzmatlar</h2>
-        <div class="cards">
-          <article class="card">
-            <div class="card-icon">⚡</div>
-            <h3>Çalt</h3>
-            <p>Sahypa islendik enjamda pursatda açylýar.</p>
-          </article>
-          <article class="card">
-            <div class="card-icon">🔒</div>
-            <h3>Ygtybarly</h3>
-            <p>Saýt howpsuz HTTPS baglanyşygy arkaly işleýär.</p>
-          </article>
-          <article class="card">
-            <div class="card-icon">📱</div>
-            <h3>Islendik enjamda</h3>
-            <p>Telefonda, planşetde we kompýuterde owadan görünýär.</p>
-          </article>
+  <section class="ai-show" aria-labelledby="ai-h">
+    <div class="wrap ai-in">
+      <header class="sec-head sec-head--light">
+        <h2 id="ai-h">Amatly AI: sorag beriň, mugallym ýaly düşündirsin</h2>
+        <p>Claude modeline daýanýar, türkmen dilinde gürleýär we her sahypada aşakdaky sag burçda durýar.</p>
+      </header>
+      <div class="ai-grid">
+        <ul class="ai-feats">
+          <li><b>Suratdan çözýär</b><span>Depderdäki, kitapdaky ýa-da tagtadaky meseläniň suratyny goşuň.</span></li>
+          <li><b>Ýalňyşyňyzy tapýar</b><span>Öz çözgüdiňiziň suratyny iberiň: ilkinji ýalňyş ädimi görkezip, näme üçin ýalňyşdygyny düşündirýär.</span></li>
+          <li><b>Jogaby barlaýar</b><span>Limit, önüm, integral we çyzykly programmirleme (simpleks) saýtyň öz hasaplaýyş motory bilen çözülýär we barlanýar.</span></li>
+          <li><b>Janly grafik çyzýar</b><span>Funksiýanyň grafigini çatyň içinde çyzýar: süýşüriň, ulaldyň, parametri üýtgediň.</span></li>
+          <li><b>Mugallym režimi</b><span>Jogaby derrew aýtmaýar: soraglar we maslahatlar bilen meseläni özüňize çözdürýär.</span></li>
+          <li><b>Saýla-da sora</b><span>Islendik sahypada formulany ýa-da teksti saýlaň we «AI-dan sora» basyň.</span></li>
+        </ul>
+        <div class="ai-demo" aria-label="Mysal: Amatly AI-yň janly grafigi">
+          <div class="ai-demo-q">y = a·sin(x) we y = x/2 grafiklerini deňeşdiriň</div>
+          <div class="ai-demo-a">
+            <p>Iki egriniň kesişýän nokatlary <i>a</i> parametrine bagly. Süýrgüji süýşüriň: <i>a</i> ulaldygyça kesişme nokatlary köpelýär.</p>
+            <div class="ai-demo-plot" id="demoPlot"></div>
+          </div>
+          <button type="button" class="ai-demo-go" id="demoAsk">Amatly AI bilen synap görüň</button>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="contact" class="section">
-      <div class="container narrow">
-        <h2>Habarlaşmak</h2>
-        <p>Soraglaryňyz ýa-da teklipleriňiz barmy? Biz bilen habarlaşyň!</p>
+  <section class="extras wrap" aria-label="Günüň meselesi we täzelikler">
+    <article class="ex-card ex-daily">
+      <h2>Günüň meselesi</h2>
+      <p>Her gün täze söz meselesi: çözüň, jogabyňyzy barlaň we çözgüdi ädimme-ädim görüň.</p>
+      <a class="btn-line" href="soz-meseleleri/index.html#daily-h">Meseläni açmak</a>
+    </article>
+    <article class="ex-card ex-news">
+      <h2>Saýtda näme täze</h2>
+      <ul class="news-list">
+        <li><time datetime="2026-10-23">23.10.2026</time><a href="amal-barlagy/simpleks.html">Simpleks usuly goşuldy: çyzykly programmirleme ädimme-ädim</a></li>
+        <li><time datetime="2026-10-22">22.10.2026</time><a href="taze/index.html">Amatly AI goşuldy: suratdan çözmek we ýalňyşy tapmak</a></li>
+        <li><time datetime="2026-10-21">21.10.2026</time><a href="kalkulus/index.html">Kalkulus bölümi açyldy: 15 sapak</a></li>
+      </ul>
+      <a class="ex-more" href="taze/index.html#saytda-taze">Ähli täzelikler</a>
+    </article>
+  </section>
+
+  <section class="home-news wrap" id="homeNewsSec" aria-labelledby="hn-h" hidden>
+    <div class="home-news__head">
+      <h2 id="hn-h">Ylym we bilim habarlary</h2>
+      <a class="home-news__all" href="taze/index.html#habarlar">Ähli habarlar</a>
+    </div>
+    <div class="home-news__grid" id="homeNews" data-count="3"></div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap foot-in">
+    <div class="foot-brand">
+      <span class="foot-logo">Amatly<em>.com</em></span>
+      <p>Türkmen dilinde matematika: kalkulýatorlar, sapaklar we AI mugallym.</p>
+    </div>
+    <nav class="foot-nav" aria-label="Aşaky menýu">
+      <a href="kalkulus/index.html">Kalkulus</a>
+      <a href="statistika/index.html">Statistika</a>
+      <a href="geometriya/index.html">Geometriýa</a>
+      <a href="soz-meseleleri/index.html">Söz meseleleri</a>
+      <a href="taze/index.html">Näme täze</a>
+      <a href="pikirler/index.html">Pikirler</a>
+      <a href="sazlamalar/index.html">Sazlamalar</a>
+    </nav>
+    <p class="foot-note">Amatly AI ýalňyşyp biler: möhüm jogaplary barlaň. Hasap maglumatlary diňe şu brauzerde saklanýar.</p>
+  </div>
+</footer>
+
+<dialog class="auth" id="authDialog" aria-labelledby="authTitle">
+  <div class="auth-side" aria-hidden="true">
+    <svg class="auth-mark" viewBox="0 0 32 32"><path d="M16 1.5 20.25 5.75 26.25 5.75 26.25 11.75 30.5 16 26.25 20.25 26.25 26.25 20.25 26.25 16 30.5 11.75 26.25 5.75 26.25 5.75 20.25 1.5 16 5.75 11.75 5.75 5.75 11.75 5.75Z" fill="currentColor" opacity=".14"/><path d="M16 1.5 20.25 5.75 26.25 5.75 26.25 11.75 30.5 16 26.25 20.25 26.25 26.25 20.25 26.25 16 30.5 11.75 26.25 5.75 26.25 5.75 20.25 1.5 16 5.75 11.75 5.75 5.75 11.75 5.75Z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/><path d="M16 10 22 16 16 22 10 16Z" fill="#e9a23b"/></svg>
+    <p class="auth-side-t">Hasabyňyz bilen</p>
+    <ul>
+      <li>Islendik brauzerde we telefonda girip bolýar</li>
+      <li>Sazlamalar, rekordlar we sapaklaryň ösüşi deňleşdirilýär</li>
+      <li>Türgenleşik netijeleriňiz ýitmeýär</li>
+      <li>AI söhbetleriňiz size aýratyn saklanýar</li>
+    </ul>
+  </div>
+  <div class="auth-main">
+    <button type="button" class="auth-x" id="authClose" aria-label="Ýap"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <h2 id="authTitle">Amatly.com</h2>
+    <div class="auth-tabs" role="tablist" aria-label="Giriş ýa-da hasaba durmak">
+      <button type="button" role="tab" id="tabLogin" aria-controls="loginForm" aria-selected="true">Girmek</button>
+      <button type="button" role="tab" id="tabRegister" aria-controls="registerForm" aria-selected="false" tabindex="-1">Hasaba durmak</button>
+    </div>
+    <form class="auth-form" id="loginForm" role="tabpanel" aria-labelledby="tabLogin" novalidate>
+      <div class="field">
+        <label for="loginUser">Ulanyjy ady</label>
+        <input type="text" id="loginUser" autocomplete="username" autocapitalize="none" spellcheck="false" required>
+      </div>
+      <div class="field">
+        <label for="loginPass">Parol</label>
+        <div class="pass"><input type="password" id="loginPass" autocomplete="current-password" required><button type="button" class="pass-eye" data-target="loginPass" aria-label="Paroly görkez" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/><path class="eye-off" d="M4 4l16 16"/></svg></button></div>
+      </div>
+      <label class="check"><input type="checkbox" id="loginRemember" checked> <span>Meni ýatda sakla</span></label>
+      <p class="form-err" id="loginError" role="alert"></p>
+      <button type="submit" class="btn-solid"><span>Girmek</span></button>
+      <p class="auth-alt">Hasabyňyz başga brauzerde döredilip, faýla göçürildimi? <button type="button" class="linkish" id="importAccBtn">Hasap faýlyndan dikeltmek</button><input type="file" id="importAccFile" accept="application/json,.json" hidden aria-label="Hasap faýlyny (JSON) saýlaň"></p>
+    </form>
+    <form class="auth-form" id="registerForm" role="tabpanel" aria-labelledby="tabRegister" novalidate hidden>
+      <div class="field">
+        <label for="regUser">Ulanyjy ady</label>
+        <input type="text" id="regUser" autocomplete="username" autocapitalize="none" spellcheck="false" maxlength="24" aria-describedby="regUserHint" required>
+        <small id="regUserHint">3–24 belgi: harplar, sanlar, aralyk, _ . -</small>
+      </div>
+      <div class="field">
+        <label for="regPass">Parol</label>
+        <div class="pass"><input type="password" id="regPass" autocomplete="new-password" aria-describedby="regPassHint" required><button type="button" class="pass-eye" data-target="regPass" aria-label="Paroly görkez" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/><path class="eye-off" d="M4 4l16 16"/></svg></button></div>
+        <div class="meter" aria-hidden="true"><i id="passMeter"></i></div>
+        <small id="regPassHint">Iň az 6 belgi. Harp bilen sany garyşdyrsaňyz has ygtybarly.</small>
+      </div>
+      <div class="field">
+        <label for="regPass2">Paroly gaýtalaň</label>
+        <input type="password" id="regPass2" autocomplete="new-password" required>
+      </div>
+      <label class="check"><input type="checkbox" id="regRemember" checked> <span>Meni ýatda sakla</span></label>
+      <p class="form-err" id="registerError" role="alert"></p>
+      <button type="submit" class="btn-solid"><span>Hasaba durmak</span></button>
+    </form>
+    <p class="auth-note" id="authNote">Parol açyk ýazylmaýar: PBKDF2 bilen şifrlenip saklanýar.</p>
+  </div>
+</dialog>
+
+<dialog class="auth acct" id="acctDialog" aria-labelledby="acctTitle">
+  <div class="auth-main">
+    <button type="button" class="auth-x" id="acctClose" aria-label="Ýap"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <h2 id="acctTitle">Hasabyňyz</h2>
+    <p class="acct-who"><span class="acct-av" id="acctInitial" aria-hidden="true"></span><b id="acctName"></b><span class="acct-badge" id="acctBadge"></span></p>
+    <section class="acct-sec" aria-labelledby="acctSyncH">
+      <h3 id="acctSyncH">Enjamlaryň arasynda deňleşdirmek</h3>
+      <p id="acctSyncText" aria-live="polite"></p>
+      <div class="acct-row">
+        <button type="button" class="btn-line" id="acctSyncNow">Indi deňleşdir</button>
+        <button type="button" class="btn-line" id="acctExport">Hasaby faýla göçür</button>
       </div>
     </section>
-  </main>
+    <section class="acct-sec" id="acctMigrate" aria-labelledby="acctMigH" hidden>
+      <h3 id="acctMigH">Hasaby serwere geçirmek</h3>
+      <p>Serwer elýeterli: hasabyňyzy geçirseňiz, islendik brauzerde we telefonda şol at we parol bilen girip bilersiňiz. Şu brauzerdäki sazlamalar hem geçirilýär.</p>
+      <form class="auth-form" id="migrateForm" novalidate>
+        <input type="text" class="acct-user" autocomplete="username" hidden tabindex="-1">
+      <div class="field">
+        <label for="migPass">Parolyňyz</label>
+        <div class="pass"><input type="password" id="migPass" autocomplete="current-password" required><button type="button" class="pass-eye" data-target="migPass" aria-label="Paroly görkez" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/><path class="eye-off" d="M4 4l16 16"/></svg></button></div>
+      </div>
+        <p class="form-err" id="migError" role="alert"></p>
+        <button type="submit" class="btn-solid"><span>Serwere geçir</span></button>
+      </form>
+    </section>
+    <details class="acct-sec">
+      <summary>Paroly üýtgetmek</summary>
+      <form class="auth-form" id="passForm" novalidate>
+        <input type="text" class="acct-user" autocomplete="username" hidden tabindex="-1">
+      <div class="field">
+        <label for="pwOld">Häzirki parol</label>
+        <div class="pass"><input type="password" id="pwOld" autocomplete="current-password" required><button type="button" class="pass-eye" data-target="pwOld" aria-label="Paroly görkez" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/><path class="eye-off" d="M4 4l16 16"/></svg></button></div>
+      </div>
+      <div class="field">
+        <label for="pwNew">Täze parol</label>
+        <div class="pass"><input type="password" id="pwNew" autocomplete="new-password" aria-describedby="pwNewHint" required><button type="button" class="pass-eye" data-target="pwNew" aria-label="Paroly görkez" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/><path class="eye-off" d="M4 4l16 16"/></svg></button></div>
+        <small id="pwNewHint">Iň az 6 belgi. Serwerdäki hasapda beýleki enjamlardan täzeden girmeli bolar.</small>
+      </div>
+        <div class="field">
+          <label for="pwNew2">Täze paroly gaýtalaň</label>
+          <input type="password" id="pwNew2" autocomplete="new-password" required>
+        </div>
+        <p class="form-err" id="passError" role="alert"></p>
+        <button type="submit" class="btn-solid"><span>Paroly üýtget</span></button>
+      </form>
+    </details>
+    <details class="acct-sec acct-danger">
+      <summary>Hasaby pozmak</summary>
+      <form class="auth-form" id="delForm" novalidate>
+        <input type="text" class="acct-user" autocomplete="username" hidden tabindex="-1">
+        <p>Hasap we onuň deňleşdirilen sazlamalary pozular. Muny yzyna gaýtaryp bolmaýar.</p>
+      <div class="field">
+        <label for="delPass">Parolyňyz</label>
+        <div class="pass"><input type="password" id="delPass" autocomplete="current-password" required><button type="button" class="pass-eye" data-target="delPass" aria-label="Paroly görkez" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/><path class="eye-off" d="M4 4l16 16"/></svg></button></div>
+      </div>
+        <label class="check"><input type="checkbox" id="delLocal"> <span>Şu enjamdaky sazlamalary hem arassala</span></label>
+        <p class="form-err" id="delError" role="alert"></p>
+        <button type="submit" class="btn-solid btn-danger"><span>Hasaby poz</span></button>
+      </form>
+    </details>
+    <section class="acct-sec" aria-labelledby="acctOutH">
+      <h3 id="acctOutH">Hasapdan çykmak</h3>
+      <label class="check"><input type="checkbox" id="outClear"> <span>Şu enjamdaky sazlamalary arassala (umumy kompýuter)</span></label>
+      <label class="check" id="outAllRow"><input type="checkbox" id="outAll"> <span>Ähli enjamlardan çyk</span></label>
+      <button type="button" class="btn-line" id="acctLogout">Hasapdan çyk</button>
+    </section>
+  </div>
+</dialog>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year">2026</span> Amatly. Ähli hukuklar goralan.</p>
-    </div>
-  </footer>
 
-  <script src="script.js"></script>
+<script src="assets/giris/js/hash.js" defer></script>
+<script src="assets/nav/account.js" defer></script>
+<script src="assets/giris/js/main.js" defer></script>
+<script src="assets/taze-pikirler/js/news-data.js" defer></script>
+<script src="assets/taze-pikirler/js/news-auto.js" defer></script>
+<script src="assets/taze-pikirler/js/habarlar.js" defer></script>
 </body>
 </html>

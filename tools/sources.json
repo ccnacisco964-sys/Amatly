@@ -1,0 +1,25 @@
+{
+  "images": "save",
+  "keywords": "matemat|mathemat|algebra|geometr|olimpiad|olympiad|bilim|ylym|ylmy|okuw|mekdep|uniwersitet|institut|talyp|mugallym|akademi|informatik|education|school|student|universit|scien|математ|олимпиад|образован|школ|студент|университет|наук",
+  "sources": [
+    {
+      "id": "tp",
+      "type": "turkmenportal",
+      "name": "Turkmenportal",
+      "url": "https://turkmenportal.com/tm/news/category/22-bilim",
+      "lang": "tk",
+      "filter": false,
+      "max": 12
+    },
+    {
+      "id": "gov",
+      "type": "rss",
+      "name": "Türkmenistan döwlet habar portaly",
+      "url": "https://turkmenistan.gov.tm/rss.xml",
+      "lang": "tk",
+      "urlContains": "/tk/",
+      "filter": true,
+      "max": 60
+    }
+  ]
+}

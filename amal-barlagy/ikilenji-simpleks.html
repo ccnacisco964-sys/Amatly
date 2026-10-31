@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="tk">
+<head>
+<meta charset="UTF-8">
+<script src="../assets/nav/theme.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ikilenji simpleks usuly — ädimme-ädim kalkulýator | Amatly.com</title>
+<meta name="description" content="Çyzykly programmirleme meselesini ikilenji simpleks usuly bilen ädimme-ädim çözýän kalkulýator: çykýan setir, giriji sütün, ikilenji mesele we kölege bahalary, W* = Z* barlagy. Takyk droblar bilen.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tk_TM">
+<meta property="og:site_name" content="Amatly.com">
+<meta property="og:title" content="Ikilenji simpleks usuly — ädimme-ädim kalkulýator | Amatly.com">
+<meta property="og:description" content="Çyzykly programmirleme meselesini ikilenji simpleks usuly bilen ädimme-ädim çözýän kalkulýator: çykýan setir, giriji sütün, ikilenji mesele we kölege bahalary, W* = Z* barlagy. Takyk droblar bilen.">
+<link rel="canonical" href="https://amatly.com/amal-barlagy/ikilenji-simpleks.html">
+<meta property="og:url" content="https://amatly.com/amal-barlagy/ikilenji-simpleks.html">
+<meta property="og:image" content="https://amatly.com/assets/og/amal-barlagy.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Amatly.com — Ikilenji simpleks usuly — ädimme-ädim kalkulýator">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#172e6e" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1a33" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="../assets/ulag-meselesi/css/main.css">
+<link rel="stylesheet" href="../assets/simpleks/css/simpleks.css">
+<link rel="stylesheet" href="../assets/amal-barlagy/css/or.css">
+<link rel="stylesheet" href="../assets/nav/nav.css">
+<script src="../assets/nav/nav.js" defer></script>
+</head>
+<body data-page="or-ikilenji">
+
+<div class="container">
+  <header class="top" id="top">
+    <div class="logo-row">
+      <div class="logo">Amatly.com</div>
+      <form class="search-row" id="searchForm" data-site-search>
+        <input type="text" placeholder="Meseläňizi ýazyň ýa-da agtaryň" aria-label="Gözleg">
+        <button type="submit" aria-label="Gözläň">🔍</button>
+      </form>
+    </div>
+  </header>
+</div>
+
+<nav class="amx-nav" id="amxNav" aria-label="Esasy menýu"><div class="amx-bar"><button class="amx-burger" type="button" aria-expanded="false" aria-controls="amxPanel" aria-label="Menýuny aç"><span class="amx-burger-lines" aria-hidden="true"><i></i><i></i><i></i></span>Menýu</button><span class="amx-here">Amal barlagy</span><button class="amx-tool amx-bar-tool" type="button" data-theme-toggle aria-label="Gara / açyk temany çalyş" title="Gara / açyk tema"><svg class="amx-ico i-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></svg><svg class="amx-ico i-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6L7 7M17 17l1.4 1.4M18.4 5.6L17 7M7 17l-1.4 1.4"/></svg><span class="amx-lbl">Temany çalyş</span></button><div class="amx-panel" id="amxPanel"><div class="amx-panelhead"><span class="amx-brand">Amatly<em>.com</em></span><button class="amx-close" type="button" aria-label="Menýuny ýap"><svg class="amx-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M5 5l14 14M19 5L5 19"/></svg></button></div><ul class="amx-list"><li><a class="amx-link" href="../index.html"><svg class="amx-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M3.5 11.2L12 4l8.5 7.2M6 9.6V20h12V9.6"/></svg><span>Baş sahypa</span></a></li><li class="amx-has-mega"><button class="amx-link amx-trigger is-current" type="button" aria-expanded="false" aria-controls="amxMega"><svg class="amx-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><rect x="4" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.6"/></svg><span>Bölümler</span><svg class="amx-chev amx-ico" viewBox="0 0 20 20" width="14" height="14" aria-hidden="true" focusable="false"><path d="M5 7.5l5 5 5-5"/></svg></button><div class="amx-mega" id="amxMega"><div class="amx-mega-card"><section class="amx-group"><h3>Algebra we analiz</h3><ul><li><a class="amx-item" href="../on-algebra/index.html"><span class="amx-glyph" aria-hidden="true">½</span><span class="amx-txt"><b>Öň-algebra</b><small>Algebra üçin gerek esasy düşünjeler.</small></span></a></li><li><a class="amx-item" href="../algebra/index.html"><span class="amx-glyph" aria-hidden="true">x²</span><span class="amx-txt"><b>Algebra</b><small>Deňlemeler, deňsizlikler we n×n ulgamlar.</small></span></a></li><li><a class="amx-item" href="../trigonometriya/index.html"><span class="amx-glyph" aria-hidden="true">θ</span><span class="amx-txt"><b>Trigonometriýa</b><small>Birlik töwerek, formulalar we deňlemeler.</small></span></a></li><li><a class="amx-item" href="../matrisa/index.html"><span class="amx-glyph" aria-hidden="true">[ ]</span><span class="amx-txt"><b>Matrisa &amp; Wektor</b><small>Matrisa amallary we wektor hasaplamalary.</small></span></a></li><li><a class="amx-item" href="../kalkulus/index.html"><span class="amx-glyph" aria-hidden="true">∫</span><span class="amx-txt"><b>Kalkulus</b><small>Diferensial we integral hasaplamalar.</small></span></a></li></ul></section><section class="amx-group"><h3>Hasaplama gurallary</h3><ul><li><a class="amx-item" href="../san-usullary/index.html"><span class="amx-glyph" aria-hidden="true">≈</span><span class="amx-txt"><b>San usullary</b><small>Kökler, interpolýasiýa, Ýakobi we Zeýdel.</small></span></a></li><li><a class="amx-item" href="../statistika/index.html"><span class="amx-glyph" aria-hidden="true">σ</span><span class="amx-txt"><b>Statistika</b><small>Ortaça, ähtimallyk we beýleki statistiki hasaplamalar.</small></span></a></li><li><a class="amx-item" href="../amal-barlagy/index.html" aria-current="page"><span class="amx-glyph" aria-hidden="true">→</span><span class="amx-txt"><b>Amal barlagy</b><small>Simpleks, ulag, bellemek, oýunlar, tor meýilnamasy.</small></span></a></li></ul></section><section class="amx-group"><h3>Meseleler we şekiller</h3><ul><li><a class="amx-item" href="../soz-meseleleri/index.html"><span class="amx-glyph" aria-hidden="true">?</span><span class="amx-txt"><b>Söz meseleleri</b><small>Gündelik durmuşdaky matematiki meseleler.</small></span></a></li><li><a class="amx-item" href="../geometriya/index.html"><span class="amx-glyph" aria-hidden="true">△</span><span class="amx-txt"><b>Geometriýa</b><small>Meýdan, göwrüm we şekilleriň häsiýetleri.</small></span></a></li></ul></section><div class="amx-mega-foot"><a class="amx-soon amx-foot-link" href="#" aria-disabled="true" title="Ýakynda goşular">Biz barada <em>ýakynda</em></a></div></div></div></li><li><a class="amx-link" href="../oyunlar/index.html"><svg class="amx-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><rect x="3" y="7.5" width="18" height="10" rx="5"/><path d="M8 10.5v4M6 12.5h4M15.5 11.6h.01M18 13.4h.01"/></svg><span>Oýunlar</span></a></li><li><a class="amx-link" href="../taze/index.html"><svg class="amx-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M11 3.5l1.9 5.1 5.1 1.9-5.1 1.9L11 17.5l-1.9-5.1L4 10.5l5.1-1.9zM18.5 16.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z"/></svg><span>Näme täze</span></a></li><li><a class="amx-link" href="../pikirler/index.html"><svg class="amx-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4.5 5.5h15v10.2h-7.2L8 19v-3.3H4.5z"/></svg><span>Pikirler</span></a></li><li class="amx-end"><button class="amx-tool" type="button" data-theme-toggle aria-label="Gara / açyk temany çalyş" title="Gara / açyk tema"><svg class="amx-ico i-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></svg><svg class="amx-ico i-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6L7 7M17 17l1.4 1.4M18.4 5.6L17 7M7 17l-1.4 1.4"/></svg><span class="amx-lbl">Temany çalyş</span></button></li><li><a class="amx-link amx-gear" href="../sazlamalar/index.html"><svg class="amx-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg><span class="amx-lbl-keep">Sazlamalar</span></a></li></ul></div><div class="amx-scrim"></div></div></nav>
+
+<div class="container">
+
+  <div class="breadcrumb">
+    <a href="../index.html">Baş sahypa</a> <span>&gt;</span>
+    <a href="index.html">Amal barlagy</a> <span>&gt;</span>
+    <a href="index.html#cyzykly-programmirleme">Çyzykly programmirleme</a> <span>&gt;</span>
+    <span>Ikilenji simpleks usuly</span>
+  </div>
+
+  <a class="back-link" href="index.html">← Amal barlagy bölümine gaýdyň</a>
+  <a class="algo-link" href="#algoInfo" id="algoToggle" aria-expanded="false" aria-controls="algoInfo">Algoritma we düşündiriş</a>
+  <h1 class="tool-title">Ikilenji simpleks usuly bilen ädimme-ädim çözmek</h1>
+
+  <div id="algoInfo" class="algo-box" hidden>
+    <strong>Ikilenji simpleks usulynyň ädimleri:</strong>
+    <ol>
+      <li><b>Şert:</b> başlangyç tablisa <i>ikilenji mümkin</i> bolmaly — optimallyk şerti eýýäm ýerine ýetýär: min meselede ähli c<sub>j</sub> ≥ 0 (Δ<sub>j</sub> ≤ 0), max meselede ähli c<sub>j</sub> ≤ 0 (Δ<sub>j</sub> ≥ 0). Bu köplenç ≥ çäklendirmeli «iň arzan» meselelerde bolýar.</li>
+      <li><b>Kanoniki görnüş:</b> ≥ çäklendirmeler −1-e köpeldilip ≤ görnüşe getirilýär, = çäklendirme iki deňsizlige bölünýär; her setire goşmaça üýtgeýän goşulýar. Bazis — goşmaça üýtgeýänler, emeli üýtgeýän gerek däl. Sag tarapda (B) otrisatel sanlar bolup biler.</li>
+      <li><b>Çykýan setir:</b> B sütünindäki iň kiçi (iň otrisatel) baha. Ähli B<sub>i</sub> ≥ 0 bolsa — meýilnama optimal.</li>
+      <li><b>Giriji sütün:</b> çykýan setirde a<sub>rj</sub> &lt; 0 bolan sütünlerden |Δ<sub>j</sub> / a<sub>rj</sub>| gatnaşygy iň kiçi bolany. Otrisatel a<sub>rj</sub> ýok bolsa — meseläniň mümkin çözgüdi ýok.</li>
+      <li><b>Žordan–Gauss özgertmesi</b> adaty simpleksdäki ýaly; 3-nji ädime gaýdyň.</li>
+    </ol>
+    <p class="algo-note">Adaty simpleks usuly mümkin meýilnamadan başlap optimallyga ýetýär, ikilenji simpleks bolsa optimallyk şertini saklap, mümkinlige ýetýär. Optimal tablisanyň goşmaça sütünlerindäki Δ bahalary ikilenji meseläniň çözgüdini (kölege bahalaryny) berýär, we W* = Z* (berk ikilenjilik teoremasy). Kalkulýator netijäni adaty simpleks usuly bilen hem barlaýar.</p>
+  </div>
+
+  <section class="sx-panel">
+    <label class="field-label" for="lpText">Meseläni ýazyň: bir setirde maksat funksiýasy, aşakdaky setirlerde çäklendirmeler</label>
+    <div class="field-note">≥ üçin <code>&gt;=</code>, ≤ üçin <code>&lt;=</code>. x ≥ 0 şertleri özi goşulýar. Min meselede ähli c<sub>j</sub> ≥ 0, max meselede ähli c<sub>j</sub> ≤ 0 bolmaly.</div>
+    <textarea id="lpText" class="sx-text" spellcheck="false" rows="6" aria-describedby="lpTextHelp">min Z = 2x1 + 3x2 + 4x3
+x1 + 2x2 + x3 &gt;= 3
+2x1 - x2 + 3x3 &gt;= 4</textarea>
+    <details class="sx-help" id="lpTextHelp">
+      <summary>Nähili ýazmaly? (mysallar)</summary>
+      <ul>
+        <li>Maksat funksiýasy: <code>min Z = 2x1 + 3x2</code> ýa-da <code>F = 4x + y -&gt; min</code>.</li>
+        <li>Çäklendirmeler: <code>x1 + 2x2 &gt;= 3</code>, <code>x1 - x2 &lt;= 2</code>, <code>x1 + x2 = 4</code>; droblar we onluk sanlar: <code>1/2 x1</code>, <code>1,5x2</code>.</li>
+        <li>Iň köp 10 üýtgeýän we 12 çäklendirme.</li>
+      </ul>
+    </details>
+  <div class="sx-presets" role="group" aria-label="Mysallar">
+    <span class="sx-presets-title">Mysallar:</span>
+    <div class="sx-preset-list" id="presetList"></div>
+  </div>
+  <p class="sx-story" id="presetStory" hidden></p>
+  </section>
+  <div class="sx-options">
+    <label for="orNum">Sanlary görkezmek:
+      <select id="orNum">
+        <option value="frac" selected>Takyk droblar (3/2)</option>
+        <option value="dec">Onluk sanlar (1.5)</option>
+      </select>
+    </label>
+  </div>
+
+  <div id="errorBox" class="error-box" role="alert" hidden></div>
+
+  <div class="solve-wrap">
+    <button class="classic-btn solve-btn" id="solveBtn" type="button">Çözüň</button>
+  </div>
+
+  <noscript><p class="error-box">Bu kalkulýator JavaScript talap edýär. Brauzeriňizde JavaScript-i işjeňleşdiriň.</p></noscript>
+
+  <section id="resultsSection" aria-live="polite" hidden>
+    <h2 id="meselanin-gornusi" class="section-title">Meseläniň matematiki görnüşi</h2>
+    <div id="modelView"></div>
+
+    <h2 id="kanoniki-gornus" class="section-title">Başlangyç tablisa üçin özgertmek</h2>
+    <div id="canonView"></div>
+
+    <h2 id="tablisalar" class="section-title">Ikilenji simpleks tablisalar</h2>
+    <div id="tableauxView"></div>
+
+    <h2 id="jogap" class="section-title">Jogap</h2>
+    <div id="answerView"></div>
+
+    <h2 id="ikilenji-mesele" class="section-title">Ikilenji mesele we kölege bahalary</h2>
+    <div id="dualView"></div>
+  </section>
+
+  <div class="note-box note-box--spaced or-links">
+    <strong>Amal barlagynyň beýleki gurallary:</strong>
+    <a href="simpleks.html">Simpleks usuly</a> ·
+    <a href="bitin-sanly.html">Bitin sanly programmirleme</a> ·
+    <a href="bellemek.html">Bellemek meselesi (Wengr)</a> ·
+    <a href="oyunlar-nazaryyeti.html">Oýunlar nazaryýeti</a> ·
+    <a href="cpm-pert.html">CPM we PERT</a> ·
+    <a href="in-gysga-yol.html">Iň gysga ýol</a> ·
+    <a href="demirgazyk-gunbatar.html">Demirgazyk-günbatar burç</a> ·
+    <a href="in-az-baha.html">Iň az baha</a> ·
+    <a href="vogel.html">Vogel usuly</a> ·
+    <a href="modi.html">MODI usuly</a> ·
+    <a href="index.html">ähli usullar</a>
+  </div>
+
+  <footer>Amatly.com — okuw maksatly gurallar: ikilenji simpleks usuly. Hasaplamalar math.js kitaphanasy bilen takyk droblarda ýerine ýetirilýär. Matematika oýunlary: <a href="../oyunlar/index.html">Oýunlar</a>.</footer>
+
+</div>
+
+<script src="../assets/vendor/math.js"></script>
+<script src="../assets/simpleks/js/simplex-engine.js"></script>
+<script src="../assets/amal-barlagy/js/or-engine.js"></script>
+<script src="../assets/amal-barlagy/js/or-common.js"></script>
+<script src="../assets/amal-barlagy/js/ikilenji.js" defer></script>
+</body>
+</html>

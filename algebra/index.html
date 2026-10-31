@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="tk">
+<head>
+<meta charset="UTF-8">
+<script src="../assets/nav/theme.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Amatly.com — algebrany kiçi synplardan uniwersitet derejesine çenli ädimme-ädim öwren, kalkulýatorlar bilen çözüň.">
+<title>Algebra — Amatly.com</title>
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tk_TM">
+<meta property="og:site_name" content="Amatly.com">
+<meta property="og:title" content="Algebra — Amatly.com">
+<meta property="og:description" content="Amatly.com — algebrany kiçi synplardan uniwersitet derejesine çenli ädimme-ädim öwren, kalkulýatorlar bilen çözüň.">
+<link rel="canonical" href="https://amatly.com/algebra/">
+<meta property="og:url" content="https://amatly.com/algebra/">
+<meta property="og:image" content="https://amatly.com/assets/og/algebra.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Amatly.com — Algebra">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#172e6e" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1a33" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="../assets/algebra/css/main.css">
+<link rel="stylesheet" href="../assets/nav/nav.css">
+<script src="../assets/nav/nav.js" defer></script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><symbol id="ic-star" viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.8-5.2 2.8 1-5.8-4.3-4.1 5.9-.9z"/></symbol><symbol id="ic-flame" viewBox="0 0 24 24"><path d="M12 3s5 3.8 5 9.2A5 5 0 0 1 7 12.2c0-1.8.9-3 1.8-3.9.2 1.1.8 1.8 1.5 2C10.2 7.8 11 5.3 12 3z"/></symbol><symbol id="ic-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></symbol><symbol id="ic-map" viewBox="0 0 24 24"><path d="M9 4L3.5 6v14L9 18l6 2 5.5-2V4L15 6z"/><path d="M9 4v14M15 6v14"/></symbol><symbol id="ic-calc" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M8.5 7.5h7M8.5 12h.01M12 12h.01M15.5 12h.01M8.5 16h.01M12 16h.01M15.5 16h.01"/></symbol><symbol id="ic-formula" viewBox="0 0 24 24"><path d="M3.5 13l3 .5 3 6L14 5h6.5"/></symbol><symbol id="ic-chart" viewBox="0 0 24 24"><path d="M4 4v16h16"/><path d="M8 15l3.5-4 3 2.5L20 7"/></symbol><symbol id="ic-cap" viewBox="0 0 24 24"><path d="M2.5 9.5L12 5l9.5 4.5L12 14z"/><path d="M6.5 11.8V16c1.5 1.5 3.4 2.2 5.5 2.2s4-.7 5.5-2.2v-4.2M21.5 9.5v5"/></symbol><symbol id="ic-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5.5M12 7.6v.01"/></symbol><symbol id="ic-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".8"/></symbol><symbol id="ic-repeat" viewBox="0 0 24 24"><path d="M4 11V9a3 3 0 0 1 3-3h11M15 3l3 3-3 3M20 13v2a3 3 0 0 1-3 3H6M9 21l-3-3 3-3"/></symbol><symbol id="ic-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></symbol></defs></svg>
+
+<div class="container">
+  <header class="top" id="top">
+    <div class="logo-row">
+      <div class="logo">Amatly.com</div>
+      <div class="xp-badge" id="xpBadge" aria-live="polite">
+        <span><svg class="ic ic-star" aria-hidden="true" focusable="false"><use href="#ic-star"/></svg> XP: <b id="xp-total">0</b></span>
+        <span><svg class="ic ic-flame" aria-hidden="true" focusable="false"><use href="#ic-flame"/></svg> Iň gowy yzygiderlik: <b id="xp-best-streak">0</b></span>
+      </div>
+      <form class="search-row" id="searchForm" data-site-hook role="search">
+        <input type="text" id="searchInput" placeholder="Meseläňizi ýazyň ýa-da agtaryň (mysal: x²+5x+6, logarifm, deňsizlik)"
+               aria-label="Gözleg" autocomplete="off" role="combobox" aria-expanded="false"
+               aria-controls="searchSuggestions" aria-autocomplete="list">
+        <button type="submit" aria-label="Gözläň"><svg class="ic ic-search" aria-hidden="true" focusable="false"><use href="#ic-search"/></svg></button>
+        <div class="search-suggestions" id="searchSuggestions" role="listbox" hidden></div>
+      </form>
+    </div>
+    <div class="search-feedback" id="searchFeedback" role="status" hidden></div>
+  </header>
+</div>
+
+
+<nav class="amx-nav" id="amxNav" aria-label="Esasy menýu"><div class="amx-bar"><button class="amx-burger" type="button" aria-expanded="false" aria-controls="amxPanel" aria-label="Menýuny aç"><span class="amx-burger-lines" aria-hidden="true"><i></i><i></i><i></i></span>Menýu</button><span class="amx-here">Algebra</span><button class="amx-tool amx-bar-tool" type="button" data-theme-toggle aria-label="Gara / açyk temany çalyş" title="Gara / açyk tema"><svg class="amx-ico i-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></svg><svg class="amx-ico i-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6L7 7M17 17l1.4 1.4M18.4 5.6L17 7M7 17l-1.4 1.4"/></svg><span class="amx-lbl">Temany çalyş</span></button><div class="amx-panel" id="amxPanel"><div class="amx-panelhead"><span class="amx-brand">Amatly<em>.com</em></span><button class="amx-close" type="button" aria-label="Menýuny ýap"><svg class="amx-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M5 5l14 14M19 5L5 19"/></svg></button></div><ul class="amx-list"><li><a class="amx-link" href="../index.html"><svg class="amx-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M3.5 11.2L12 4l8.5 7.2M6 9.6V20h12V9.6"/></svg><span>Baş sahypa</span></a></li><li class="amx-has-mega"><button class="amx-link amx-trigger is-current" type="button" aria-expanded="false" aria-controls="amxMega"><svg class="amx-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><rect x="4" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.6"/></svg><span>Bölümler</span><svg class="amx-chev amx-ico" viewBox="0 0 20 20" width="14" height="14" aria-hidden="true" focusable="false"><path d="M5 7.5l5 5 5-5"/></svg></button><div class="amx-mega" id="amxMega"><div class="amx-mega-card"><section class="amx-group"><h3>Algebra we analiz</h3><ul><li><a class="amx-item" href="../on-algebra/index.html"><span class="amx-glyph" aria-hidden="true">½</span><span class="amx-txt"><b>Öň-algebra</b><small>Algebra üçin gerek esasy düşünjeler.</small></span></a></li><li><a class="amx-item" href="../algebra/index.html" aria-current="page"><span class="amx-glyph" aria-hidden="true">x²</span><span class="amx-txt"><b>Algebra</b><small>Deňlemeler, deňsizlikler we n×n ulgamlar.</small></span></a></li><li><a class="amx-item" href="../trigonometriya/index.html"><span class="amx-glyph" aria-hidden="true">θ</span><span class="amx-txt"><b>Trigonometriýa</b><small>Birlik töwerek, formulalar we deňlemeler.</small></span></a></li><li><a class="amx-item" href="../matrisa/index.html"><span class="amx-glyph" aria-hidden="true">[ ]</span><span class="amx-txt"><b>Matrisa &amp; Wektor</b><small>Matrisa amallary we wektor hasaplamalary.</small></span></a></li><li><a class="amx-item" href="../kalkulus/index.html"><span class="amx-glyph" aria-hidden="true">∫</span><span class="amx-txt"><b>Kalkulus</b><small>Diferensial we integral hasaplamalar.</small></span></a></li></ul></section><section class="amx-group"><h3>Hasaplama gurallary</h3><ul><li><a class="amx-item" href="../san-usullary/index.html"><span class="amx-glyph" aria-hidden="true">≈</span><span class="amx-txt"><b>San usullary</b><small>Kökler, interpolýasiýa, Ýakobi we Zeýdel.</small></span></a></li><li><a class="amx-item" href="../statistika/index.html"><span class="amx-glyph" aria-hidden="true">σ</span><span class="amx-txt"><b>Statistika</b><small>Ortaça, ähtimallyk we beýleki statistiki hasaplamalar.</small></span></a></li><li><a class="amx-item" href="../amal-barlagy/index.html"><span class="amx-glyph" aria-hidden="true">→</span><span class="amx-txt"><b>Amal barlagy</b><small>Simpleks, ulag, bellemek, oýunlar, tor meýilnamasy.</small></span></a></li></ul></section><section class="amx-group"><h3>Meseleler we şekiller</h3><ul><li><a class="amx-item" href="../soz-meseleleri/index.html"><span class="amx-glyph" aria-hidden="true">?</span><span class="amx-txt"><b>Söz meseleleri</b><small>Gündelik durmuşdaky matematiki meseleler.</small></span></a></li><li><a class="amx-item" href="../geometriya/index.html"><span class="amx-glyph" aria-hidden="true">△</span><span class="amx-txt"><b>Geometriýa</b><small>Meýdan, göwrüm we şekilleriň häsiýetleri.</small></span></a></li></ul></section><div class="amx-mega-foot"><a class="amx-soon amx-foot-link" href="#" aria-disabled="true" title="Ýakynda goşular">Biz barada <em>ýakynda</em></a></div></div></div></li><li><a class="amx-link" href="../oyunlar/index.html"><svg class="amx-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><rect x="3" y="7.5" width="18" height="10" rx="5"/><path d="M8 10.5v4M6 12.5h4M15.5 11.6h.01M18 13.4h.01"/></svg><span>Oýunlar</span></a></li><li><a class="amx-link" href="../taze/index.html"><svg class="amx-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M11 3.5l1.9 5.1 5.1 1.9-5.1 1.9L11 17.5l-1.9-5.1L4 10.5l5.1-1.9zM18.5 16.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z"/></svg><span>Näme täze</span></a></li><li><a class="amx-link" href="../pikirler/index.html"><svg class="amx-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4.5 5.5h15v10.2h-7.2L8 19v-3.3H4.5z"/></svg><span>Pikirler</span></a></li><li class="amx-end"><button class="amx-tool" type="button" data-theme-toggle aria-label="Gara / açyk temany çalyş" title="Gara / açyk tema"><svg class="amx-ico i-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></svg><svg class="amx-ico i-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6L7 7M17 17l1.4 1.4M18.4 5.6L17 7M7 17l-1.4 1.4"/></svg><span class="amx-lbl">Temany çalyş</span></button></li><li><a class="amx-link amx-gear" href="../sazlamalar/index.html"><svg class="amx-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg><span class="amx-lbl-keep">Sazlamalar</span></a></li></ul></div><div class="amx-scrim"></div></div></nav>
+
+
+
+<div class="container">
+
+  <div class="breadcrumb">
+    <a href="../index.html">Baş sahypa</a> <span>&gt;</span>
+    <span>Algebra</span>
+  </div>
+
+  <a class="back-link" href="../index.html">← Baş sahypa</a>
+  <h1 class="tool-title">Algebra — deňlemeler we deňsizlikler</h1>
+  <p class="lead">Kiçi synp okuwçysyndan uniwersitet talybyna çenli — özüňize görä derejäni saýlaň, temalary içgin okaň, kalkulýatorlar bilen ädimme-ädim çözgütleri görüň we goşmaça okamak üçin maslahat berilýän kitaplary tapyň.</p>
+
+  <section class="roadmap-panel" aria-labelledby="roadmapTitle">
+    <h2 id="roadmapTitle"><svg class="ic ic-map ic-lg" aria-hidden="true" focusable="false"><use href="#ic-map"/></svg> Algebra ýol kartasy</h2>
+    <p class="roadmap-sub">Indi nämäni öwrenmeli? Aşakdaky yzygiderlik boýunça öňe gidiň — her ädimi basyp, degişli bölüme geçip bilersiňiz. ✓ bellenen ädimler — şu sessiýada kalkulýator ýa-da maşk arkaly synanyşan zatlaryň.</p>
+    <div class="roadmap-steps" id="roadmapSteps"></div>
+    <div class="progress-bars" id="progressBars"></div>
+  </section>
+
+  <div class="level-tabs" role="tablist" aria-label="Algebra derejesi">
+    <button class="level-tab active" type="button" id="tabBaslangyc" data-target="lvlBaslangyc" role="tab" aria-selected="true" aria-controls="lvlBaslangyc" tabindex="0"><span class="tab-icon" aria-hidden="true"><svg class="ic ic-calc" aria-hidden="true" focusable="false"><use href="#ic-calc"/></svg></span>Kiçi synplar</button>
+    <button class="level-tab" type="button" id="tabOrta" data-target="lvlOrta" role="tab" aria-selected="false" aria-controls="lvlOrta" tabindex="-1"><span class="tab-icon" aria-hidden="true"><svg class="ic ic-formula" aria-hidden="true" focusable="false"><use href="#ic-formula"/></svg></span>Orta synplar</button>
+    <button class="level-tab" type="button" id="tabYokary" data-target="lvlYokary" role="tab" aria-selected="false" aria-controls="lvlYokary" tabindex="-1"><span class="tab-icon" aria-hidden="true"><svg class="ic ic-chart" aria-hidden="true" focusable="false"><use href="#ic-chart"/></svg></span>Ýokary synplar</button>
+    <button class="level-tab" type="button" id="tabUniwersitet" data-target="lvlUniwersitet" role="tab" aria-selected="false" aria-controls="lvlUniwersitet" tabindex="-1"><span class="tab-icon" aria-hidden="true"><svg class="ic ic-cap" aria-hidden="true" focusable="false"><use href="#ic-cap"/></svg></span>Uniwersitet</button>
+  </div>
+
+  <!-- ===================== KIÇI SYNPLAR ===================== -->
+  <section class="level-panel lvl-elementary" id="lvlBaslangyc" role="tabpanel" aria-labelledby="tabBaslangyc" tabindex="0">
+    <p class="lead">1–4-nji synplar üçin. Bu ýerde algebranyň iň ilkinji düşünjeleri — näbelli san, deňlik we sada deňlemeler — gutujyk we mysal arkaly öwredilýär.</p>
+
+    <h2 id="esasy-dusunjeler" class="section-title">Esasy düşünjeler</h2>
+    <div class="tool-grid">
+      <div class="tool-card" id="topic-unknown-number">
+        <h3 id="nabelli-san-name">Näbelli san näme?</h3>
+        <p>Käte bir sanyň ornuny bilmeýäris we ony gutujyk (⬜), ýyldyzjyk ýa-da harp (meselem, x) bilen belleýäris. Soň şol nyşanyň ornuna haýsy sanyň gelýändigini gözleýäris — muňa "deňlemäni çözmek" diýilýär.</p>
+        <p>Mysal üçin, 3 + ⬜ = 7 deňlemesinde gutujygyň ornuna 4 sany goýsak, deňlik dogry bolýar (3 + 4 = 7), diýmek gutujyk 4 sanyny gizleýär eken.</p>
+        <span class="formula">3 + ⬜ = 7 → ⬜ = 4</span>
+      </div>
+      <div class="tool-card" id="topic-equality">
+        <h3 id="denlik-terezi-kanuny">Deňlik — terezi kanuny</h3>
+        <p>Deňligiň iki tarapy hemişe deň agramda bolmaly, edil deňagramlaşdyrylan terezi ýaly. Bir tarapa bir san goşsaňyz ýa-da aýyrsaňyz, edil şony beýleki tarapa-da etmeli, terezi deňagramly galar ýaly.</p>
+        <p>Bu kada — "deňligiň esasy häsiýeti" — ähli deňlemeleri çözmegiň binýady bolup, kiçi synpdan başlap uniwersitete çenli üýtgewsiz ulanylýar.</p>
+      </div>
+      <div class="tool-card" id="topic-add-eq">
+        <h3 id="sada-gosmak-denlemeleri">Sada goşmak deňlemeleri</h3>
+        <p>x + a = b görnüşli deňlemelerde x-i tapmak üçin b-den a-ny aýyrýarys, sebäbi aýyrmak goşmagyň "tersidir" — goşulan sany yzyna alyp aýyrýar.</p>
+        <span class="formula">x + 5 = 12 → x = 12 − 5 = 7</span>
+      </div>
+      <div class="tool-card" id="topic-sub-eq">
+        <h3 id="sada-ayyrmak-denlemeleri">Sada aýyrmak deňlemeleri</h3>
+        <p>x − a = b görnüşinde bolsa, x-i tapmak üçin a bilen b-ni goşýarys, sebäbi goşmak aýyrmagyň tersidir.</p>
+        <span class="formula">x − 4 = 9 → x = 9 + 4 = 13</span>
+      </div>
+      <div class="tool-card" id="topic-mul-eq">
+        <h3 id="kopeltmek-denlemeleri">Köpeltmek deňlemeleri</h3>
+        <p>a × x = b görnüşli deňlemelerde x-i tapmak üçin deňligiň iki tarapyny-da a sanyna bölýäris, sebäbi bölmek köpeltmegiň tersidir. (a san 0-dan başga bolmaly, sebäbi 0-a bölmek mümkin däl.)</p>
+        <span class="formula">3 × x = 15 → x = 15 ÷ 3 = 5</span>
+      </div>
+      <div class="tool-card" id="topic-div-eq">
+        <h3 id="bolmek-denlemeleri">Bölmek deňlemeleri</h3>
+        <p>x ÷ a = b görnüşinde bolsa, x-i tapmak üçin deňligiň iki tarapyny-da a sanyna köpeldýäris, sebäbi köpeltmek bölmegiň tersidir.</p>
+        <span class="formula">x ÷ 4 = 6 → x = 6 × 4 = 24</span>
+      </div>
+    </div>
+
+    <div class="insight-box">
+      <span class="box-label">Näme üçin beýle edýäris? — Ters amallar</span>
+      <p>Ýokardaky dört kartada bir umumy syr bar: goşmagyň tersi — aýyrmak, köpeltmegiň tersi — bölmek. Deňlemäni çözeniňizde, näbelli sanyň ýanyndaky "goşulan" ýa-da "köpeldilen" sandan dynmak üçin, edil şoňa garşy (ters) amaly ulanýarys.</p>
+      <p>Bu pikir örän möhümdir: orta we ýokary synplarda has çylşyrymly deňlemeleri çözeniňizde-de edil şu bir düzgün — ters amal bilen näbellini ýeke galdyrmak — ulanylar.</p>
+    </div>
+
+    <h2 id="amaly-masklar" class="section-title">Amaly maşklar</h2>
+    <div class="game-panel">
+      <h3 id="nabelli-sany-tapmak-oyny">Näbelli sany tapmak oýny</h3>
+      <div class="game-sub">Aşakdaky deňlemede x-iň näçedigini kelläňizde hasaplaň (deňleme goşmak, aýyrmak, köpeltmek ýa-da bölmek bolup biler), soň jogabyňyzy ýazyň we barlaň.</div>
+      <div class="ex-setup-row" style="margin:0 0 10px;">
+        <div class="field">
+          <label for="el-diff">Kynçylyk</label>
+          <select id="el-diff">
+            <option value="easy">○ Ýeňil</option>
+            <option value="medium" selected>○ Orta</option>
+            <option value="hard">○ Çylşyrymly</option>
+          </select>
+        </div>
+        <span class="streak-flame"><svg class="ic ic-flame" aria-hidden="true" focusable="false"><use href="#ic-flame"/></svg> Streak: <b id="el-streak">0</b></span>
+      </div>
+      <div style="font-size:1.5rem;font-weight:bold;color:var(--blue-logo);padding:6px 0 14px;" id="el-equation">x + 5 = 12</div>
+      <div class="field-row">
+        <div class="field"><label for="el-input">Jogabyňyzy şu ýere ýazyň (x = ?)</label><input type="number" id="el-input" placeholder="meselem: 7" inputmode="numeric" style="width:140px;"></div>
+        <button class="solve-btn" id="el-check" type="button">Barlaň</button>
+      </div>
+      <button class="classic-btn" id="el-reveal" type="button">Jogaby görkeziň</button>
+      <button class="classic-btn" id="el-new" type="button">Täze mesele</button>
+      <div class="result-box" id="el-result" hidden aria-live="polite" aria-atomic="true">
+        <div class="answer" id="el-answer"></div>
+      </div>
+    </div>
+
+    <h2 id="maslahat-berilyan-kitaplar-we-cesmel" class="section-title">Maslahat berilýän kitaplar we çeşmeler</h2>
+    <div class="lang-note"><svg class="ic ic-info" aria-hidden="true" focusable="false"><use href="#ic-info"/></svg> <strong>Bellik:</strong> häzirki wagtda giňişleýin we mugt türkmen dilindäki algebra okuw çeşmesi ýok bolany üçin, aşakdaky ähli baglanyşyklar iňlis dilindedir. Kiçi synp okuwçysy üçin ene-ata ýa-da mugallymyň gözegçiliginde ulanylsa has peýdaly bolar.</div>
+    <div class="tool-grid">
+      <div class="tool-card">
+        <h3 id="khan-academy-early-math-inlis-dilind"><a href="https://www.khanacademy.org/math/early-math" target="_blank" rel="noopener">Khan Academy — Early Math</a><span class="lang-badge">🇬🇧 Iňlis dilinde</span></h3>
+        <p>Sanlar, goşmak-aýyrmak we ilkinji deňleme pikirleri gysga wideolar we amaly maşklar arkaly öwredilýär. Mugt, kiçi synp okuwçysyna ulularyň kömegi bilen has peýdaly bolar.</p>
+      </div>
+      <div class="tool-card">
+        <h3 id="openstax-algebra-kitaplary-inlis-dil"><a href="https://openstax.org/algebra" target="_blank" rel="noopener">OpenStax — Algebra kitaplary</a><span class="lang-badge">🇬🇧 Iňlis dilinde</span></h3>
+        <p>Mugallymlar we ene-atalar üçin: çaganyň öyde nämä taýýarlanýandygyny görmek isleseňiz, mekdep derejesindäki algebra kitaplarynyň doly, mugt toplumy.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ORTA SYNPLAR ===================== -->
+  <section class="level-panel" id="lvlOrta" role="tabpanel" aria-labelledby="tabOrta" tabindex="0" hidden>
+    <p class="lead">5–9-njy synplar üçin. Üýtgeýänler, aňlatmalar, çyzykly deňlemeler, deňsizlikler we köpagzalar bilen tanyşarsyňyz.</p>
+
+    <h2 id="esasy-dusunjeler-2" class="section-title">Esasy düşünjeler</h2>
+    <div class="tool-grid">
+      <div class="tool-card" id="topic-variables">
+        <h3 id="uytgeyanler-we-anlatmalar">Üýtgeýänler we aňlatmalar</h3>
+        <p>Harplar (x, y, a, b...) belli bir sanyň ornuny tutup biler, olara üýtgeýän diýilýär. 2x + 3 ýaly ýazgylara algebraik aňlatma diýilýär.</p>
+        <p>Aňlatmanyň bölekleriniň-de öz ady bar: "2x" — bir agza, 2 — onuň koeffisiýenti (üýtgeýäniň öňündäki san), 3 bolsa hemişelik agza. Meňzeş agzalar diýlip, birmeňzeş harply agzalara (meselem, 3x bilen 5x) aýdylýar — olary bir-birine goşup ýönekeýleşdirse bolýar.</p>
+      </div>
+      <div class="tool-card" id="topic-linear-eq">
+        <h3 id="cyzykly-denlemeler">Çyzykly deňlemeler</h3>
+        <p>Näbelli birinji derejede gatnaşýan deňlemedir. Umumy görnüşi ax + b = c. Çözmek üçin deňligiň häsiýetini ulanyp, näbelli harpy ýeke galdyrýarys: ilki hemişelik agzany, soň koeffisiýenti aýyrýarys.</p>
+        <span class="formula">x = (c − b) ÷ a</span>
+      </div>
+      <div class="tool-card" id="topic-inequalities">
+        <h3 id="densizlikler">Deňsizlikler</h3>
+        <p>&lt;, &gt;, ≤, ≥ belgileri bilen ýazylýar. Çözgüt bir san däl-de, bir aralykdaky sanlaryň ählisi bolup biler. Deňleme ýaly çözülýär, ýöne bir aýratyn kada bar: iki tarapy-da otrisatel sana köpeltseňiz ýa-da bölseňiz, alamat öz ugruny üýtgedýär.</p>
+        <span class="formula">2x − 1 &gt; 5 → x &gt; 3</span>
+      </div>
+      <div class="tool-card" id="topic-polynomials">
+        <h3 id="kopagzalar">Köpagzalar</h3>
+        <p>Birnäçe agzadan ybarat aňlatmalar. Bir agzaly aňlatma — biragza, iki agzaly — ikiagza, üç agzaly — üçagza diýilýär. Köpagzanyň derejesi — onuň içindäki iň ýokary derejeli agzanyň derejesidir.</p>
+        <span class="formula">3x + 2x − 5 = 5x − 5</span>
+      </div>
+      <div class="tool-card" id="topic-factoring">
+        <h3 id="faktoryallasdyrmak">Faktorýallaşdyrmak</h3>
+        <p>Aňlatmany köpeldijileriň hasyna öwürmek. Iň ýönekeý usul — umumy köpeldijini gapyrgadan çykarmak. Başga giň ulanylýan usul — toparlara bölmek (gruplaşdyrmak): köpagza jübüt-jübüt agzalara bölünip, her jübütden umumy köpeldiji aýratynlykda çykarylýar.</p>
+        <span class="formula">a² − b² = (a−b)(a+b)</span>
+      </div>
+      <div class="tool-card" id="topic-systems">
+        <h3 id="denlemeler-ulgamy">Deňlemeler ulgamy</h3>
+        <p>Iki näbellili iki deňlemäni birlikde çözmek. Ýerine goýmak usulynda bir deňlemeden bir näbellini beýlekiniň üsti bilen aňladyp, ikinji deňlemä goýýarys. Goşmak-aýyrmak usulynda bolsa, bir üýtgeýäni ýok etmek üçin deňlemeleri degişli sanlara köpeldip goşýarys ýa-da aýyrýarys. Grafiki taýdan çözgüt — iki dogry çyzygyň kesişýän nokady.</p>
+      </div>
+      <div class="tool-card" id="topic-function-concept">
+        <h3 id="funksiya-dusunjesi">Funksiýa düşünjesi</h3>
+        <p>Funksiýa — her bir girýän bahany (x) ýeke-täk çykýan baha (y) bilen baglanyşdyrýan kada. "y = f(x)" ýazgysy "y, x-e bagly funksiýa" diýmegi aňladýar. Mysal üçin, y = 2x + 1 funksiýasynda x = 3 üçin y = 7 bolýar.</p>
+      </div>
+      <div class="tool-card" id="topic-slope-graph">
+        <h3 id="grafikde-cyzykly-denlemeler">Grafikde çyzykly deňlemeler</h3>
+        <p>y = mx + b görnüşine "eňňitli-kesişme forma" diýilýär: m — çyzygyň eňňidi (näçe dik ýa-da ýapyk barýandygy), b bolsa çyzygyň y okuny kesýän nokady. Iki nokat tapyp, olary birleşdirseňiz, çyzygyň grafigini çyzyp bolýar.</p>
+        <span class="formula">y = 2x + 1 (m=2, b=1)</span>
+      </div>
+      <div class="tool-card" id="topic-abs-value">
+        <h3 id="absolyut-baha">Absolýut baha</h3>
+        <p>Bir sanyň san okundaky noldan uzaklygyny görkezýär, hemişe otrisatel bolmadyk san bolýar. |x| bilen belgilenýär. |x| = a (a &gt; 0) deňlemesiniň iki çözgüdi bar.</p>
+        <span class="formula">|x| = 5 → x = 5 ýa-da x = −5</span>
+      </div>
+    </div>
+
+    <div class="example-box interactive-box">
+      <span class="box-label">Özüňiz synap görüň — eňňit-kesişme grafigi</span>
+      <p>Aşakdaky terezileri süýşürip, <b>m</b> (eňňit) bilen <b>b</b>-niň (y okuny kesýän nokat) çyzygyň şekilini nähili üýtgedýändigini göz öňüne getiriň.</p>
+      <div class="slider-row">
+        <div class="slider-field">
+          <label for="slope-m">m (eňňit) = <b id="slope-m-val">2</b></label>
+          <input type="range" id="slope-m" min="-5" max="5" step="0.5" value="2">
+        </div>
+        <div class="slider-field">
+          <label for="slope-b">b (y-kesişme) = <b id="slope-b-val">1</b></label>
+          <input type="range" id="slope-b" min="-8" max="8" step="1" value="1">
+        </div>
+      </div>
+      <svg class="graph" id="slope-graph" width="320" height="220" viewBox="0 0 320 220"></svg>
+      <div class="eq-readout" id="slope-eq">y = 2x + 1</div>
+    </div>
+
+    <div class="insight-box">
+      <span class="box-label">Üns beriň — deňsizlikde alamatyň öwrülmegi</span>
+      <p>Deňsizligiň iki tarapyny-da otrisatel sana köpeltseňiz ýa-da bölseňiz, alamat hökman öwrülmeli. Mysal üçin, −2x &gt; 4 deňsizligini çözeniňizde, iki tarapy-da (−2)-ä bölsek, x &lt; −2 bolýar (&gt; alamaty &lt; alamatyna öwrüldi). Bu kadany ýatdan çykarmak iň köp duş gelýän ýalňyşlyklaryň biridir.</p>
+    </div>
+
+    <div class="example-box">
+      <span class="box-label">Mysal — deňlemeler ulgamyny goşmak-aýyrmak usuly bilen çözmek</span>
+      <p>Ulgam: x + y = 10 we x − y = 2.</p>
+      <p>Iki deňlemäni agza-agzyna goşsak, y ýok bolýar: (x + y) + (x − y) = 10 + 2 → 2x = 12 → x = 6.</p>
+      <p>x = 6 bahany birinji deňlemä goýsak: 6 + y = 10 → y = 4. Çözgüt: x = 6, y = 4.</p>
+    </div>
+
+    <h2 id="mask-merkezi" class="section-title">Maşk merkezi</h2>
+    <div class="exercise-panel" id="ex-orta">
+      <h3 id="oz-maskynyzy-gurun"><svg class="ic ic-target" aria-hidden="true" focusable="false"><use href="#ic-target"/></svg> Öz maşkyňyzy guruň</h3>
+      <div class="game-sub">Dereje bilen temany saýlaň, kynçylygy we mesele sanyny belläň — soň yzygider mesele çözüp, XP we streak gazanyň.</div>
+      <div class="ex-setup-row">
+        <div class="field">
+          <label for="ex-orta-topic">Tema</label>
+          <select id="ex-orta-topic">
+            <option value="lin">Çyzykly deňlemeler</option>
+            <option value="ineq">Deňsizlikler</option>
+            <option value="fac">Faktorýallaşdyrmak</option>
+            <option value="sys">Deňlemeler ulgamy</option>
+            <option value="abs">Absolýut baha</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="ex-orta-diff">Kynçylyk</label>
+          <select id="ex-orta-diff">
+            <option value="easy">○ Ýeňil</option>
+            <option value="medium" selected>○ Orta</option>
+            <option value="hard">○ Çylşyrymly</option>
+            <option value="olympiad">○ Olimpiada</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="ex-orta-count">Mesele sany</label>
+          <select id="ex-orta-count">
+            <option value="5">5</option>
+            <option value="10" selected>10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+          </select>
+        </div>
+        <button class="solve-btn" id="ex-orta-start" type="button">Başlaň</button>
+      </div>
+      <div class="ex-live" id="ex-orta-live" hidden aria-live="polite" aria-atomic="true">
+        <div class="ex-progress-line">
+          <span>Mesele: <b id="ex-orta-idx">1</b>/<b id="ex-orta-total">10</b></span>
+          <span>Dogry: <b id="ex-orta-correct">0</b></span>
+          <span class="streak-flame"><svg class="ic ic-flame" aria-hidden="true" focusable="false"><use href="#ic-flame"/></svg> Streak: <b id="ex-orta-streak">0</b></span>
+          <span><svg class="ic ic-star" aria-hidden="true" focusable="false"><use href="#ic-star"/></svg> XP: <b id="ex-orta-xp">0</b></span>
+        </div>
+        <div class="ex-question" id="ex-orta-question">—</div>
+        <div class="ex-answer-row">
+          <label for="ex-orta-input" class="visually-hidden">Jogabyňyzy ýazyň</label>
+          <input type="text" id="ex-orta-input" placeholder="jogap, meselem: 3 ýa-da 2, -5" inputmode="text" autocomplete="off">
+          <button class="solve-btn" id="ex-orta-check" type="button">Barlaň</button>
+          <button class="classic-btn" id="ex-orta-skip" type="button">Geçiň →</button>
+        </div>
+        <div class="ex-feedback" id="ex-orta-feedback"></div>
+      </div>
+      <div class="ex-summary" id="ex-orta-summary" hidden></div>
+    </div>
+
+    <h2 id="kalkulyatorlar" class="section-title">Kalkulýatorlar</h2>
+    <div class="game-panel">
+      <h3 id="cyzykly-denleme-kalkulyatory">Çyzykly deňleme kalkulýatory</h3>
+      <div class="game-sub">ax + b = c görnüşli deňlemäni ädimme-ädim çözüň.</div>
+      <div class="field-row">
+        <div class="field"><label for="lin-a">a</label><input type="number" id="lin-a" value="2"></div>
+        <div class="field"><label for="lin-b">b</label><input type="number" id="lin-b" value="3"></div>
+        <div class="field"><label for="lin-c">c</label><input type="number" id="lin-c" value="11"></div>
+        <button class="solve-btn" id="lin-solve" type="button">Çözüň</button>
+      </div>
+      <div class="result-box" id="lin-result" hidden aria-live="polite" aria-atomic="true">
+        <div class="steps" id="lin-steps"></div>
+        <div class="answer" id="lin-answer"></div>
+        <button class="similar-btn" id="lin-similar" type="button" hidden><svg class="ic ic-repeat" aria-hidden="true" focusable="false"><use href="#ic-repeat"/></svg> Şuňa meňzeş mesele synap görüň</button>
+      </div>
+    </div>
+
+    <div class="game-panel">
+      <h3 id="densizlik-kalkulyatory">Deňsizlik kalkulýatory</h3>
+      <div class="game-sub">ax + b [alamat] c görnüşli deňsizligi ädimme-ädim çözüň we san okunda görüň.</div>
+      <div class="field-row">
+        <div class="field"><label for="ineq-a">a</label><input type="number" id="ineq-a" value="2"></div>
+        <div class="field"><label for="ineq-b">b</label><input type="number" id="ineq-b" value="-1"></div>
+        <div class="field">
+          <label for="ineq-sign">Alamat</label>
+          <select id="ineq-sign">
+            <option value=">">&gt;</option>
+            <option value="<">&lt;</option>
+            <option value=">=">≥</option>
+            <option value="<=">≤</option>
+          </select>
+        </div>
+        <div class="field"><label for="ineq-c">c</label><input type="number" id="ineq-c" value="5"></div>
+        <button class="solve-btn" id="ineq-solve" type="button">Çözüň</button>
+      </div>
+      <div class="result-box" id="ineq-result" hidden aria-live="polite" aria-atomic="true">
+        <div class="steps" id="ineq-steps"></div>
+        <div class="answer" id="ineq-answer"></div>
+        <svg class="graph" id="ineq-line" width="440" height="90" viewBox="0 0 440 90"></svg>
+        <button class="similar-btn" id="ineq-similar" type="button" hidden><svg class="ic ic-repeat" aria-hidden="true" focusable="false"><use href="#ic-repeat"/></svg> Şuňa meňzeş mesele synap görüň</button>
+      </div>
+    </div>
+
+    <div class="game-panel">
+      <h3 id="denlemeler-ulgamy-kalkulyatory">Deňlemeler ulgamy kalkulýatory</h3>
+      <div class="game-sub">Iki näbellili iki deňlemäni (a₁x + b₁y = c₁, a₂x + b₂y = c₂) ädimme-ädim çözüň.</div>
+      <div class="field-row">
+        <div class="field"><label for="sys-a1">a₁</label><input type="number" id="sys-a1" value="1"></div>
+        <div class="field"><label for="sys-b1">b₁</label><input type="number" id="sys-b1" value="1"></div>
+        <div class="field"><label for="sys-c1">c₁</label><input type="number" id="sys-c1" value="10"></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label for="sys-a2">a₂</label><input type="number" id="sys-a2" value="1"></div>
+        <div class="field"><label for="sys-b2">b₂</label><input type="number" id="sys-b2" value="-1"></div>
+        <div class="field"><label for="sys-c2">c₂</label><input type="number" id="sys-c2" value="2"></div>
+        <button class="solve-btn" id="sys-solve" type="button">Çözüň</button>
+      </div>
+      <div class="result-box" id="sys-result" hidden aria-live="polite" aria-atomic="true">
+        <div class="steps" id="sys-steps"></div>
+        <div class="answer" id="sys-answer"></div>
+        <button class="similar-btn" id="sys-similar" type="button" hidden><svg class="ic ic-repeat" aria-hidden="true" focusable="false"><use href="#ic-repeat"/></svg> Şuňa meňzeş mesele synap görüň</button>
+      </div>
+      <p class="ls-more">Üç we has köp näbelli? <a href="#nxn-ulgam" class="jump-link" data-jump-level="lvlUniwersitet" data-jump-anchor="nxn-ulgam">n×n ulgam kalkulýatory — Gauss we Kramer usullary →</a></p>
+    </div>
+
+    <div class="game-panel">
+      <h3 id="kwadrat-ucagzany-faktoryallasdyrmak">Kwadrat üçagzany faktorýallaşdyrmak</h3>
+      <div class="game-sub">ax² + bx + c aňlatmasyny "ac-usuly" bilen ädimme-ädim köpeldijileriň hasyna öwürüň: umumy köpeldiji → ac → jeminiň gözlegi → orta agzany bölmek → toparlamak → faktorýallaşdyrmak → barlag.</div>
+      <div class="field-row">
+        <div class="field"><label for="fac-a">a</label><input type="number" id="fac-a" value="6"></div>
+        <div class="field"><label for="fac-b">b</label><input type="number" id="fac-b" value="11"></div>
+        <div class="field"><label for="fac-c">c</label><input type="number" id="fac-c" value="-10"></div>
+        <button class="solve-btn" id="fac-solve" type="button">Faktorýallaşdyryň</button>
+      </div>
+      <div class="result-box" id="fac-result" hidden aria-live="polite" aria-atomic="true">
+        <div class="steps" id="fac-steps"></div>
+        <div class="answer" id="fac-answer"></div>
+        <button class="similar-btn" id="fac-similar" type="button" hidden><svg class="ic ic-repeat" aria-hidden="true" focusable="false"><use href="#ic-repeat"/></svg> Şuňa meňzeş mesele synap görüň</button>
+      </div>
+    </div>
+
+    <div class="game-panel">
+      <h3 id="absolyut-baha-denlemesi-kalkulyatory">Absolýut baha deňlemesi kalkulýatory</h3>
+      <div class="game-sub">|ax + b| = c görnüşli deňlemäni çözüň.</div>
+      <div class="field-row">
+        <div class="field"><label for="abs-a">a</label><input type="number" id="abs-a" value="2"></div>
+        <div class="field"><label for="abs-b">b</label><input type="number" id="abs-b" value="-3"></div>
+        <div class="field"><label for="abs-c">c</label><input type="number" id="abs-c" value="7"></div>
+        <button class="solve-btn" id="abs-solve" type="button">Çözüň</button>
+      </div>
+      <div class="result-box" id="abs-result" hidden aria-live="polite" aria-atomic="true">
+        <div class="steps" id="abs-steps"></div>
+        <div class="answer" id="abs-answer"></div>
+        <button class="similar-btn" id="abs-similar" type="button" hidden><svg class="ic ic-repeat" aria-hidden="true" focusable="false"><use href="#ic-repeat"/></svg> Şuňa meňzeş mesele synap görüň</button>
+      </div>
+    </div>
+
+    <h2 id="maslahat-berilyan-kitaplar-we-cesmel-2" class="section-title">Maslahat berilýän kitaplar we çeşmeler</h2>
+    <div class="tool-grid">
+      <div class="tool-card">
+        <h3 id="openstax-elementary-algebra-2e-inlis"><a href="https://openstax.org/details/books/elementary-algebra-2e" target="_blank" rel="noopener">OpenStax — Elementary Algebra 2e</a><span class="lang-badge">🇬🇧 Iňlis dilinde</span></h3>
+        <p>Üýtgeýänlerden faktorýallaşdyrmaga çenli ähli orta synp temalaryny öz içine alýan, mugt we resmi kitap.</p>
+      </div>
+      <div class="tool-card">
+        <h3 id="khan-academy-pre-algebra-inlis-dilin"><a href="https://www.khanacademy.org/math/pre-algebra" target="_blank" rel="noopener">Khan Academy — Pre-Algebra</a><span class="lang-badge">🇬🇧 Iňlis dilinde</span></h3>
+        <p>Wideo sapaklar we öz-özüňizi barlaýan maşklar bilen, çyzykly deňlemelere we deňsizliklere taýýarlaýan mugt kurs.</p>
+      </div>
+      <div class="tool-card">
+        <h3 id="art-of-problem-solving-introduction-"><a href="https://artofproblemsolving.com/store/book/intro-algebra" target="_blank" rel="noopener">Art of Problem Solving — Introduction to Algebra</a><span class="lang-badge">🇬🇧 Iňlis dilinde</span></h3>
+        <p>Has çuň we bäsleşik derejesinde pikirlenmek isleýän okuwçylar üçin meşhur kitap (mugt däl), mesele çözmek endigini ösdürmäge gönükdirilen.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ÝOKARY SYNPLAR ===================== -->
+  <section class="level-panel" id="lvlYokary" role="tabpanel" aria-labelledby="tabYokary" tabindex="0" hidden>
+    <p class="lead">10–12-nji synplar üçin. Kwadrat deňlemeler, funksiýalaryň grafikleri, dereje-logarifm düzgünleri we yzygiderlikler.</p>
+
+    <h2 id="esasy-dusunjeler-3" class="section-title">Esasy düşünjeler</h2>
+    <div class="tool-grid">
+      <div class="tool-card" id="topic-quadratic">
+        <h3 id="kwadrat-denlemeler">Kwadrat deňlemeler</h3>
+        <p>Näbelli ikinji derejede gatnaşýan deňlemedir: ax<sup>2</sup>+bx+c=0. Ony üç usul bilen çözüp bolýar: faktorýallaşdyrmak (mümkin bolanda), kwadraty doldurmak we kwadrat formula. Diskriminant (D=b<sup>2</sup>-4ac) kökleriň sanyny kesgitleýär: D&gt;0 — 2 hakyky kök, D=0 — 1 kök, D&lt;0 — hakyky kök ýok.</p>
+        <span class="formula">x = <span class="tfrac"><span class="num">-b ± <span class="radical">√<span class="rad-inner">D</span></span></span><span class="den">2a</span></span></span>
+      </div>
+      <div class="tool-card" id="topic-quadratic-func">
+        <h3 id="kwadrat-funksiyalar">Kwadrat funksiýalar</h3>
+        <p>y = ax² + bx + c funksiýasynyň grafigine parabola diýilýär. a &gt; 0 bolsa şahalary ýokary, a &lt; 0 bolsa aşak gönükdirilen bolýar. Depe nokady (parabolanyň iň ýokary ýa-da iň aşak nokady) x = −b/2a nokadynda ýerleşýär.</p>
+      </div>
+      <div class="tool-card" id="topic-rational">
+        <h3 id="rasional-anlatmalar">Rasional aňlatmalar</h3>
+        <p>Aşagynda köpagza bolan kesirlere rasional aňlatma diýilýär. Amal etmezden öň aşaky köpagzanyň nola deň bolýan bahalaryny tapyp, olary kesgitleniş oblastyndan (x-iň kabul edip biljek bahalarynyň toplumyndan) aýyrmak zerur, sebäbi nola bölmek mümkin däl.</p>
+      </div>
+      <div class="tool-card" id="topic-powers">
+        <h3 id="derejeler-we-kokler">Derejeler we kökler</h3>
+        <p>aᵐ · aⁿ = aᵐ⁺ⁿ, (aᵐ)ⁿ = aᵐⁿ, a⁰ = 1 (a≠0), a⁻ⁿ = 1/aⁿ ýaly düzgünler islendik derejeli aňlatmany ýönekeýleşdirmäge kömek edýär. Kesirli dereje köki aňladýar: a^(1/n) = ⁿ√a.</p>
+      </div>
+      <div class="tool-card" id="topic-logarithms">
+        <h3 id="logarifmler">Logarifmler</h3>
+        <p>log<sub>a</sub> b — a-ny haýsy derejä ýokarlandyrsaňyz b alynýandygyny görkezýär, ýagny derejäniň ters amaly. Esasy düzgünler: log<sub>a</sub>(xy)=log<sub>a</sub> x+log<sub>a</sub> y, log<sub>a</sub>(x/y)=log<sub>a</sub> x-log<sub>a</sub> y, log<sub>a</sub>(x<sup>n</sup>)=nlog<sub>a</sub> x. e esasly logarifme "natural logarifm" (ln), 10 esasly logarifme bolsa "onluk logarifm" (lg) diýilýär.</p>
+        <span class="formula">a<sup>x</sup> = b ⇔ x = log<sub>a</sub> b</span>
+      </div>
+      <div class="tool-card" id="topic-sequences">
+        <h3 id="yzygiderlikler">Yzygiderlikler</h3>
+        <p>Arifmetik yzygiderlikde her agza öňküsinden hemişelik san (d) bilen tapawutlanýar; geometrikde bolsa hemişelik gatnaşyk (r) bilen köpelýär. Geometrik yzygiderlikde |r| &lt; 1 bolsa, agzalaryň sany çäksiz artanda jem S = a₁/(1−r) belli bir çäklendirilen baha golaýlaýar.</p>
+      </div>
+      <div class="tool-card" id="topic-domain">
+        <h3 id="kesgitlenis-oblasty-we-bahalar-toplu">Kesgitleniş oblasty we bahalar toplumy</h3>
+        <p>Kesgitleniş oblasty — funksiýanyň kabul edip biljek ähli x bahalarynyň toplumy; bahalar toplumy bolsa şoňa laýyk çykýan ähli y bahalarynyň toplumy. Mysal üçin, y = 1/x funksiýasynyň kesgitleniş oblastynda x = 0 ýok, sebäbi 0-a bölmek mümkin däl.</p>
+      </div>
+      <div class="tool-card" id="topic-exponential">
+        <h3 id="eksponensial-funksiyalar">Eksponensial funksiýalar</h3>
+        <p>y = a·bˣ görnüşli funksiýalar ösüş (b&gt;1) ýa-da kemelme (0&lt;b&lt;1) hadysalaryny suratlandyrýar — mysal üçin, bakteriýalaryň köpelmegi ýa-da radioaktiw maddanyň dargamagy. Logarifm — eksponensial funksiýanyň ters funksiýasydyr.</p>
+      </div>
+      <div class="tool-card" id="topic-inverse-func">
+        <h3 id="ters-funksiyalar">Ters funksiýalar</h3>
+        <p>Eger f funksiýasy x-i y-a öwürse, f⁻¹ (ters funksiýa) bolsa y-y yzyna x-e öwürýär. Funksiýanyň tersi bolmagy üçin, dürli girýän bahalar hemişe dürli çykýan bahalar bermeli.</p>
+      </div>
+    </div>
+
+    <div class="example-box">
+      <span class="box-label">Grafiki görnüş — a-nyň alamaty parabolanyň ugruny kesgitleýär</span>
+      <p>y = ax² + bx + c funksiýasynda a-nyň položitel ýa-da otrisatel bolmagy parabolanyň şahalarynyň ugruny kesgitleýär. Depe nokady (amber tegelek) — parabolanyň iň ýokary ýa-da iň aşak nokady.</p>
+      <div class="mini-diagram-row">
+        <div class="mini-diagram">
+          <svg width="150" height="150" viewBox="0 0 150 150">
+            <line x1="10" y1="107.5" x2="140" y2="107.5" stroke="#c7c7c7" stroke-width="1"/>
+            <line x1="75" y1="10" x2="75" y2="140" stroke="#c7c7c7" stroke-width="1"/>
+            <polyline points="10,10 26.3,66.9 42.5,107.5 58.8,131.9 75,140 91.3,131.9 107.5,107.5 123.8,66.9 140,10" fill="none" stroke="#2f77c9" stroke-width="2.5"/>
+            <circle cx="75" cy="140" r="4.5" fill="#e8a33d"/>
+          </svg>
+          <div class="cap">a &gt; 0 → şahalar ýokary</div>
+        </div>
+        <div class="mini-diagram">
+          <svg width="150" height="150" viewBox="0 0 150 150">
+            <line x1="10" y1="42.5" x2="140" y2="42.5" stroke="#c7c7c7" stroke-width="1"/>
+            <line x1="75" y1="10" x2="75" y2="140" stroke="#c7c7c7" stroke-width="1"/>
+            <polyline points="10,140 26.3,83.1 42.5,42.5 58.8,18.1 75,10 91.3,18.1 107.5,42.5 123.8,83.1 140,140" fill="none" stroke="#2f77c9" stroke-width="2.5"/>
+            <circle cx="75" cy="10" r="4.5" fill="#e8a33d"/>
+          </svg>
+          <div class="cap">a &lt; 0 → şahalar aşak</div>
+        </div>
+      </div>
+      <p style="margin-top:10px;">Aşakdaky "Kwadrat deňleme kalkulýatory" bilen özüňiz dürli a, b, c bahalaryny synap, grafigi göni görüň ↓</p>
+    </div>
+
+    <div class="proof-box">
+      <span class="box-label">Kwadrat formula nireden gelip çykýar?</span>
+      <p>ax<sup>2</sup>+bx+c=0 deňlemesini "kwadraty doldurmak" usuly bilen çözeliň. Ilki iki tarapy-da a sanyna bölýäris: x<sup>2</sup>+<span class="tfrac"><span class="num">b</span><span class="den">a</span></span>x+<span class="tfrac"><span class="num">c</span><span class="den">a</span></span>=0.</p>
+      <p>Soň hemişelik agzany garşy tarapa geçirýäris: x<sup>2</sup>+<span class="tfrac"><span class="num">b</span><span class="den">a</span></span>x=-<span class="tfrac"><span class="num">c</span><span class="den">a</span></span>. Iki tarapa-da (<span class="tfrac"><span class="num">b</span><span class="den">2a</span></span>)<sup>2</sup> goşup, çep tarapy doly kwadrata öwürýäris: (x+<span class="tfrac"><span class="num">b</span><span class="den">2a</span></span>)<sup>2</sup>=<span class="tfrac"><span class="num">b<sup>2</sup></span><span class="den">4a<sup>2</sup></span></span>-<span class="tfrac"><span class="num">c</span><span class="den">a</span></span>.</p>
+      <p>Sag tarapy umumy paýnama getirsek: (x+<span class="tfrac"><span class="num">b</span><span class="den">2a</span></span>)<sup>2</sup>=<span class="tfrac"><span class="num">b<sup>2</sup>-4ac</span><span class="den">4a<sup>2</sup></span></span>. Iki tarapdan-da kwadrat kök alsak: x+<span class="tfrac"><span class="num">b</span><span class="den">2a</span></span>=<span class="tfrac"><span class="num">±<span class="radical">√<span class="rad-inner">b<sup>2</sup>-4ac</span></span></span><span class="den">2a</span></span>. Şeýlelikde: x=<span class="tfrac"><span class="num">-b±<span class="radical">√<span class="rad-inner">b<sup>2</sup>-4ac</span></span></span><span class="den">2a</span></span> — ine, kwadrat formula!</p>
+    </div>
+
+    <div class="example-box">
+      <span class="box-label">Mysal — logarifm düzgünlerini ulanmak</span>
+      <p>log<sub>2</sub> 8 + log<sub>2</sub> 4 aňlatmasyny ýönekeýleşdireliň. Köpeltmek düzgüni boýunça: log<sub>2</sub> 8+log<sub>2</sub> 4=log<sub>2</sub>(8·4)=log<sub>2</sub> 32.</p>
+      <p>32=2<sup>5</sup> bolany üçin, log<sub>2</sub> 32=5. Diýmek, log<sub>2</sub> 8+log<sub>2</sub> 4=5 (barlag: log<sub>2</sub> 8=3, log<sub>2</sub> 4=2, 3+2=5 — dogry).</p>
+    </div>
+
+    <h2 id="amaly-masklar-2" class="section-title">Amaly maşklar</h2>
+    <div class="game-panel">
+      <h3 id="kwadrat-denleme-kalkulyatory">Kwadrat deňleme kalkulýatory</h3>
+      <div class="game-sub">ax² + bx + c = 0 deňlemesini çözüň we parabolanyň grafigini görüň.</div>
+      <div class="field-row">
+        <div class="field"><label for="quad-a">a</label><input type="number" id="quad-a" value="1"></div>
+        <div class="field"><label for="quad-b">b</label><input type="number" id="quad-b" value="-5"></div>
+        <div class="field"><label for="quad-c">c</label><input type="number" id="quad-c" value="6"></div>
+        <button class="solve-btn" id="quad-solve" type="button">Çözüň</button>
+      </div>
+      <div class="result-box" id="quad-result" hidden aria-live="polite" aria-atomic="true">
+        <div class="steps" id="quad-steps"></div>
+        <div class="answer" id="quad-answer"></div>
+        <svg class="graph" id="quad-graph" width="440" height="260" viewBox="0 0 440 260"></svg>
+        <button class="similar-btn" id="quad-similar" type="button" hidden><svg class="ic ic-repeat" aria-hidden="true" focusable="false"><use href="#ic-repeat"/></svg> Şuňa meňzeş mesele synap görüň</button>
+      </div>
+    </div>
+
+    <div class="game-panel">
+      <h3 id="yzygiderlik-kalkulyatory">Yzygiderlik kalkulýatory</h3>
+      <div class="game-sub">Arifmetik ýa-da geometrik yzygiderligiň n-nji agzasyny we ilkinji n agzanyň jemini tapyň.</div>
+      <div class="field-row">
+        <div class="field">
+          <label for="seq-type">Görnüş</label>
+          <select id="seq-type">
+            <option value="arithmetic">Arifmetik</option>
+            <option value="geometric">Geometrik</option>
+          </select>
+        </div>
+        <div class="field"><label for="seq-a1">a₁</label><input type="number" id="seq-a1" value="2"></div>
+        <div class="field"><label id="seq-diff-label" for="seq-diff">d (tapawut)</label><input type="number" id="seq-diff" value="3"></div>
+        <div class="field"><label for="seq-n">n</label><input type="number" id="seq-n" value="5" min="1" step="1"></div>
+        <button class="solve-btn" id="seq-solve" type="button">Hasaplaň</button>
+      </div>
+      <div class="result-box" id="seq-result" hidden aria-live="polite" aria-atomic="true">
+        <div class="steps" id="seq-steps"></div>
+        <div class="answer" id="seq-answer"></div>
+        <button class="similar-btn" id="seq-similar" type="button" hidden><svg class="ic ic-repeat" aria-hidden="true" focusable="false"><use href="#ic-repeat"/></svg> Şuňa meňzeş mesele synap görüň</button>
+      </div>
+    </div>
+
+    <div class="game-panel">
+      <h3 id="eksponensial-denleme-kalkulyatory">Eksponensial deňleme kalkulýatory</h3>
+      <div class="game-sub">aˣ = b görnüşli deňlemede x-i logarifm arkaly tapyň.</div>
+      <div class="field-row">
+        <div class="field"><label for="exp-a">a (esas)</label><input type="number" id="exp-a" value="2"></div>
+        <div class="field"><label for="exp-b">b (netije)</label><input type="number" id="exp-b" value="32"></div>
+        <button class="solve-btn" id="exp-solve" type="button">Çözüň</button>
+      </div>
+      <div class="result-box" id="exp-result" hidden aria-live="polite" aria-atomic="true">
+        <div class="steps" id="exp-steps"></div>
+        <div class="answer" id="exp-answer"></div>
+        <button class="similar-btn" id="exp-similar" type="button" hidden><svg class="ic ic-repeat" aria-hidden="true" focusable="false"><use href="#ic-repeat"/></svg> Şuňa meňzeş mesele synap görüň</button>
+      </div>
+    </div>
+
+    <div class="game-panel">
+      <h3 id="kesgitlenis-oblasty-tapyjy">Kesgitleniş oblasty tapyjy</h3>
+      <div class="game-sub">y = 1 ÷ (ax + b) görnüşli rasional funksiýanyň kesgitleniş oblastyny tapyň.</div>
+      <div class="field-row">
+        <div class="field"><label for="dom-a">a</label><input type="number" id="dom-a" value="1"></div>
+        <div class="field"><label for="dom-b">b</label><input type="number" id="dom-b" value="-4"></div>
+        <button class="solve-btn" id="dom-solve" type="button">Tapyň</button>
+      </div>
+      <div class="result-box" id="dom-result" hidden aria-live="polite" aria-atomic="true">
+        <div class="steps" id="dom-steps"></div>
+        <div class="answer" id="dom-answer"></div>
+        <button class="similar-btn" id="dom-similar" type="button" hidden><svg class="ic ic-repeat" aria-hidden="true" focusable="false"><use href="#ic-repeat"/></svg> Şuňa meňzeş mesele synap görüň</button>
+      </div>
+    </div>
+
+    <h2 id="maslahat-berilyan-kitaplar-we-cesmel-3" class="section-title">Maslahat berilýän kitaplar we çeşmeler</h2>
+    <div class="tool-grid">
+      <div class="tool-card">
+        <h3 id="openstax-college-algebra-2e-inlis-di"><a href="https://openstax.org/details/books/college-algebra-2e" target="_blank" rel="noopener">OpenStax — College Algebra 2e</a><span class="lang-badge">🇬🇧 Iňlis dilinde</span></h3>
+        <p>Funksiýalar, logarifmler we yzygiderlikler ýaly ýokary synp temalaryny içgin öwrenmek üçin mugt, giňişleýin kitap.</p>
+      </div>
+      <div class="tool-card">
+        <h3 id="openstax-intermediate-algebra-2e-inl"><a href="https://openstax.org/details/books/intermediate-algebra-2e" target="_blank" rel="noopener">OpenStax — Intermediate Algebra 2e</a><span class="lang-badge">🇬🇧 Iňlis dilinde</span></h3>
+        <p>Kwadrat deňlemeler bilen ýokary synp derejesine geçmezden öň binýady berkitmek isleseňiz peýdaly, mugt kitap.</p>
+      </div>
+      <div class="tool-card">
+        <h3 id="khan-academy-algebra-2-inlis-dilinde"><a href="https://www.khanacademy.org/math/algebra2" target="_blank" rel="noopener">Khan Academy — Algebra 2</a><span class="lang-badge">🇬🇧 Iňlis dilinde</span></h3>
+        <p>Kompleks sanlar, köpagzalar, eksponensial we logarifmik funksiýalar boýunça wideo sapaklar we mugt amaly maşklar.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== UNIWERSITET ===================== -->
+  <section class="level-panel lvl-university" id="lvlUniwersitet" role="tabpanel" aria-labelledby="tabUniwersitet" tabindex="0" hidden>
+    <p class="lead">Ýokary okuw jaýy derejesi üçin. Dört sütün boýunça guruldy: presalkulýus, çyzykly algebra, abstrakt algebra we subutnama usullary.</p>
+
+    <div class="tool-grid" style="margin-bottom:22px;">
+      <div class="tool-card">
+        <h3 id="1-presalkulyus">1. Presalkulýus</h3>
+        <p>Funksiýalar, köpagzalar, eksponensial we logarifmik funksiýalar — bular Ýokary synplar bölüminde jikme-jik düşündirilýär we kalkulýatorlary bar.</p>
+        <ul>
+          <li><a href="#" class="jump-link" data-jump-level="lvlYokary" data-jump-anchor="topic-quadratic-func">Funksiýalar</a></li>
+          <li><a href="#" class="jump-link" data-jump-level="lvlOrta" data-jump-anchor="topic-polynomials">Köpagzalar</a></li>
+          <li><a href="#" class="jump-link" data-jump-level="lvlYokary" data-jump-anchor="topic-exponential">Eksponensial</a></li>
+          <li><a href="#" class="jump-link" data-jump-level="lvlYokary" data-jump-anchor="topic-logarithms">Logarifm</a></li>
+        </ul>
+      </div>
+      <div class="tool-card">
+        <h3 id="2-cyzykly-algebra-linear-algebra">2. Çyzykly algebra (Linear Algebra)</h3>
+        <p>Çyzykly deňlemeler ulgamy aşakdaky n×n kalkulýatorda (Gauss, Gauss–Žordan we Kramer usullary) çözülýär. Matrisa amallary, kesgitleýji, rang we häsiýetli sanlar — <strong>Matrisa &amp; Wektor</strong> bölüminde.</p>
+        <ul>
+          <li><a href="#" class="jump-link" data-jump-level="lvlUniwersitet" data-jump-anchor="topic-vector-spaces">Wektorlar</a></li>
+          <li><a href="#" class="jump-link" data-jump-level="lvlUniwersitet" data-jump-anchor="nxn-ulgam">Gauss usuly</a></li>
+          <li><a href="#" class="jump-link" data-jump-level="lvlUniwersitet" data-jump-anchor="kramer-usuly">Kramer usuly</a></li>
+          <li><a href="../matrisa/index.html">Matrisa, kesgitleýji, rang</a></li>
+          <li><a href="../matrisa/index.html">Häsiýetli sanlar we wektorlar</a></li>
+        </ul>
+      </div>
+      <div class="tool-card">
+        <h3 id="3-abstrakt-algebra">3. Abstrakt algebra</h3>
+        <p>Toparlar, halkalar, meýdanlar we olaryň arasyndaky gatnaşyklary aňladýan homomorfizm/izomorfizm — aşakda giňişleýin.</p>
+        <ul>
+          <li><a href="#" class="jump-link" data-jump-level="lvlUniwersitet" data-jump-anchor="topic-groups">Toparlar / Halkalar / Meýdanlar</a></li>
+          <li><a href="#" class="jump-link" data-jump-level="lvlUniwersitet" data-jump-anchor="topic-homomorphism">Homomorfizm / Izomorfizm</a></li>
+        </ul>
+      </div>
+      <div class="tool-card">
+        <h3 id="4-subutnama-proof">4. Subutnama (Proof)</h3>
+        <p>Matematiki tassyklamalary berk esaslandyrmagyň dört esasy usuly.</p>
+        <ul>
+          <li><a href="#" class="jump-link" data-jump-level="lvlUniwersitet" data-jump-anchor="topic-induction">Induksiýa</a></li>
+          <li><a href="#" class="jump-link" data-jump-level="lvlUniwersitet" data-jump-anchor="topic-proof-methods">Göni subutnama</a></li>
+          <li><a href="#" class="jump-link" data-jump-level="lvlUniwersitet" data-jump-anchor="topic-proof-methods">Kontrpozisiýa</a></li>
+          <li><a href="#" class="jump-link" data-jump-level="lvlUniwersitet" data-jump-anchor="topic-proof-methods">Garşylyk arkaly subutnama</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 id="esasy-dusunjeler-4" class="section-title">Esasy düşünjeler</h2>
+    <div class="tool-grid">
+      <div class="tool-card" id="topic-complex">
+        <h3 id="kompleks-sanlar">Kompleks sanlar</h3>
+        <p>a+bi görnüşinde ýazylýar, bu ýerde i<sup>2</sup>=-1. a — hakyky bölek, b — hyýaly bölek. Diskriminanty otrisatel bolan kwadrat deňlemeleriň kökleri şu görnüşde çykýar.</p>
+        <p>z=a+bi sanynyň moduly |z|=<span class="radical">√<span class="rad-inner">a<sup>2</sup>+b<sup>2</sup></span></span> — san tekizliginde koordinata başlangyjyndan uzaklyk hökmünde göz öňüne getirse bolýar. Onuň jübüt sany a-bi bolup, z bilen öz jübüt sanynyň köpelmesi hemişe hakyky san berýär. Polýar görnüşde z=r( cosθ+i sinθ) diýip hem ýazylyp bilner (r=|z|); Eýleriň formulasy boýunça bolsa e<sup>iθ</sup>= cosθ+i sinθ.</p>
+      </div>
+      <div class="tool-card" id="topic-fta">
+        <h3 id="algebranyn-esasy-teoremasy">Algebranyň esasy teoremasy</h3>
+        <p>N-nji dereje polinom deňlemäniň, kratnylyklary hasaba alnanda, hut n sany kompleks köki bar. Bu teoremany 1799-njy ýylda Karl Gauss subut edipdir. Teorema kwadrat, kub we ondan ýokary derejeli deňlemeleri umumylaşdyrýar: her köki tapyp, deňlemäni (x − kök) köpeldijilerine yzygider aýryp bolýar.</p>
+      </div>
+      <div class="tool-card" id="topic-induction">
+        <h3 id="matematiki-induksiya">Matematiki induksiýa</h3>
+        <p>Subutnama usuly: 1) esasy ýagdaýy barlaň (adatça n=1 üçin), 2) n = k üçin dogry diýip çak edip (induksiýa çaklamasy), n = k+1 üçin hem dogrudygyny görkeziň. Şeýlelik bilen ähli natural sanlar üçin dogrulygy subut edilýär — edil domino daşlarynyň biri-biri yzyndan ýykylyşy ýaly.</p>
+      </div>
+      <div class="tool-card" id="topic-proof-methods">
+        <h3 id="beyleki-subutnama-usullary">Beýleki subutnama usullary</h3>
+        <p><strong>Göni subutnama:</strong> çaklamadan başlap, logiki ädimler bilen göni netijä gelinýär. Mysal: "eger n jübüt bolsa, n² hem jübütdir" — n=2k diýiň, n²=4k²=2(2k²), jübüt.</p>
+        <p><strong>Kontrpozisiýa arkaly subutnama:</strong> "eger A bolsa B bolýar" tassyklamasynyň deregine, oňa deň güýçli "eger B bolmasa A hem bolmaýar" tassyklamasyny subut edýär. Mysal: "n² täk bolsa, n hem täkdir" — muny "n jübüt bolsa n² hem jübütdir" diýip subut etmek has aňsat.</p>
+        <p><strong>Garşylyk arkaly subutnama (reductio ad absurdum):</strong> tassyklamanyň tersini dogry diýip çak edip, ondan logiki garşylyga gelinýär. Mysal: √2-niň irrasionaldygynyň klassyky subudy — √2 = p/q (iň ýönekeýleşen kesir) diýip çak ediň, onda p² = 2q², p jübüt bolmaly, ýöne şondan q-nyň hem jübütdigi gelip çykýar — bu bolsa p/q-nyň iň ýönekeýleşendigi bilen gapma-garşylyk.</p>
+      </div>
+      <div class="tool-card" id="topic-groups">
+        <h3 id="toparlar-halkalar-meydanlar">Toparlar, halkalar, meýdanlar</h3>
+        <p>Abstrakt algebra bir toplumyň üstünde kesgitlenen amallaryň umumy häsiýetlerini öwrenýär. Topar (G, *) şu dört şerti kanagatlandyrmaly: ýapyklyk, assosiatiwlik, birlik elementiniň bolmagy we her elementiň ters elementiniň bolmagy.</p>
+        <ul>
+          <li><strong>Topar</strong> mysaly: tutuş sanlar, goşmak amaly bilen (0 — birlik element, −a — a-nyň tersi).</li>
+          <li><strong>Halka</strong>: goşmak we köpeltmegi bolan gurluş (mysal: tutuş sanlar — köpeltmekde her sanyň tersi ýok).</li>
+          <li><strong>Meýdan</strong>: bölmek hem mümkin bolan halka (mysal: rasional, hakyky ýa-da kompleks sanlar).</li>
+        </ul>
+      </div>
+      <div class="tool-card" id="topic-homomorphism">
+        <h3 id="homomorfizm-we-izomorfizm">Homomorfizm we izomorfizm</h3>
+        <p><strong>Homomorfizm:</strong> iki topary (ýa-da halkany) baglanyşdyrýan we amaly saklaýan funksiýa: f(a*b)=f(a)*f(b). Gurluşyň "şekilini" başga topara geçirýär, ýöne maglumat ýitip biler (mysal: nolsyz hakyky sanlaryň köpeltme toparynda f(x)=|x| — alamat ýitýär).</p>
+        <p><strong>Izomorfizm:</strong> biýektiw (bir-birine gabat gelýän) homomorfizm — iki topar "düýp manysy boýunça birmeňzeş" gurluşa eýe bolýar, diňe elementleriň atlary üýtgeýär. Mysal: (ℝ, +) topary bilen (ℝ<sup>+</sup>, ×) topary f(x)=e<sup>x</sup> arkaly izomorf, sebäbi e<sup>x+y</sup>=e<sup>x</sup> · e<sup>y</sup>.</p>
+      </div>
+      <div class="tool-card" id="topic-polynomial-theory">
+        <h3 id="polinomlar-nazaryyeti">Polinomlar nazaryýeti</h3>
+        <p>Köpagza deňlemeleriň köklerini, köpeldijilere ýaýratmagyny we koeffisiýentler bilen kökleriň arasyndaky baglanyşygy öwrenýär. Faktor teoremasy: x = r sany P(x)-iň köki bolsa (we diňe şonda), (x − r) P(x)-i galyndysyz bölýär.</p>
+        <p>Wiýetiň formulalary: ax<sup>2</sup>+bx+c=0 deňlemesiniň x<sub>1</sub>,x<sub>2</sub> kökleri üçin x<sub>1</sub>+x<sub>2</sub>=-<span class="tfrac"><span class="num">b</span><span class="den">a</span></span> we x<sub>1</sub> x<sub>2</sub>=<span class="tfrac"><span class="num">c</span><span class="den">a</span></span>. Kub deňleme ax<sup>3</sup>+bx<sup>2</sup>+cx+d=0-yň x<sub>1</sub>,x<sub>2</sub>,x<sub>3</sub> kökleri üçin bolsa: x<sub>1</sub>+x<sub>2</sub>+x<sub>3</sub>=-<span class="tfrac"><span class="num">b</span><span class="den">a</span></span>, x<sub>1</sub>x<sub>2</sub>+x<sub>1</sub>x<sub>3</sub>+x<sub>2</sub>x<sub>3</sub>=<span class="tfrac"><span class="num">c</span><span class="den">a</span></span>, x<sub>1</sub>x<sub>2</sub>x<sub>3</sub>=-<span class="tfrac"><span class="num">d</span><span class="den">a</span></span>.</p>
+      </div>
+      <div class="tool-card" id="topic-vector-spaces">
+        <h3 id="wektor-ginislikleri">Wektor giňişlikleri</h3>
+        <p>Wektor giňişligi — goşmak we sana köpeltmek amallaryna görä ýapyk bolan toplumdyr (mysal: tekizlikdäki ähli wektorlar). Çyzykly algebra bu giňişlikleri, olaryň bazalaryny we ölçegini öwrenýär — indiki ädimiň, Matrisa &amp; Wektor bölüminiň, esasy mowzugy.</p>
+      </div>
+    </div>
+
+
+    <div class="insight-box">
+      <span class="box-label">Näme üçin kompleks sanlar zerur?</span>
+      <p>x² + 1 = 0 deňlemesiniň hakyky sanlaryň arasynda çözgüdi ýok, sebäbi hiç bir hakyky sanyň kwadraty otrisatel bolup bilmez. XVI asyrda matematikler kub deňlemeleri çözeninde-de şuňa meňzeş kynçylyga duş gelipdirler. Şonuň üçin i = √−1 diýen täze san girizildi — bu san sanlar dünýäsini giňeldip, ähli polinom deňlemeleriň çözgüdi bolmagyny üpjün etdi (Algebranyň esasy teoremasyna serediň).</p>
+    </div>
+
+    <div class="proof-box">
+      <span class="box-label">Subutnama mysaly — matematiki induksiýa</span>
+      <p>Subut edeliň: 1+2+3+⋯+n=<span class="tfrac"><span class="num">n(n+1)</span><span class="den">2</span></span>, ähli natural n üçin.</p>
+      <p><strong>1) Esasy ýagdaý (n=1):</strong> Çep tarap = 1. Sag tarap = <span class="tfrac"><span class="num">1·2</span><span class="den">2</span></span>=1. Deň, dogry.</p>
+      <p><strong>2) Induksiýa ädimi:</strong> n = k üçin dogry diýip çak edeliň: 1+2+⋯+k=<span class="tfrac"><span class="num">k(k+1)</span><span class="den">2</span></span>. n = k+1 üçin: 1+2+⋯+k+(k+1)=<span class="tfrac"><span class="num">k(k+1)</span><span class="den">2</span></span>+(k+1)=(k+1)(<span class="tfrac"><span class="num">k</span><span class="den">2</span></span>+1)=<span class="tfrac"><span class="num">(k+1)(k+2)</span><span class="den">2</span></span> — bu bolsa edil n=k+1 üçin garaşylýan netije bilen gabat gelýär.</p>
+      <p>Esasy ýagdaý dogry we induksiýa ädimi dogry bolany üçin, formula ähli natural n üçin dogrudyr. ∎</p>
+    </div>
+
+    <h2 id="amaly-masklar-3" class="section-title">Amaly maşklar</h2>
+    <div class="game-panel">
+      <h3 id="kompleks-san-kalkulyatory">Kompleks san kalkulýatory</h3>
+      <div class="game-sub">Iki kompleks san bilen esasy amallary ýerine ýetiriň.</div>
+      <div class="field-row">
+        <div class="field"><label for="cx-a">a (1-nji, hakyky)</label><input type="number" id="cx-a" value="3"></div>
+        <div class="field"><label for="cx-b">b (1-nji, hyýaly)</label><input type="number" id="cx-b" value="2"></div>
+        <div class="field">
+          <label for="cx-op">Amal</label>
+          <select id="cx-op">
+            <option value="add">+</option>
+            <option value="sub">−</option>
+            <option value="mul">×</option>
+            <option value="div">÷</option>
+          </select>
+        </div>
+        <div class="field"><label for="cx-c">c (2-nji, hakyky)</label><input type="number" id="cx-c" value="1"></div>
+        <div class="field"><label for="cx-d">d (2-nji, hyýaly)</label><input type="number" id="cx-d" value="4"></div>
+        <button class="solve-btn" id="cx-solve" type="button">Hasaplaň</button>
+      </div>
+      <div class="result-box" id="cx-result" hidden aria-live="polite" aria-atomic="true">
+        <div class="steps" id="cx-steps"></div>
+        <div class="answer" id="cx-answer"></div>
+        <button class="similar-btn" id="cx-similar" type="button" hidden><svg class="ic ic-repeat" aria-hidden="true" focusable="false"><use href="#ic-repeat"/></svg> Şuňa meňzeş mesele synap görüň</button>
+      </div>
+    </div>
+
+    <h2 id="nxn-ulgam" class="section-title">Çyzykly deňlemeler ulgamy (n×n): Gauss we Kramer usullary</h2>
+    <div class="tool-grid">
+      <div class="tool-card" id="topic-gauss">
+        <h3 id="gauss-usuly">Gauss usuly</h3>
+        <p>Ulgamyň giňeldilen matrisasy (<i>A</i> | <i>b</i>) setirleri bilen elementar özgertmeler (setirleriň ornuny çalyşmak, setiri nola deň bolmadyk sana köpeltmek, bir setire başga setiriň kratnysyny goşmak) arkaly <b>basgançakly görnüşe</b> getirilýär. Soňra iň aşaky deňlemeden başlap näbellileri yzygider tapýarys (yza ýöriş).</p>
+        <p><b>Gauss–Žordan</b> usulynda özgertme dowam edilýär: her baş element 1-e, onuň ýokarsyndaky we aşagyndaky elementler 0-a öwrülýär — jogap gönüden-göni okalýar.</p>
+      </div>
+      <div class="tool-card" id="topic-kramer">
+        <h3 id="kramer-usuly">Kramer usuly</h3>
+        <p>Kwadrat ulgamda esasy kesgitleýji Δ = det <i>A</i> ≠ 0 bolsa, ulgamyň ýeke-täk çözgüdi bar we <b><i>x</i><sub><i>i</i></sub> = Δ<sub><i>i</i></sub> / Δ</b>, bu ýerde Δ<sub><i>i</i></sub> — <i>A</i> matrisanyň <i>i</i>-nji sütüni azat agzalar bilen çalşylan kesgitleýjisi.</p>
+        <p>Δ = 0 bolsa formula ulanylmaýar: ulgamyň ýa tükeniksiz köp çözgüdi bar, ýa-da çözgüdi ýok.</p>
+      </div>
+      <div class="tool-card" id="topic-kroneker">
+        <h3 id="kroneker-kapelli-teoremasy">Kroneker–Kapelli teoremasy</h3>
+        <p>Ulgamyň çözgüdi diňe rang <i>A</i> = rang (<i>A</i> | <i>b</i>) bolanda bar. Bu umumy rang näbellileriň sanyna (<i>n</i>) deň bolsa — çözgüt ýeke-täk; <i>n</i>-den kiçi bolsa — tükeniksiz köp (<i>n</i> − rang sany näbelli erkin).</p>
+      </div>
+    </div>
+
+    <div class="game-panel ls-panel" id="lsPanel">
+      <h3 id="nxn-ulgam-kalkulyatory">n×n ulgam kalkulýatory</h3>
+      <div class="game-sub">1–6 näbellili ulgamy <b>Gauss</b>, <b>Gauss–Žordan</b> ýa-da <b>Kramer</b> usuly bilen ädimme-ädim çözüň. Hasaplamalar takyk droblarda (math.js); ulgamyň görnüşi (ýeke-täk, tükeniksiz köp çözgüt ýa-da çözgüt ýok) anyklanýar we jogap deňlemelere goýlup barlanýar.</div>
+      <div class="ls-modes" role="tablist" aria-label="Ulgamy girizmek usuly">
+        <button type="button" role="tab" id="lsTabText" aria-selected="true" aria-controls="lsTextPanel">Deňlemeler bilen</button>
+        <button type="button" role="tab" id="lsTabGrid" aria-selected="false" aria-controls="lsGridPanel" tabindex="-1">Tablisa (matrisa) bilen</button>
+      </div>
+      <div id="lsTextPanel" role="tabpanel" aria-labelledby="lsTabText">
+        <label class="ls-lbl" for="lsText">Her setirde bir deňleme (näbelliler: x, y, z, t ýa-da x1, x2, …). Drob: 1/2, onluk san: 1.5 ýa-da 1,5.</label>
+        <textarea id="lsText" class="ls-text" rows="4" spellcheck="false">2x + y − z = 8
+−3x − y + 2z = −11
+−2x + y + 2z = −3</textarea>
+      </div>
+      <div id="lsGridPanel" role="tabpanel" aria-labelledby="lsTabGrid" hidden>
+        <div class="field-row">
+          <div class="field"><label for="lsM">Deňlemeleriň sany</label><select id="lsM"></select></div>
+          <div class="field"><label for="lsN">Näbellileriň sany</label><select id="lsN"></select></div>
+        </div>
+        <div class="ls-scroll" id="lsGrid"></div>
+      </div>
+      <div class="field-row" style="margin-top:12px">
+        <div class="field"><label for="lsMethod">Usul</label><select id="lsMethod"><option value="gauss">Gauss usuly</option><option value="jordan">Gauss–Žordan usuly</option><option value="cramer">Kramer usuly</option></select></div>
+        <div class="field"><label for="lsNum">Sanlar</label><select id="lsNum"><option value="frac">takyk droblar</option><option value="dec">onluk sanlar</option></select></div>
+        <button class="solve-btn" id="lsSolve" type="button">Çözüň</button>
+      </div>
+      <div class="ls-presets" id="lsPresets" role="group" aria-label="Mysallar"></div>
+      <div class="field-error" id="lsErr" role="alert" hidden></div>
+      <div class="result-box ls-out" id="lsOut" hidden aria-live="polite"></div>
+    </div>
+
+    <div class="continue-card">
+      <div>
+        <strong>Dowamy: <a href="../matrisa/index.html">Matrisa &amp; Wektor</a></strong>
+        <p>Matrisalary goşmak we köpeltmek, kesgitleýji, ters matrisa, rang we häsiýetli sanlar — Matrisa &amp; Wektor bölüminde. Halkara derejesindäki mugt uniwersitet sapagy: <a href="https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/" target="_blank" rel="noopener">MIT OpenCourseWare — Çyzykly algebra (Gilbert Strang)</a><span class="lang-badge">🇬🇧 Iňlis dilinde</span>.</p>
+      </div>
+    </div>
+
+    <h2 id="maslahat-berilyan-kitaplar-we-cesmel-4" class="section-title">Maslahat berilýän kitaplar we çeşmeler</h2>
+    <div class="tool-grid">
+      <div class="tool-card">
+        <h3 id="judson-abstract-algebra-theory-and-a"><a href="http://abstract.ups.edu/" target="_blank" rel="noopener">Judson — Abstract Algebra: Theory and Applications</a><span class="lang-badge">🇬🇧 Iňlis dilinde</span></h3>
+        <p>Toparlar, halkalar we meýdanlar barada içgin, mugt we açyk lisenziýaly uniwersitet dersligi, dünýäde giňden ulanylýar.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>Amatly.com — matematika kalkulýatorlary we okuw oýunlary bir ýerde. Amal barlagy: <a href="../amal-barlagy/index.html">simpleks, ulag, bellemek, oýunlar nazaryýeti, CPM/PERT we iň gysga ýol</a>. Trigonometriýa: <a href="../trigonometriya/index.html">birlik töwerek, formulalar we deňlemeler</a>. Kelläňizi maşk etdirjek bolsaňyz: <a href="../oyunlar/index.html">Oýunlar</a>.</footer>
+</div>
+
+<div id="soon-toast" role="status"></div>
+<script src="../assets/vendor/math.js"></script>
+<script src="../assets/algebra/js/main.js"></script>
+<script src="../assets/algebra/js/linsys-engine.js"></script>
+<script src="../assets/algebra/js/linsys.js"></script>
+</body>
+</html>

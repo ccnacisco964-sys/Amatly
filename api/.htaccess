@@ -1,0 +1,20 @@
+# Amatly AI — api/ papkasy
+# Sazlamalar faýly (API açary) brauzere hiç haçan berilmeýär
+<FilesMatch "^(ai-config.*\.php|.*\.json)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
+# Jogap akym (stream) bilen gelýär: gysyş we buferlemek öçürilýär
+<IfModule mod_env.c>
+  SetEnvIf Request_URI "ai\.php$" no-gzip=1
+  SetEnvIf Request_URI "ai\.php$" no-brotli=1
+</IfModule>
+<IfModule mod_headers.c>
+  Header set X-Accel-Buffering "no"
+</IfModule>
+Options -Indexes

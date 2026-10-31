@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="640" height="400" role="img" aria-label="Koordinata tekizliginde funksiýanyň grafigi">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a86d8"/><stop offset="1" stop-color="#113f7d"/></linearGradient>
+<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0v40" fill="none" stroke="#fff" stroke-opacity=".09" stroke-width="1.5"/></pattern>
+</defs>
+<rect width="640" height="400" fill="url(#bg)"/>
+<rect width="640" height="400" fill="url(#grid)"/>
+<path d="M160 320 H548" stroke="#fff" stroke-opacity=".9" stroke-width="5" stroke-linecap="round"/><path d="M548 320 l-18 -10 v20 z" fill="#fff" fill-opacity=".9"/><path d="M180 352 V72" stroke="#fff" stroke-opacity=".9" stroke-width="5" stroke-linecap="round"/><path d="M180 72 l-10 18 h20 z" fill="#fff" fill-opacity=".9"/><path d="M180 320 Q320 20 520 300" fill="none" stroke="#ffd79a" stroke-width="10" stroke-linecap="round"/><circle cx="253.8" cy="206.3" r="10" fill="#fff"/><circle cx="335.0" cy="165.0" r="10" fill="#fff"/><circle cx="423.8" cy="196.3" r="10" fill="#fff"/><path d="M498.0 82.0 Q502.0 100.0 520.0 104.0 Q502.0 108.0 498.0 126.0 Q494.0 108.0 476.0 104.0 Q494.0 100.0 498.0 82.0 Z" fill="#fff" fill-opacity=".45"/><path d="M126.0 112.0 Q128.9 125.1 142.0 128.0 Q128.9 130.9 126.0 144.0 Q123.1 130.9 110.0 128.0 Q123.1 125.1 126.0 112.0 Z" fill="#fff" fill-opacity=".35"/>
+</svg>

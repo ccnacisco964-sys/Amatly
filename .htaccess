@@ -1,0 +1,78 @@
+# Amatly.com — Apache hostingi üçin sazlamalar (saýtyň kök papkasy).
+# Gysyş (Brotli / gzip), keş (cache), MIME görnüşleri we 404 sahypasy. Ähli bölekler <IfModule> içinde:
+# hostingde haýsydyr bir modul ýok bolsa, saýt şonda-da işleýär.
+
+Options -Indexes
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+
+# ------------------------------------------------------------------ MIME görnüşleri
+<IfModule mod_mime.c>
+  AddDefaultCharset utf-8
+  AddCharset utf-8 .html .css .js .mjs .json .xml .txt .svg .webmanifest
+  AddType text/javascript .js .mjs
+  AddType application/manifest+json .webmanifest
+  AddType image/svg+xml .svg
+  AddType font/woff2 .woff2
+  AddType font/woff .woff
+</IfModule>
+
+# ------------------------------------------------------------------ gysyş: ilki Brotli, ýok bolsa gzip
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/css text/javascript application/javascript application/json application/manifest+json application/xml text/xml text/plain image/svg+xml
+</IfModule>
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json application/manifest+json application/xml text/xml text/plain image/svg+xml
+  <IfModule mod_headers.c>
+    Header append Vary Accept-Encoding
+  </IfModule>
+</IfModule>
+
+# ------------------------------------------------------------------ keş (cache)
+# Düzgün: faýlyň salgysynda wersiýa (?v=…) bar bolsa — 1 ýyl üýtgewsiz; harplar — 1 ýyl; suratlar — 30 gün;
+# math.js, KaTeX (assets/vendor) — 7 gün; galan HTML, CSS, JS — her gezek barlanýar (ETag: üýtgemedik bolsa 304, ýüklenmeýär).
+# Şeýdip täze wersiýa ýüklenende köne skriptler bilen garyşmaýar. Offline we çalt gaýtadan açmak üçin: sw.js (PWA).
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|css|js|mjs|json|xml|txt|webmanifest)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+  <FilesMatch "\.(png|jpe?g|gif|webp|avif|svg|ico)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+  <FilesMatch "\.(woff2?|ttf|otf)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <If "%{REQUEST_URI} =~ m#^/assets/vendor/#">
+    Header set Cache-Control "public, max-age=604800"
+  </If>
+  <If "%{QUERY_STRING} =~ /(^|&)v=[0-9a-zA-Z]+/">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </If>
+  # hyzmat işçisi (offline) hemişe täze bolmaly
+  <FilesMatch "^sw\.js$">
+    Header set Cache-Control "no-cache"
+    Header set Service-Worker-Allowed "/"
+  </FilesMatch>
+
+  # howpsuzlyk: brauzer faýlyň görnüşini özi çaklamasyn; daşky saýtlara diňe domen iberilsin
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# mod_headers ýok bolsa: mod_expires bilen ýönekeý keş
+<IfModule !mod_headers.c>
+  <IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 0 seconds"
+    ExpiresByType image/png "access plus 30 days"
+    ExpiresByType image/svg+xml "access plus 30 days"
+    ExpiresByType font/woff2 "access plus 1 year"
+  </IfModule>
+</IfModule>
+
+# gizlin faýllar (.git, .env …) daşyna berilmeýär
+<FilesMatch "^\.">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+</FilesMatch>

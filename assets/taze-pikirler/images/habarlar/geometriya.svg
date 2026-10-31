@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="640" height="400" role="img" aria-label="Geometrik şekiller">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a86d8"/><stop offset="1" stop-color="#113f7d"/></linearGradient>
+<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0v40" fill="none" stroke="#fff" stroke-opacity=".09" stroke-width="1.5"/></pattern>
+</defs>
+<rect width="640" height="400" fill="url(#bg)"/>
+<rect width="640" height="400" fill="url(#grid)"/>
+<circle cx="398" cy="212" r="98" fill="#ffd79a" fill-opacity=".2" stroke="#ffd79a" stroke-width="5"/><rect x="168" y="188" width="118" height="118" rx="10" fill="#fff" fill-opacity=".1" stroke="#fff" stroke-opacity=".6" stroke-width="4" transform="rotate(-16 227 247)"/><path d="M196 304 L320 104 L444 304 Z" fill="#fff" fill-opacity=".18" stroke="#fff" stroke-width="5" stroke-linejoin="round"/><circle cx="196" cy="304" r="9" fill="#fff"/><circle cx="320" cy="104" r="9" fill="#fff"/><circle cx="444" cy="304" r="9" fill="#fff"/><path d="M528.0 90.0 Q531.2 104.8 546.0 108.0 Q531.2 111.2 528.0 126.0 Q524.8 111.2 510.0 108.0 Q524.8 104.8 528.0 90.0 Z" fill="#fff" fill-opacity=".45"/>
+</svg>

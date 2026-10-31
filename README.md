@@ -1,14 +1,16 @@
-# Amatly
+# Amatly.com — matematika öz diliňde
 
-Ýönekeý we amatly web saýt.
+Türkmen dilinde matematika: kalkulýatorlar, sapaklar, oýunlar we Amatly AI.
 
-## Saýt
+**Saýt:** https://ccnacisco964-sys.github.io/Amatly/
 
-Saýt GitHub Pages arkaly hemmeler üçin açyk:
-**https://ccnacisco964-sys.github.io/Amatly/**
+## GitHub Pages
 
-## Faýllar
+Saýt GitHub Pages arkaly (Settings → Pages → "Deploy from a branch") hemmeler üçin açyk.
 
-- `index.html` — sahypanyň mazmuny
-- `style.css` — dizaýn
-- `script.js` — mobil menýu
+Bellikler:
+- GitHub Pages diňe statik faýllary görkezýär, PHP işlemeýär. Şonuň üçin `api/ai.php` we `api/account.php` bu ýerde işlemeýär:
+  hasaplar diňe brauzerde saklanýar, AI bolsa diňe ulanyjy Sazlamalarda öz API açaryny goşsa işleýär.
+- `404.html` faýlyndaky salgylar `/Amatly/` bilen başlaýar (GitHub Pages taslama salgysy üçin).
+  Saýty öz domeniňize (mysal: amatly.com) geçirseňiz, `/Amatly/` böleklerini `/` bilen çalyşyň.
+- `.htaccess` we `_headers` faýllary GitHub Pages-de ulanylmaýar (Apache / Netlify / Cloudflare üçin).

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="tk">
+<head>
+<meta charset="UTF-8">
+<script src="../assets/nav/theme.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Integralyň ulanylyşy — egriler arasyndaky meýdan, aýlanma jisimleriň göwrümi (disk, washer, gabyk), funksiýanyň ortaça bahasy, egriniň uzynlygy, mysal, kalkulýator, maşk we test.">
+<meta name="format-detection" content="telephone=no">
+<title>Integralyň ulanylyşy — Kalkulus II | Amatly.com</title>
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tk_TM">
+<meta property="og:site_name" content="Amatly.com">
+<meta property="og:title" content="Integralyň ulanylyşy — Kalkulus II | Amatly.com">
+<meta property="og:description" content="Integralyň ulanylyşy — egriler arasyndaky meýdan, aýlanma jisimleriň göwrümi (disk, washer, gabyk), funksiýanyň ortaça bahasy, egriniň uzynlygy, mysal, kalkulýator, maşk we test.">
+<link rel="canonical" href="https://amatly.com/kalkulus/kalkulus-integral-ulanylysy.html">
+<meta property="og:url" content="https://amatly.com/kalkulus/kalkulus-integral-ulanylysy.html">
+<meta property="og:image" content="https://amatly.com/assets/og/kalkulus.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Amatly.com — Integralyň ulanylyşy — Kalkulus II">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#172e6e" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1a33" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="../assets/kalkulus/css/lesson.css?v=c6f9bec2">
+<link rel="stylesheet" href="../assets/nav/nav.css">
+<script src="../assets/nav/nav.js" defer></script>
+<script src="../assets/vendor/math.js" defer></script>
+<script src="../assets/kalkulus/js/kalkulus.js?v=18c5a2d0" defer></script>
+</head>
+<body data-lesson="integral-ulanylysy" data-label="Integralyň ulanylyşy" data-level="high">
+<div class="container">
+  <header class="top" id="top">
+    <div class="logo-row">
+      <div class="logo">Amatly.com</div>
+      <form class="search-row" id="searchForm" data-site-search>
+        <input type="text" placeholder="Meseläňizi ýazyň ýa-da agtaryň" aria-label="Gözleg">
+        <button type="submit" aria-label="Gözläň">🔍</button>
+      </form>
+    </div>
+  </header>
+</div>
+
+<nav class="amx-nav" id="amxNav" aria-label="Esasy menýu"><div class="amx-bar"><button class="amx-burger" type="button" aria-expanded="false" aria-controls="amxPanel" aria-label="Menýuny aç"><span class="amx-burger-lines" aria-hidden="true"><i></i><i></i><i></i></span>Menýu</button><span class="amx-here">Kalkulus</span><button class="amx-tool amx-bar-tool" type="button" data-theme-toggle aria-label="Gara / açyk temany çalyş" title="Gara / açyk tema"><svg class="amx-ico i-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></svg><svg class="amx-ico i-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6L7 7M17 17l1.4 1.4M18.4 5.6L17 7M7 17l-1.4 1.4"/></svg><span class="amx-lbl">Temany çalyş</span></button><div class="amx-panel" id="amxPanel"><div class="amx-panelhead"><span class="amx-brand">Amatly<em>.com</em></span><button class="amx-close" type="button" aria-label="Menýuny ýap"><svg class="amx-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M5 5l14 14M19 5L5 19"/></svg></button></div><ul class="amx-list"><li><a class="amx-link" href="../index.html"><svg class="amx-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M3.5 11.2L12 4l8.5 7.2M6 9.6V20h12V9.6"/></svg><span>Baş sahypa</span></a></li><li class="amx-has-mega"><button class="amx-link amx-trigger is-current" type="button" aria-expanded="false" aria-controls="amxMega"><svg class="amx-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><rect x="4" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.6"/></svg><span>Bölümler</span><svg class="amx-chev amx-ico" viewBox="0 0 20 20" width="14" height="14" aria-hidden="true" focusable="false"><path d="M5 7.5l5 5 5-5"/></svg></button><div class="amx-mega" id="amxMega"><div class="amx-mega-card"><section class="amx-group"><h3>Algebra we analiz</h3><ul><li><a class="amx-item" href="../on-algebra/index.html"><span class="amx-glyph" aria-hidden="true">½</span><span class="amx-txt"><b>Öň-algebra</b><small>Algebra üçin gerek esasy düşünjeler.</small></span></a></li><li><a class="amx-item" href="../algebra/index.html"><span class="amx-glyph" aria-hidden="true">x²</span><span class="amx-txt"><b>Algebra</b><small>Deňlemeler, deňsizlikler we n×n ulgamlar.</small></span></a></li><li><a class="amx-item" href="../trigonometriya/index.html"><span class="amx-glyph" aria-hidden="true">θ</span><span class="amx-txt"><b>Trigonometriýa</b><small>Birlik töwerek, formulalar we deňlemeler.</small></span></a></li><li><a class="amx-item" href="../matrisa/index.html"><span class="amx-glyph" aria-hidden="true">[ ]</span><span class="amx-txt"><b>Matrisa &amp; Wektor</b><small>Matrisa amallary we wektor hasaplamalary.</small></span></a></li><li><a class="amx-item" href="../kalkulus/index.html" aria-current="page"><span class="amx-glyph" aria-hidden="true">∫</span><span class="amx-txt"><b>Kalkulus</b><small>Diferensial we integral hasaplamalar.</small></span></a></li></ul></section><section class="amx-group"><h3>Hasaplama gurallary</h3><ul><li><a class="amx-item" href="../san-usullary/index.html"><span class="amx-glyph" aria-hidden="true">≈</span><span class="amx-txt"><b>San usullary</b><small>Kökler, interpolýasiýa, Ýakobi we Zeýdel.</small></span></a></li><li><a class="amx-item" href="../statistika/index.html"><span class="amx-glyph" aria-hidden="true">σ</span><span class="amx-txt"><b>Statistika</b><small>Ortaça, ähtimallyk we beýleki statistiki hasaplamalar.</small></span></a></li><li><a class="amx-item" href="../amal-barlagy/index.html"><span class="amx-glyph" aria-hidden="true">→</span><span class="amx-txt"><b>Amal barlagy</b><small>Simpleks, ulag, bellemek, oýunlar, tor meýilnamasy.</small></span></a></li></ul></section><section class="amx-group"><h3>Meseleler we şekiller</h3><ul><li><a class="amx-item" href="../soz-meseleleri/index.html"><span class="amx-glyph" aria-hidden="true">?</span><span class="amx-txt"><b>Söz meseleleri</b><small>Gündelik durmuşdaky matematiki meseleler.</small></span></a></li><li><a class="amx-item" href="../geometriya/index.html"><span class="amx-glyph" aria-hidden="true">△</span><span class="amx-txt"><b>Geometriýa</b><small>Meýdan, göwrüm we şekilleriň häsiýetleri.</small></span></a></li></ul></section><div class="amx-mega-foot"><a class="amx-soon amx-foot-link" href="#" aria-disabled="true" title="Ýakynda goşular">Biz barada <em>ýakynda</em></a></div></div></div></li><li><a class="amx-link" href="../oyunlar/index.html"><svg class="amx-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><rect x="3" y="7.5" width="18" height="10" rx="5"/><path d="M8 10.5v4M6 12.5h4M15.5 11.6h.01M18 13.4h.01"/></svg><span>Oýunlar</span></a></li><li><a class="amx-link" href="../taze/index.html"><svg class="amx-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M11 3.5l1.9 5.1 5.1 1.9-5.1 1.9L11 17.5l-1.9-5.1L4 10.5l5.1-1.9zM18.5 16.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z"/></svg><span>Näme täze</span></a></li><li><a class="amx-link" href="../pikirler/index.html"><svg class="amx-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4.5 5.5h15v10.2h-7.2L8 19v-3.3H4.5z"/></svg><span>Pikirler</span></a></li><li class="amx-end"><button class="amx-tool" type="button" data-theme-toggle aria-label="Gara / açyk temany çalyş" title="Gara / açyk tema"><svg class="amx-ico i-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></svg><svg class="amx-ico i-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6L7 7M17 17l1.4 1.4M18.4 5.6L17 7M7 17l-1.4 1.4"/></svg><span class="amx-lbl">Temany çalyş</span></button></li><li><a class="amx-link amx-gear" href="../sazlamalar/index.html"><svg class="amx-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg><span class="amx-lbl-keep">Sazlamalar</span></a></li></ul></div><div class="amx-scrim"></div></div></nav>
+
+<div class="container">
+  <div class="breadcrumb">
+    <a href="../index.html">Baş sahypa</a> <span>&gt;</span>
+    <a href="index.html">Kalkulus</a> <span>&gt;</span>
+    <span>Integralyň ulanylyşy</span>
+  </div>
+  <a class="back-link" href="index.html">← Kalkulus (ähli sapaklar)</a>
+
+  <div class="hero">
+    <div class="lesson-meta"><span class="level-badge lvl-high">🟣 Ýokary · Kalkulus II</span><span class="lesson-tag">Sapak 7 / 15</span></div>
+    <h1>7. Integralyň ulanylyşy</h1>
+    <p class="lead">Bu sapakda kesgitli integralyň kömegi bilen egriler arasyndaky meýdany, aýlanma jisimleriň göwrümini, funksiýanyň ortaça bahasyny we egriniň uzynlygyny hasaplamagy öwrenersiň.</p>
+  </div>
+
+  <h2 id="7-1-dusunje" class="section-title">7.1 Düşünje</h2>
+  <div class="concept-box">
+    Kesgitli integral — kiçijik bölekleriň jemi. Oblasty inçe zolaklara (giňligi dx) bölýäris, her zolagyň meýdanyny, göwrümini ýa-da uzynlygyny hasaplaýarys, olary goşýarys we zolaklary barha inçe edýäris. Şol bir pikir ähli ulanyşlarda gaýtalanýar.
+    <ul style="margin:8px 0 0;padding-left:20px">
+      <li><b>Egriler arasyndaky meýdan:</b> zolagyň beýikligi = ýokarky egri − aşaky egri.</li>
+      <li><b>Aýlanma jisimiň göwrümi:</b> zolagy x oky daşynda aýlasak disk (ýa-da halka — washer) alynýar; y oky daşynda aýlanma üçin gabyk (shell) usuly ulanylýar.</li>
+      <li><b>Ortaça baha:</b> funksiýanyň aralykdaky "deňleşdirilen" bahasy.</li>
+      <li><b>Egriniň uzynlygy:</b> kiçijik ýaýy gipotenuza hökmünde alýarys: √(dx² + dy²).</li>
+    </ul>
+  </div>
+
+  <h2 id="7-2-formula-duzgunler" class="section-title">7.2 Formula / düzgünler</h2>
+  <div class="formula-box">
+    S = ∫<sub>a</sub><sup>b</sup> [f(x) − g(x)] dx &nbsp;(f ≥ g) &nbsp;&nbsp;|&nbsp;&nbsp; V = π ∫<sub>a</sub><sup>b</sup> [f(x)]² dx<br>
+    f<sub>ort</sub> = <span style="white-space:nowrap">1/(b − a)</span> · ∫<sub>a</sub><sup>b</sup> f(x) dx &nbsp;&nbsp;|&nbsp;&nbsp; L = ∫<sub>a</sub><sup>b</sup> √(1 + [f′(x)]²) dx
+  </div>
+  <div class="table-wrap"><table class="conv">
+    <tr><th>Mesele</th><th>Formula</th><th>Bellik</th></tr>
+    <tr><td>Egriler arasyndaky meýdan</td><td>∫ (ýokarky − aşaky) dx</td><td>Egriler kesişse, kesişme nokatlarynda bölmeli</td></tr>
+    <tr><td>Disk usuly (x oky)</td><td>V = π ∫ f² dx</td><td>Aýlanýan oblast x okuna direýär</td></tr>
+    <tr><td>Washer usuly (x oky)</td><td>V = π ∫ (f² − g²) dx</td><td>f ≥ g ≥ 0</td></tr>
+    <tr><td>Gabyk usuly (y oky)</td><td>V = 2π ∫ x·f(x) dx</td><td>0 ≤ a &lt; b</td></tr>
+    <tr><td>Ortaça baha</td><td>f<sub>ort</sub> = 1/(b − a) · ∫ f dx</td><td>f üznüksiz bolsa f(c) = f<sub>ort</sub> bolan c bar</td></tr>
+    <tr><td>Egriniň uzynlygy</td><td>L = ∫ √(1 + f′²) dx</td><td>f′ üznüksiz bolmaly</td></tr>
+  </table></div>
+  <div class="hint">Ilki çyz: ýokarky we aşaky egrini, kesişme nokatlaryny (f(x) = g(x) deňlemesini çöz) görmek ýalňyşlyklaryň köpüsiniň öňüni alýar. Meýdan we uzynlyk hemişe položitel, göwrüm π köpeldijisi bilen çykýar.</div>
+
+  <h2 id="7-3-mysal-we-adimme-adim-cozgut" class="section-title">7.3 Mysal we ädimme-ädim çözgüt</h2>
+  <div class="example-box"><b>Mysal 1 (meýdan):</b> y = x we y = x² egrileriň arasyndaky meýdany tap.<br><button type="button" class="preset try" data-fill="{&quot;ia-f&quot;: &quot;x&quot;, &quot;ia-g&quot;: &quot;x^2&quot;, &quot;ia-a&quot;: &quot;0&quot;, &quot;ia-b&quot;: &quot;1&quot;}" data-run="calcIntegralApps" title="Şu mysaly kalkulýatora geçirip ädimme-ädim çöz">▶ Kalkulýatorda çöz</button></div>
+  <ol class="steps">
+    <li><b>1-nji ädim:</b> Kesişme: x = x² → x(x − 1) = 0 → x = 0 we x = 1.</li>
+    <li><b>2-nji ädim:</b> [0; 1]-de x ≥ x² (mysal: x = 0,5 üçin 0,5 ≥ 0,25), ýokarky egri y = x.</li>
+    <li><b>Netije:</b> S = ∫<sub>0</sub><sup>1</sup> (x − x²) dx = [x²/2 − x³/3]<sub>0</sub><sup>1</sup> = 1/2 − 1/3 = <b>1/6</b>.</li>
+  </ol>
+
+  <div class="example-box"><b>Mysal 2 (göwrüm):</b> y = √x egrisiniň [0; 4] aralygyny x oky daşynda aýlandyryp alnan göwrümi tap.<br><button type="button" class="preset try" data-fill="{&quot;ia-f&quot;: &quot;sqrt(x)&quot;, &quot;ia-g&quot;: &quot;&quot;, &quot;ia-a&quot;: &quot;0&quot;, &quot;ia-b&quot;: &quot;4&quot;}" data-run="calcIntegralApps" title="Şu mysaly kalkulýatora geçirip ädimme-ädim çöz">▶ Kalkulýatorda çöz</button></div>
+  <ol class="steps">
+    <li><b>1-nji ädim:</b> Disk usuly: V = π ∫<sub>0</sub><sup>4</sup> (√x)² dx.</li>
+    <li><b>2-nji ädim:</b> (√x)² = x, şonuň üçin V = π [x²/2]<sub>0</sub><sup>4</sup>.</li>
+    <li><b>Netije:</b> V = π · 8 = <b>8π ≈ 25,13</b>.</li>
+  </ol>
+
+  <div class="example-box"><b>Mysal 3 (ortaça baha):</b> f(x) = x² funksiýanyň [0; 3] aralykdaky ortaça bahasyny tap.<br><button type="button" class="preset try" data-fill="{&quot;ia-f&quot;: &quot;x^2&quot;, &quot;ia-g&quot;: &quot;&quot;, &quot;ia-a&quot;: &quot;0&quot;, &quot;ia-b&quot;: &quot;3&quot;}" data-run="calcIntegralApps" title="Şu mysaly kalkulýatora geçirip ädimme-ädim çöz">▶ Kalkulýatorda çöz</button></div>
+  <ol class="steps">
+    <li><b>1-nji ädim:</b> ∫<sub>0</sub><sup>3</sup> x² dx = [x³/3]<sub>0</sub><sup>3</sup> = 9.</li>
+    <li><b>2-nji ädim:</b> f<sub>ort</sub> = 9 / (3 − 0) = <b>3</b>.</li>
+    <li><b>Barlag:</b> x² = 3 → c = √3 ≈ 1,73 ∈ [0; 3]: funksiýa şol nokatda ortaça baha deň bolýar.</li>
+  </ol>
+
+  <div class="example-box"><b>Mysal 4 (uzynlyk):</b> y = (2/3)·x<sup>3/2</sup> egrisiniň [0; 3] aralykdaky uzynlygyny tap.<br><button type="button" class="preset try" data-fill="{&quot;ia-f&quot;: &quot;(2/3)*x^(3/2)&quot;, &quot;ia-g&quot;: &quot;&quot;, &quot;ia-a&quot;: &quot;0&quot;, &quot;ia-b&quot;: &quot;3&quot;}" data-run="calcIntegralApps" title="Şu mysaly kalkulýatora geçirip ädimme-ädim çöz">▶ Kalkulýatorda çöz</button></div>
+  <ol class="steps">
+    <li><b>1-nji ädim:</b> f′(x) = (2/3)·(3/2)·x<sup>1/2</sup> = √x.</li>
+    <li><b>2-nji ädim:</b> 1 + f′² = 1 + x, şonuň üçin L = ∫<sub>0</sub><sup>3</sup> √(1 + x) dx.</li>
+    <li><b>Netije:</b> L = [(2/3)(1 + x)<sup>3/2</sup>]<sub>0</sub><sup>3</sup> = (2/3)(8 − 1) = <b>14/3 ≈ 4,67</b>.</li>
+  </ol>
+
+  <h2 id="7-4-interaktiw-kalkulyator" class="section-title">7.4 Interaktiw kalkulýator</h2>
+  <div class="calc-card">
+    <h3 id="integralyn-ulanylys-hasaplayjysy">Integralyň ulanylyş hasaplaýjysy</h3>
+    <p class="desc">f(x) (we islege görä g(x)) hem-de [a; b] aralygy giriz: egriler arasyndaky meýdany, x oky daşynda aýlanma göwrümini, f-iň ortaça bahasyny we f egrisiniň uzynlygyny Simpson usuly bilen hasaplaýar. Grafikde meýdan reňklenýär, gyzyl bölünen çyzyk — ortaça baha.</p>
+    <div class="presets"><span>Mysallar:</span><button type="button" class="preset" data-fill="{&quot;ia-f&quot;: &quot;sin(x)&quot;, &quot;ia-g&quot;: &quot;&quot;, &quot;ia-a&quot;: &quot;0&quot;, &quot;ia-b&quot;: &quot;pi&quot;}" data-run="calcIntegralApps">sin x, [0; π]</button><button type="button" class="preset" data-fill="{&quot;ia-f&quot;: &quot;x&quot;, &quot;ia-g&quot;: &quot;x^2&quot;, &quot;ia-a&quot;: &quot;0&quot;, &quot;ia-b&quot;: &quot;1&quot;}" data-run="calcIntegralApps">x we x², [0; 1]</button><button type="button" class="preset" data-fill="{&quot;ia-f&quot;: &quot;4-x^2&quot;, &quot;ia-g&quot;: &quot;&quot;, &quot;ia-a&quot;: &quot;-2&quot;, &quot;ia-b&quot;: &quot;2&quot;}" data-run="calcIntegralApps">4 − x², [−2; 2]</button><button type="button" class="preset" data-fill="{&quot;ia-f&quot;: &quot;x^2&quot;, &quot;ia-g&quot;: &quot;&quot;, &quot;ia-a&quot;: &quot;0&quot;, &quot;ia-b&quot;: &quot;3&quot;}" data-run="calcIntegralApps">x², [0; 3]</button><button type="button" class="preset" data-fill="{&quot;ia-f&quot;: &quot;(2/3)*x^(3/2)&quot;, &quot;ia-g&quot;: &quot;&quot;, &quot;ia-a&quot;: &quot;0&quot;, &quot;ia-b&quot;: &quot;3&quot;}" data-run="calcIntegralApps">(2/3)x^(3/2), [0; 3]</button><button type="button" class="preset" data-fill="{&quot;ia-f&quot;: &quot;x&quot;, &quot;ia-g&quot;: &quot;x^3&quot;, &quot;ia-a&quot;: &quot;0&quot;, &quot;ia-b&quot;: &quot;1&quot;}" data-run="calcIntegralApps">x we x³, [0; 1]</button></div>
+    <div class="field-row">
+      <div class="field grow"><label for="ia-f">f(x)</label><input id="ia-f" type="text" value="sin(x)"></div>
+      <div class="field grow"><label for="ia-g">g(x) (islege görä)</label><input id="ia-g" type="text" value=""></div>
+      <div class="field"><label for="ia-a">a</label><input id="ia-a" type="text" value="0"></div>
+      <div class="field"><label for="ia-b">b</label><input id="ia-b" type="text" value="pi"></div>
+      <div class="field"><label>&nbsp;</label><button type="button" class="run" onclick="calcIntegralApps()">Hasapla</button></div>
+    </div>
+    <div class="hint">g(x)-i boş goýsaň, ikinji egri x oky (g = 0) hasaplanýar. Göwrüm formulasy 0 ≤ g ≤ f bolanda dogry; uzynlyk diňe f egrisi üçin hasaplanýar. π üçin <b>pi</b> ýaz.</div>
+    <div id="ia-result" class="result" aria-live="polite"></div>
+    <canvas id="ia-graph" class="graph" width="640" height="220"></canvas>
+  </div>
+
+  <h2 id="7-5-mask" class="section-title">7.5 Maşk</h2>
+  <details class="exercise"><summary>1. y = x² we y = 4 egrileriň arasyndaky meýdany tap — Jogaby görkez</summary>
+    <p>Kesişme: x² = 4 → x = ±2. S = ∫<sub>−2</sub><sup>2</sup> (4 − x²) dx = [4x − x³/3] = (8 − 8/3) − (−8 + 8/3) = <b>32/3 ≈ 10.67</b>.</p></details>
+  <details class="exercise"><summary>2. y = x² egrisiniň [0; 2] aralygyny x oky daşynda aýlandyryp alnan göwrümi tap — Jogaby görkez</summary>
+    <p>V = π∫<sub>0</sub><sup>2</sup> x⁴ dx = π · 32/5 = <b>32π/5 ≈ 20.11</b>.</p></details>
+  <details class="exercise"><summary>3. y = x we y = x² (0 ≤ x ≤ 1) arasyndaky bölegi x oky daşynda aýlandyr. Göwrüm? — Jogaby görkez</summary>
+    <p>Washer: V = π∫<sub>0</sub><sup>1</sup> (x² − x⁴) dx = π(1/3 − 1/5) = <b>2π/15 ≈ 0.419</b>.</p></details>
+  <details class="exercise"><summary>4. f(x) = sin x funksiýanyň [0; π] aralykdaky ortaça bahasy? — Jogaby görkez</summary>
+    <p>∫<sub>0</sub><sup>π</sup> sin x dx = 2, şonuň üçin f<sub>ort</sub> = 2/π ≈ <b>0.637</b>.</p></details>
+  <details class="exercise"><summary>5. y = 3x + 1 çyzygynyň [0; 2] aralykdaky uzynlygy? — Jogaby görkez</summary>
+    <p>f′ = 3, L = ∫<sub>0</sub><sup>2</sup> √(1 + 9) dx = <b>2√10 ≈ 6.32</b> ((0; 1) we (2; 7) nokatlaryň arasyndaky aralyk bilen gabat gelýär).</p></details>
+  <details class="exercise"><summary>6. y = x³ we y = x egrileriň arasyndaky meýdany tap — Jogaby görkez</summary>
+    <p>Egriler üç nokatda kesişýär: x = −1; 0; 1. [−1; 0]-da x³ ≥ x, [0; 1]-de x ≥ x³. Simmetriýa boýunça S = 2∫<sub>0</sub><sup>1</sup> (x − x³) dx = 2(1/2 − 1/4) = <b>1/2</b>.</p></details>
+
+  <h2 id="7-6-test" class="section-title">7.6 Test</h2>
+  <p class="muted" style="font-size:.86rem;margin:0 0 12px">10 sorag. Jogap saýlanyňdan soň dogry jogap we düşündiriş görkezilýär; netijäň brauzerde ýatda saklanýar.</p>
+  <div class="quiz-q" data-explain="Ýokarky egri x, aşaky x²: ∫₀¹ (x − x²) dx = 1/2 − 1/3 = 1/6.">
+    <p><b>1.</b> y = x we y = x² egrileriň [0; 1] aralykdaky arasyndaky meýdan?</p>
+    <div class="quiz-opts">
+      <button type="button" onclick="checkQuiz(this)">1/2</button>
+      <button type="button" onclick="checkQuiz(this)">1/3</button>
+      <button type="button" onclick="checkQuiz(this)" data-correct="true">1/6</button>
+      <button type="button" onclick="checkQuiz(this)">1/4</button>
+    </div>
+    <div class="quiz-fb"></div>
+  </div>
+  <div class="quiz-q" data-explain="Her kesiş — radiusy f(x) bolan tegelek, meýdany πf². Olary jemleýäris: V = π∫f² dx.">
+    <p><b>2.</b> x oky daşynda aýlanma jisimiň göwrümi (disk usuly) nähili hasaplanýar?</p>
+    <div class="quiz-opts">
+      <button type="button" onclick="checkQuiz(this)">π∫f dx</button>
+      <button type="button" onclick="checkQuiz(this)" data-correct="true">π∫f² dx</button>
+      <button type="button" onclick="checkQuiz(this)">2π∫f dx</button>
+      <button type="button" onclick="checkQuiz(this)">∫f² dx</button>
+    </div>
+    <div class="quiz-fb"></div>
+  </div>
+  <div class="quiz-q" data-explain="V = π∫₀⁴ x dx = π · 16/2 = 8π.">
+    <p><b>3.</b> y = √x egrisiniň [0; 4] aralygyny x oky daşynda aýlandyrsak göwrüm?</p>
+    <div class="quiz-opts">
+      <button type="button" onclick="checkQuiz(this)">4π</button>
+      <button type="button" onclick="checkQuiz(this)">16π</button>
+      <button type="button" onclick="checkQuiz(this)">2π</button>
+      <button type="button" onclick="checkQuiz(this)" data-correct="true">8π</button>
+    </div>
+    <div class="quiz-fb"></div>
+  </div>
+  <div class="quiz-q" data-explain="∫₀³ x² dx = 9, ortaça baha = 9/(3 − 0) = 3.">
+    <p><b>4.</b> f(x) = x² funksiýanyň [0; 3] aralykdaky ortaça bahasy?</p>
+    <div class="quiz-opts">
+      <button type="button" onclick="checkQuiz(this)">9</button>
+      <button type="button" onclick="checkQuiz(this)">27</button>
+      <button type="button" onclick="checkQuiz(this)">1</button>
+      <button type="button" onclick="checkQuiz(this)" data-correct="true">3</button>
+    </div>
+    <div class="quiz-fb"></div>
+  </div>
+  <div class="quiz-q" data-explain="Integraly aralygyň uzynlygyna bölýäris: f_ort = (1/(b − a))∫f dx.">
+    <p><b>5.</b> Funksiýanyň [a; b] aralykdaky ortaça bahasynyň formulasy?</p>
+    <div class="quiz-opts">
+      <button type="button" onclick="checkQuiz(this)" data-correct="true">(1/(b − a))∫f dx</button>
+      <button type="button" onclick="checkQuiz(this)">∫f dx</button>
+      <button type="button" onclick="checkQuiz(this)">(b − a)∫f dx</button>
+      <button type="button" onclick="checkQuiz(this)">f(b) − f(a)</button>
+    </div>
+    <div class="quiz-fb"></div>
+  </div>
+  <div class="quiz-q" data-explain="f′ = 3, L = ∫₀² √(1 + 9) dx = 2√10 ≈ 6.32.">
+    <p><b>6.</b> y = 3x + 1 çyzygynyň [0; 2] aralykdaky uzynlygy?</p>
+    <div class="quiz-opts">
+      <button type="button" onclick="checkQuiz(this)">6</button>
+      <button type="button" onclick="checkQuiz(this)" data-correct="true">2√10</button>
+      <button type="button" onclick="checkQuiz(this)">√10</button>
+      <button type="button" onclick="checkQuiz(this)">7</button>
+    </div>
+    <div class="quiz-fb"></div>
+  </div>
+  <div class="quiz-q" data-explain="Kiçijik ýaýyň uzynlygy √(dx² + dy²) = √(1 + f′²) dx.">
+    <p><b>7.</b> Egriniň uzynlygy haýsy formula bilen hasaplanýar?</p>
+    <div class="quiz-opts">
+      <button type="button" onclick="checkQuiz(this)" data-correct="true">∫√(1 + f′²) dx</button>
+      <button type="button" onclick="checkQuiz(this)">∫(1 + f′²) dx</button>
+      <button type="button" onclick="checkQuiz(this)">∫√(1 + f²) dx</button>
+      <button type="button" onclick="checkQuiz(this)">π∫√(1 + f′²) dx</button>
+    </div>
+    <div class="quiz-fb"></div>
+  </div>
+  <div class="quiz-q" data-explain="Kesişme: x² = 4 → x = −2 we x = 2.">
+    <p><b>8.</b> y = x² we y = 4 egrileriň arasyndaky meýdan üçin integral serhetleri?</p>
+    <div class="quiz-opts">
+      <button type="button" onclick="checkQuiz(this)">−4 we 4</button>
+      <button type="button" onclick="checkQuiz(this)">0 we 4</button>
+      <button type="button" onclick="checkQuiz(this)">0 we 2</button>
+      <button type="button" onclick="checkQuiz(this)" data-correct="true">−2 we 2</button>
+    </div>
+    <div class="quiz-fb"></div>
+  </div>
+  <div class="quiz-q" data-explain="Ýokarky egri üýtgeýär, şonuň üçin her bölekde ýokarky − aşaky alynýar we netijeler goşulýar (ýa-da |f − g| integrirlenýär).">
+    <p><b>9.</b> Egriler bir nokatda kesişip ýokarky/aşaky ornuny çalyşsa, meýdany nädip hasaplamaly?</p>
+    <div class="quiz-opts">
+      <button type="button" onclick="checkQuiz(this)">Hemişe ∫(f − g)dx ýeterlik</button>
+      <button type="button" onclick="checkQuiz(this)">Diňe ilkinji kesişmä çenli</button>
+      <button type="button" onclick="checkQuiz(this)">Mümkin däl</button>
+      <button type="button" onclick="checkQuiz(this)" data-correct="true">Kesişme nokatlarynda böläp, her bölegi aýry hasaplamaly</button>
+    </div>
+    <div class="quiz-fb"></div>
+  </div>
+  <div class="quiz-q" data-explain="Bu y oky daşynda aýlanma üçin gabyk (shell) usulynyň formulasy.">
+    <p><b>10.</b> V = 2π∫x·f(x) dx formulasy haýsy usula degişli?</p>
+    <div class="quiz-opts">
+      <button type="button" onclick="checkQuiz(this)">Disk usuly</button>
+      <button type="button" onclick="checkQuiz(this)">Washer usuly</button>
+      <button type="button" onclick="checkQuiz(this)" data-correct="true">Gabyk (shell) usuly</button>
+      <button type="button" onclick="checkQuiz(this)">Simpson usuly</button>
+    </div>
+    <div class="quiz-fb"></div>
+  </div>
+  <div class="quiz-score" id="quiz-score">
+    <div class="qs-line"><b class="qs-text">Test netijesi: 0 / 10</b><span class="qs-pct">0%</span></div>
+    <div class="qs-bar"><div class="qs-fill"></div></div>
+    <div class="qs-msg"></div>
+    <button type="button" class="qs-reset">↻ Testi gaýtadan çöz</button>
+  </div>
+
+  <button class="done-btn" id="doneBtn" type="button" onclick="markDone()">✓ Sapagy öwrenildi diýip belle</button><span class="done-msg" id="doneMsg"></span>
+
+  <div class="lesson-nav">
+    <a href="kalkulus-integral.html">← Öňki sapak: Integral</a>
+    <a href="kalkulus-integral-usullary.html">Indiki sapak: Integral usullary →</a>
+  </div>
+
+  <footer>Amatly.com — okuw maksatly matematika gurallary. <a href="index.html">Kalkulus baş sahypasy</a></footer>
+</div>
+</body>
+</html>

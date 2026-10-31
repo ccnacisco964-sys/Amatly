@@ -1,0 +1,4 @@
+.radio-note{text-align:center;font-size:.82rem;color:var(--muted);margin:0 0 18px;}
+
+/* ---- Gara tema (awtomatik döredildi) ---- */
+html[data-theme=dark]{color-scheme:dark;--dk-white:22 27 40}

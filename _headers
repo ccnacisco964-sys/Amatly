@@ -1,0 +1,28 @@
+# Amatly.com — Netlify / Cloudflare Pages üçin HTTP sözbaşylary (Apache hostinginde .htaccess ulanylýar).
+# Gysyş bu hostinglerde awtomatik. Keş: HTML, CSS, JS — hostingiň adaty düzgüni (her gezek barlanýar);
+# harplar 1 ýyl, suratlar 30 gün. Bir faýla birnäçe düzgün gabat gelse, Cache-Control birleşdirilýär — şonuň üçin «/*» içinde ýok.
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/vendor/*
+  Cache-Control: public, max-age=604800
+
+/assets/og/*
+  Cache-Control: public, max-age=2592000
+
+/assets/*/images/*
+  Cache-Control: public, max-age=2592000
+
+/icons/*
+  Cache-Control: public, max-age=2592000
+
+/sw.js
+  Cache-Control: no-cache
+  Service-Worker-Allowed: /
+
+/api/*
+  X-Accel-Buffering: no

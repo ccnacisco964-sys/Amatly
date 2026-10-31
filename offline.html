@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="tk" data-base="" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Internet ýok — Amatly.com</title>
+<meta name="description" content="Amatly.com offline sahypasy: internet ýok wagty şu enjamda ýatda saklanan sahypalaryňyzy açyp bilersiňiz; baglanyşyk dikelende sahypa özi täzelenýär.">
+<meta property="og:title" content="Internet ýok — Amatly.com">
+<meta property="og:description" content="Amatly.com offline sahypasy: internet ýok wagty şu enjamda ýatda saklanan sahypalaryňyzy açyp bilersiňiz; baglanyşyk dikelende sahypa özi täzelenýär.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tk_TM">
+<meta property="og:site_name" content="Amatly.com">
+<meta property="og:image" content="https://amatly.com/assets/og/amatly.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Amatly.com — Internet ýok">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#172e6e" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1a33" media="(prefers-color-scheme: dark)">
+<!-- Bu sahypany hyzmat işçisi (sw.js) internet ýok wagty islendik salgyda görkezýär: şonuň üçin ähli salgylar
+     we harplar skriptde saýtyň kök papkasyna (data-base) görä goýulýar, stiller şu ýerde. -->
+<style>
+html[data-theme=light]{--paper:#f4f7fc;--card:#fff;--ink:#13203d;--ink2:#4a5878;--ink3:#6f7c99;--line:#dce3f0;--lapis:#2047c4;--band:#172e6e;--soft:#e7edfc}
+html[data-theme=dark]{--paper:#0b1324;--card:#111c33;--ink:#e8edf8;--ink2:#a9b6d3;--ink3:#8593b3;--line:#22304f;--lapis:#86a6ff;--band:#0f1a33;--soft:#1a2a52}
+*{box-sizing:border-box}
+:root{--font:"Instrument Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;--serif:"Amatly Serif","Latin Modern Roman",Georgia,"Times New Roman",serif}
+body{margin:0;min-height:100vh;background:var(--paper);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.6}
+.bar{display:flex;align-items:center;height:64px;padding:0 max(16px,calc((100vw - 980px)/2));background:var(--band);color:#fff}
+.logo{display:inline-flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-family:var(--serif);font-size:1.35rem;line-height:1}
+.logo svg{width:30px;height:30px}
+.logo em{font-style:normal;opacity:.7}
+main{max-width:760px;margin:0 auto;padding:48px 16px 64px}
+.hero{padding:32px 28px;border:1px solid var(--line);border-radius:22px;background:var(--card);text-align:center}
+.hero svg{width:64px;height:64px;color:var(--lapis)}
+h1{margin:12px 0 8px;font-family:var(--serif);font-weight:400;font-size:clamp(1.9rem,5vw,2.6rem);line-height:1.1}
+.lead{max-width:52ch;margin:0 auto 22px;color:var(--ink2)}
+button{height:46px;padding:0 24px;border:0;border-radius:999px;background:var(--lapis);color:#fff;font-family:inherit;font-weight:700;font-size:15px;cursor:pointer}
+html[data-theme=dark] button{background:#3a63e6}
+button:focus-visible,a:focus-visible{outline:3px solid #e9a23b;outline-offset:2px}
+h2{margin:36px 0 12px;font-size:1.05rem;line-height:1.3}
+ul{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;margin:0;padding:0;list-style:none}
+li a{display:block;height:100%;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink);text-decoration:none;font-weight:600;line-height:1.35}
+li a:hover{border-color:var(--lapis);background:var(--soft)}
+.tip{margin:28px 0 0;font-size:14.5px;color:var(--ink3)}
+.tip a{color:var(--lapis)}
+</style>
+</head>
+<body>
+<header class="bar"><a class="logo" data-href="index.html"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16 1.5 20.25 5.75 26.25 5.75 26.25 11.75 30.5 16 26.25 20.25 26.25 26.25 20.25 26.25 16 30.5 11.75 26.25 5.75 26.25 5.75 20.25 1.5 16 5.75 11.75 5.75 5.75 11.75 5.75Z" fill="currentColor" opacity=".16"/><path d="M16 1.5 20.25 5.75 26.25 5.75 26.25 11.75 30.5 16 26.25 20.25 26.25 26.25 20.25 26.25 16 30.5 11.75 26.25 5.75 26.25 5.75 20.25 1.5 16 5.75 11.75 5.75 5.75 11.75 5.75Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M16 10 22 16 16 22 10 16Z" fill="#e9a23b"/></svg><span>Amatly<em>.com</em></span></a></header>
+<main id="main">
+  <div class="hero">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 8.8a15 15 0 0 1 4.2-2.5M10.7 5.1A15 15 0 0 1 22 8.8M5 12.5a10 10 0 0 1 5.2-2.7M15.5 10.4a10 10 0 0 1 3.5 2.1M8.5 16.1a5 5 0 0 1 7 0M12 20h.01M3 3l18 18"/></svg>
+    <h1>Internet ýok</h1>
+    <p class="lead" id="lead">Bu sahypa entek şu enjamda ýatda saklanmandyr. Internet baglanyşygyny barlaň — baglanyşyk dikelende sahypa özi täzelener.</p>
+    <button type="button" id="retry">Täzeden synanyş</button>
+  </div>
+  <section id="savedSec" aria-labelledby="savedH" hidden>
+    <h2 id="savedH">Internetsiz açylýan sahypalar</h2>
+    <ul id="saved"></ul>
+  </section>
+  <p class="tip">Ähli saýty internetsiz ulanmak üçin: <a data-href="sazlamalar/index.html#offline">Sazlamalar → Programma we offline</a> → «Ähli saýty ýükle».</p>
+</main>
+<script>
+(function () {
+  'use strict';
+  var root = document.documentElement;
+  var base = root.getAttribute('data-base') || location.pathname.replace(/[^/]*$/, '');
+  var t = 'dark';
+  try { t = localStorage.getItem('amatly_theme') || 'dark'; } catch (e) { /* ýok */ }
+  if (t === 'auto') t = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  root.setAttribute('data-theme', t === 'light' ? 'light' : 'dark');
+  var st = document.createElement('style');
+  st.textContent = '@font-face{font-family:"Instrument Sans";src:url(' + base + 'assets/fonts/instrument-sans-400.woff2) format("woff2");font-weight:400 500;font-display:swap}' +
+    '@font-face{font-family:"Instrument Sans";src:url(' + base + 'assets/fonts/instrument-sans-700.woff2) format("woff2");font-weight:600 800;font-display:swap}' +
+    '@font-face{font-family:"Amatly Serif";src:url(' + base + 'assets/fonts/lm-roman-demi.woff2) format("woff2");font-display:swap}';
+  document.head.appendChild(st);
+  [].forEach.call(document.querySelectorAll('[data-href]'), function (a) { a.href = base + a.getAttribute('data-href'); });
+  if (/\/offline\.html$/.test(location.pathname)) document.getElementById('lead').textContent = 'Internet ýok wagty saýtyň şu enjamda ýatda saklanan sahypalaryny açyp bilersiňiz.';
+  document.getElementById('retry').addEventListener('click', function () { location.reload(); });
+  /* baglanyşyk dikelende: hakykatdan dikeldimi — serwere kiçi haýyş (HEAD; sw.js ony ýatdan bermeýär), soň täzelemek */
+  var checking = false;
+  function back() {
+    if (checking) return;
+    checking = true;
+    fetch(location.href.split('#')[0], { method: 'HEAD', cache: 'no-store' })
+      .then(function (r) { if (r.status < 500) location.reload(); }, function () { /* entek ýok */ })
+      .then(function () { checking = false; });
+  }
+  window.addEventListener('online', function () { setTimeout(back, 600); });
+  if (!('caches' in window)) return;
+  var prefix = location.origin + base, seen = {};
+  caches.keys().then(function (names) {
+    return Promise.all(names.filter(function (n) { return /^amatly-/.test(n); }).map(function (n) {
+      return caches.open(n).then(function (c) { return c.keys().then(function (ks) { return ks.map(function (r) { return { c: c, u: r.url.split('?')[0] }; }); }); });
+    }));
+  }).then(function (groups) {
+    var pages = [];
+    groups.forEach(function (g) {
+      g.forEach(function (x) {
+        if (seen[x.u] || x.u.indexOf(prefix) !== 0 || !/\.html$/.test(x.u) || /\/(offline|404)\.html$/.test(x.u)) return;
+        seen[x.u] = 1; pages.push(x);
+      });
+    });
+    return Promise.all(pages.map(function (x) {
+      return x.c.match(x.u).then(function (r) { return r.text(); }).then(function (h) {
+        var title = (new DOMParser().parseFromString(h, 'text/html').title || '').replace(/\s*[—|–-]\s*Amatly\.com\s*$/, '').trim();
+        if (x.u === prefix + 'index.html' || /^Amatly\.com\b/.test(title)) title = 'Baş sahypa';
+        else title = title.split(/\s[—|]\s/)[0];                          /* «Integral — Kalkulus I» → «Integral» */
+        return { u: x.u, t: title || x.u.slice(prefix.length), home: title === 'Baş sahypa' };
+      }).catch(function () { return null; });
+    }));
+  }).then(function (list) {
+    list = list.filter(Boolean).sort(function (a, b) { return (b.home - a.home) || a.t.localeCompare(b.t, 'tk'); });
+    if (!list.length) return;
+    var ul = document.getElementById('saved');
+    list.forEach(function (x) {
+      var li = document.createElement('li'), a = document.createElement('a');
+      a.href = x.u; a.textContent = x.t; li.appendChild(a); ul.appendChild(li);
+    });
+    document.getElementById('savedSec').hidden = false;
+  }).catch(function () { /* ýok */ });
+})();
+</script>
+</body>
+</html>

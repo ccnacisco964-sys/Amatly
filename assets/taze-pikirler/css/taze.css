@@ -1,0 +1,94 @@
+/* Amatly.com — "Näme täze" sahypasy: başlyk, bölümler, täzelikleriň senenamasy, gapdal sütün */
+
+/* Umumy düwmeler we bellikler (habar sahypasy hem ulanýar) */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}
+.chip{border:1px solid var(--c-border);background:var(--c-card);color:var(--c-text);border-radius:var(--radius-pill);padding:6px 14px;font:inherit;font-size:0.85rem;font-weight:600;cursor:pointer}
+.chip:hover{border-color:var(--c-brand-bg)}
+.chip[aria-pressed="true"]{background:var(--c-brand-bg);border-color:var(--c-brand-bg);color:var(--c-on-brand)}
+.tag{font-size:0.74rem;font-weight:700;padding:2px 9px;border-radius:var(--radius-pill)}
+.tag--taze{background:var(--c-success-bg);color:var(--c-success)}
+.tag--gow{background:var(--c-brand-soft);color:var(--c-brand)}
+.tag--duz{background:var(--c-warn-bg);color:var(--c-warn)}
+.roadmap{list-style:none;margin:0;padding:0}
+
+/* Depder kagyzy: inçe kwadratlar we gyzyl gyra çyzygy */
+:root{--tz-paper:#fbfdff;--tz-grid:rgba(47,119,201,.12);--tz-margin:rgba(214,88,100,.6)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--tz-paper:#101b29;--tz-grid:rgba(139,188,255,.07);--tz-margin:rgba(214,88,100,.42)}}
+:root[data-theme="dark"]{--tz-paper:#101b29;--tz-grid:rgba(139,188,255,.07);--tz-margin:rgba(214,88,100,.42)}
+
+/* Sahypanyň başy */
+.tz-hero{background-color:var(--tz-paper);background-image:linear-gradient(var(--tz-grid) 1px,transparent 1px),linear-gradient(90deg,var(--tz-grid) 1px,transparent 1px);background-size:22px 22px;background-position:-1px -1px;border-bottom:1px solid var(--c-border);padding:38px 0 28px;overflow:hidden}
+.tz-hero .wrap{position:relative}
+.tz-hero .wrap::before{content:"";position:absolute;top:-38px;bottom:-28px;left:calc(var(--gutter) - 14px);width:2px;background:var(--tz-margin)}
+.tz-hero h1{margin:0 0 12px;font-size:clamp(2.3rem,6vw,3.4rem);line-height:1.04;font-weight:800;letter-spacing:-0.035em;color:var(--c-text)}
+.tz-hero__lead{margin:0 0 22px;max-width:58ch;font-size:1.06rem;color:var(--c-muted)}
+.tz-jump{display:flex;flex-wrap:wrap;gap:8px}
+.tz-jump a{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid var(--c-border);border-radius:var(--radius-pill);background:var(--c-card);color:var(--c-text);font-size:0.92rem;font-weight:700;text-decoration:none}
+.tz-jump a:hover{border-color:var(--c-brand-bg);color:var(--c-brand)}
+.tz-jump b{min-width:24px;padding:1px 7px;border-radius:var(--radius-pill);background:var(--c-brand-soft);color:var(--c-brand);font-size:0.78rem;text-align:center;font-variant-numeric:tabular-nums}
+
+/* Gözleg netijesi */
+.tz-found{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin:20px 0 0;padding:10px 14px;border:1px solid var(--c-border);border-left:4px solid var(--c-brand-bg);border-radius:var(--radius-md);background:var(--c-card);font-size:0.92rem}
+.tz-clear{padding:2px 0;border:0;background:none;color:var(--c-link);font:inherit;font-weight:700;text-decoration:underline;cursor:pointer}
+
+/* Bölümleriň gurluşy: her bölümiň başy birmeňzeş */
+.tz-sec{padding:34px 0 6px;scroll-margin-top:70px}
+.tz-sec + .tz-sec{margin-top:30px;border-top:1px solid var(--c-border)}
+.tz-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:6px 24px;margin:0 0 16px}
+.tz-head__main{max-width:64ch}
+.tz-head h2{margin:0 0 6px;font-size:clamp(1.35rem,3vw,1.65rem);line-height:1.2;font-weight:800;letter-spacing:-0.02em}
+.tz-head__main p{margin:0;color:var(--c-muted)}
+.tz-head__side{margin:0;font-size:0.85rem;color:var(--c-muted)}
+.tz-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 18px;margin:0 0 16px}
+.tz-bar .chips{margin:0}
+.tz-count{font-size:0.85rem;color:var(--c-muted)}
+.tz-note{margin:0 0 16px;padding:12px 16px;border-radius:var(--radius-md);background:var(--c-warn-bg);color:var(--c-warn)}
+
+/* Täzelikler we gapdal sütün */
+.tz-split{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:40px;align-items:start}
+.tz-aside{position:sticky;top:72px;display:grid;gap:16px}
+#bolumler{scroll-margin-top:70px}
+
+/* Senenama: aý boýunça toparlar, çepde gün */
+.tz-tl,.tl-list{list-style:none;margin:0;padding:0}
+.tl-month + .tl-month{margin-top:28px}
+.tl-month__h{margin:0 0 4px;padding-bottom:8px;border-bottom:2px solid var(--c-text);font-size:1rem;font-weight:800;letter-spacing:-0.01em}
+.tl-item{display:grid;grid-template-columns:70px minmax(0,1fr);gap:14px;padding:16px 0;border-bottom:1px solid var(--c-border)}
+.tl-list .tl-item:last-child{border-bottom:0}
+.tl-date{display:flex;flex-direction:column;line-height:1}
+.tl-date b{font-size:2.05rem;font-weight:800;letter-spacing:-0.04em;color:var(--c-brand);font-variant-numeric:tabular-nums}
+.tl-date span{margin-top:6px;font-size:0.76rem;color:var(--c-muted);white-space:nowrap}
+.tl-body .tag{display:inline-block;margin:0 0 7px}
+.tl-title{margin:0 0 4px;font-size:1.08rem;line-height:1.3;letter-spacing:-0.01em}
+.tl-text{margin:0 0 6px;max-width:62ch}
+.tl-link{font-size:0.92rem;font-weight:700}
+.tl-empty{padding:12px 0;color:var(--c-muted)}
+
+/* Gapdal kartoçkalar */
+.tz-card h2{margin:0 0 10px;font-size:1rem}
+.tz-seclist{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.tz-seclist a{display:flex;align-items:center;gap:11px;margin:0 -8px;padding:6px 8px;border-radius:var(--radius-sm);color:var(--c-text);font-size:0.94rem;font-weight:600;text-decoration:none}
+.tz-seclist a:hover{background:var(--c-brand-soft);color:var(--c-brand)}
+.tz-glyph{flex:none;display:inline-grid;place-items:center;width:30px;height:30px;border-radius:8px;background:var(--c-brand-soft);color:var(--c-brand);font-size:0.86rem;font-weight:800;white-space:nowrap}
+.tz-soon{margin-top:14px;padding-top:12px;border-top:1px solid var(--c-border)}
+.tz-soon h3{margin:0 0 6px;font-size:0.85rem;font-weight:700;color:var(--c-muted)}
+.tz-soon .roadmap li{padding:2px 0;font-size:0.9rem}
+
+@media (max-width:860px){
+  .tz-split{grid-template-columns:minmax(0,1fr);gap:28px}
+  .tz-aside{position:static}
+}
+@media (min-width:480px) and (max-width:860px){
+  .tz-seclist{grid-template-columns:1fr 1fr;column-gap:20px}
+}
+@media (max-width:560px){
+  .tz-hero{padding:28px 0 22px}
+  .tz-hero .wrap::before{top:-28px;bottom:-22px}
+  .tl-item{grid-template-columns:60px minmax(0,1fr);gap:10px}
+  .tl-date b{font-size:1.7rem}
+  .tl-date span{font-size:0.7rem}
+}
+@media print{.tz-jump,.tz-aside,.tz-found{display:none !important}.tz-split{display:block}}
+
+/* ---- Gara tema (awtomatik döredildi) ---- */
+html[data-theme=dark]{color-scheme:dark;--dk-white:22 27 40}

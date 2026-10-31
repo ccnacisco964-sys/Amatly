@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="640" height="400" role="img" aria-label="Globus we halkara baglanyşyklar">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a86d8"/><stop offset="1" stop-color="#113f7d"/></linearGradient>
+<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0v40" fill="none" stroke="#fff" stroke-opacity=".09" stroke-width="1.5"/></pattern>
+</defs>
+<rect width="640" height="400" fill="url(#bg)"/>
+<rect width="640" height="400" fill="url(#grid)"/>
+<ellipse cx="320" cy="200" rx="196" ry="74" fill="none" stroke="#ffd79a" stroke-opacity=".85" stroke-width="5" transform="rotate(-22 320 200)"/><circle cx="320" cy="200" r="116" fill="#fff" fill-opacity=".16" stroke="#fff" stroke-width="5"/><ellipse cx="320" cy="200" rx="54" ry="116" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="4"/><path d="M204 200 H436" stroke="#fff" stroke-opacity=".7" stroke-width="4"/><path d="M226 142 H414" stroke="#fff" stroke-opacity=".5" stroke-width="4"/><path d="M226 258 H414" stroke="#fff" stroke-opacity=".5" stroke-width="4"/><circle cx="497.3" cy="160.8" r="13" fill="#ffd79a" stroke="#fff" stroke-width="4"/><circle cx="172.6" cy="297.0" r="13" fill="#ffd79a" stroke="#fff" stroke-width="4"/><circle cx="267.3" cy="142.3" r="13" fill="#ffd79a" stroke="#fff" stroke-width="4"/>
+</svg>

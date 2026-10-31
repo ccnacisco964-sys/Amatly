@@ -1,0 +1,48 @@
+/* Amatly.com — Näme täze: habar kartoçkalary we giňişleýin sahypa */
+.ncard[hidden]{display:none}
+.news-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+.ncard{position:relative;display:flex;flex-direction:column;gap:10px;padding:12px;background:var(--c-card);border:1px solid var(--c-border);border-radius:16px;color:var(--c-text);transition:border-color .15s,box-shadow .15s,transform .15s}
+.ncard:hover{border-color:var(--c-brand-bg);box-shadow:0 6px 18px rgba(0,0,0,.12);transform:translateY(-2px)}
+.ncard__pic{display:block;border-radius:10px;overflow:hidden;background:var(--c-brand-soft)}
+.ncard__img,.habar__img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover}
+.ncard__body{display:flex;flex-direction:column;gap:8px;min-width:0}
+.ncard__title{margin:0;font-size:1.02rem;line-height:1.35;overflow-wrap:anywhere}
+.ncard__link{color:inherit;text-decoration:none}
+.ncard__link::after{content:"";position:absolute;inset:0;border-radius:inherit}
+.ncard__link:hover{text-decoration:underline}
+.ncard__link:focus-visible{outline:none}
+.ncard__link:focus-visible::after{outline:3px solid var(--c-focus);outline-offset:2px}
+.ncard__text{margin:0;color:var(--c-muted);font-size:.9rem;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.ncard__meta{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;font-size:.8rem;color:var(--c-muted)}
+.ntag{font-size:.74rem;font-weight:700;padding:2px 9px;border-radius:var(--radius-pill);background:var(--c-brand-soft);color:var(--c-brand)}
+.ntag--olimpiada{background:var(--c-warn-bg);color:var(--c-warn)}
+.ntag--bilim{background:var(--c-success-bg);color:var(--c-success)}
+.ntag--taze{background:var(--c-accent);color:var(--c-on-accent)}
+.nph{--a:#2f77c9;--b:#154a92;display:flex;align-items:center;justify-content:center;color:#fff;font-size:3.2rem;font-weight:700;background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(135deg,var(--a),var(--b));background-size:26px 26px,26px 26px,auto}
+.nph--olimpiada{--a:#d98a1c;--b:#8a4f00}.nph--bilim{--a:#2f9e5b;--b:#1b6b3a}
+@media (min-width:760px){
+.ncard--lead{grid-column:1/-1;flex-direction:row;gap:22px;padding:16px}
+.ncard--lead .ncard__pic{flex:0 0 46%;align-self:stretch}
+.ncard--lead .ncard__img{height:100%;min-height:220px;aspect-ratio:auto}
+.ncard--lead .ncard__body{justify-content:center;gap:12px}
+.ncard--lead .ncard__title{font-size:1.5rem;line-height:1.25;letter-spacing:-0.015em}
+.ncard--lead .ncard__text{font-size:1rem;-webkit-line-clamp:5}
+}
+.news__morewrap{display:flex;justify-content:center;margin-top:18px}.news__morewrap .chip{padding:9px 24px;font-size:.92rem}
+.habar{max-width:760px;margin:0 auto 40px}
+.habar h1{margin:10px 0 16px;font-size:clamp(1.55rem,4vw,2.1rem);line-height:1.2;letter-spacing:-0.02em;overflow-wrap:anywhere}
+.habar p{line-height:1.75;font-size:1.04rem}
+.crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin:0 0 12px;font-size:.85rem;color:var(--c-muted)}.crumbs a{color:var(--c-muted)}.crumbs a:hover{color:var(--c-link)}
+.habar__img{border-radius:12px;aspect-ratio:16/9;margin:0 0 18px}
+.habar__video{position:relative;aspect-ratio:16/9;margin:18px 0;border-radius:12px;overflow:hidden;background:#000}.habar__video iframe,.habar__video video{position:absolute;inset:0;width:100%;height:100%;border:0}
+.habar__source{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin:24px 0;padding:14px 16px;border:1px solid var(--c-border);border-left:4px solid var(--c-brand-bg);border-radius:var(--radius-md);background:var(--c-card)}.habar__source p{margin:0;font-size:.95rem}
+.habar__share{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:18px 0}.habar__shared{font-size:.85rem;color:var(--c-muted)}
+.habar__nav{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:28px 0 8px}
+.habar__nav a{display:flex;flex-direction:column;gap:4px;padding:12px 14px;border:1px solid var(--c-border);border-radius:var(--radius-md);background:var(--c-card);color:var(--c-text);text-decoration:none}
+.habar__nav a:hover{border-color:var(--c-brand-bg)}.habar__nav small{color:var(--c-muted)}.habar__nav .is-next{text-align:right}
+@media (max-width:560px){.habar__nav{grid-template-columns:1fr}.habar__nav .is-next{text-align:left}}
+.habar__rel{margin-top:30px}.habar__rel h2{font-size:1.1rem}.habar__rel ul{list-style:none;margin:0;padding:0}
+.habar__rel li{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px;padding:9px 0;border-top:1px solid var(--c-border)}.habar__rel time{color:var(--c-muted);font-size:.82rem}
+.habar__links{padding-left:20px}.habar__note{color:var(--c-muted);font-size:.9rem}
+.habar__src{margin-top:22px;padding-top:12px;border-top:1px solid var(--c-border);color:var(--c-muted);font-size:.9rem}
+@media print{.amx-nav,.site-footer,.header-tools,.habar__share,.habar__nav,.habar__rel{display:none !important}}

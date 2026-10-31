@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="640" height="400" role="img" aria-label="Altyn medal">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e8a93f"/><stop offset="1" stop-color="#8a4f00"/></linearGradient>
+<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0v40" fill="none" stroke="#fff" stroke-opacity=".09" stroke-width="1.5"/></pattern>
+</defs>
+<rect width="640" height="400" fill="url(#bg)"/>
+<rect width="640" height="400" fill="url(#grid)"/>
+<path d="M250 70 L302 70 L350 212 L298 232 Z" fill="#fff" fill-opacity=".85"/><path d="M390 70 L338 70 L290 212 L342 232 Z" fill="#fff" fill-opacity=".55"/><circle cx="320" cy="262" r="88" fill="#fff" fill-opacity=".95"/><circle cx="320" cy="262" r="70" fill="#e8a93f"/><circle cx="320" cy="262" r="70" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="3"/><path d="M320.0 222.0 L330.0 248.2 L358.0 249.6 L336.2 267.3 L343.5 294.4 L320.0 279.0 L296.5 294.4 L303.8 267.3 L282.0 249.6 L310.0 248.2 Z" fill="#fff"/><path d="M140.0 94.0 Q144.7 115.3 166.0 120.0 Q144.7 124.7 140.0 146.0 Q135.3 124.7 114.0 120.0 Q135.3 115.3 140.0 94.0 Z" fill="#fff" fill-opacity=".55"/><path d="M508.0 130.0 Q511.6 146.4 528.0 150.0 Q511.6 153.6 508.0 170.0 Q504.4 153.6 488.0 150.0 Q504.4 146.4 508.0 130.0 Z" fill="#fff" fill-opacity=".45"/><path d="M492.0 301.0 Q494.7 313.3 507.0 316.0 Q494.7 318.7 492.0 331.0 Q489.3 318.7 477.0 316.0 Q489.3 313.3 492.0 301.0 Z" fill="#fff" fill-opacity=".4"/>
+</svg>

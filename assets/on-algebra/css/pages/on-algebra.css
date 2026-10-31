@@ -1,0 +1,16 @@
+/* ---- hero ---- */
+.hero{padding:12px 0 6px;}
+.hero h1{font-size:1.9rem; line-height:1.28; margin:16px 0 10px;}
+.hero p.lead{font-size:1rem; color:var(--muted); max-width:640px; line-height:1.55; margin:0 0 20px;}
+
+@media (max-width:680px){
+  .hero h1{font-size:1.5rem;}
+}
+
+/* ---- on-page tool links ---- */
+.tool-links{display:flex; flex-wrap:wrap; gap:9px; margin:0 0 32px;}
+.tool-links a{background:var(--blue-light); color:var(--blue-logo); text-decoration:none; font-weight:bold; font-size:.82rem; padding:7px 13px; border-radius:15px; border:1px solid var(--border-light);}
+.tool-links a:hover{background:var(--dk-bg-bcdcf7,#bcdcf7);}
+
+/* ---- Gara tema (awtomatik döredildi) ---- */
+html[data-theme=dark]{color-scheme:dark;--dk-bg-bcdcf7:#0a141d;--dk-white:22 27 40}

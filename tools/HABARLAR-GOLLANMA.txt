@@ -1,0 +1,64 @@
+﻿AMATLY.COM - NÄME TÄZE HABARLARYNY TÄZELEMEK
+
+0) Häzirki ýagdaý
+   news-auto.js we news-archive.json faýllarynda iň täze bilim, matematika we olimpiada habarlary
+   (Turkmenportal we resmi portal, 20.10.2026 ýagdaýyna görä) eýýäm goşuldy. Hiç zat ýüklemek zerur däl.
+   Habarlaryň üstündäki "Soňky täzelenme" setiri iň soňky täzelenen wagty görkezýär.
+
+1) El bilen täzelemek
+   tools\habarlary-tazele.bat faýlyny iki gezek basyň. Soň sahypany F5 bilen täzeläň.
+
+2) Awtomatik (her 2 sagatdan, Windows)
+   tools\awtomat-dikelt.bat faýlyny iki gezek basyň - bir gezek edeniň ýeterlik.
+   Kompýuter açyk we internetde bolan wagty habarlar we olaryň suratlary özi täzelenýär.
+   Aýyrmak üçin: tools\awtomat-ayyr.bat
+   Näme üçin günde bir gezek däl? Resmi portalyň RSS-i diňe soňky birnäçe sagadyň (~20) habaryny
+   saklaýar, şonuň üçin ol ýygy-ýygydan okalmasa, köp habar sypýar.
+   Netijäni Windows-yň "Task Scheduler" programmasynda görüp bilersiňiz ("Amatly habarlar").
+   Işleýşiň ýazgysy: tools\news-update.log (wagtal-wagtal pozup durup bilersiňiz).
+   Bukjany başga ýere göçüreniňizde awtomat-dikelt.bat faýlyny gaýtadan işlediň.
+
+   ÜNS BERIŇ: saýty brauzerde açmak suratlary almaýar. Saýt diňe özünde bar zady görkezýär;
+   internetden habar we surat almak işini şu gural (habarlary-tazele.bat) edýär.
+
+3) Täze çeşme goşmak
+   tools\sources.json faýlyndaky "sources" sanawyna şeýle blok goşuň:
+   { "id": "ady", "type": "rss", "name": "Görkezilýän at", "url": "https://.../rss.xml",
+     "lang": "tk", "urlContains": "/tk/", "filter": true, "max": 40 }
+   filter=true bolsa diňe bilim, ylym, olimpiada ýaly sözleri bar habarlar alynýar.
+   Sözleriň sanawy "keywords" ýerinde.
+
+4) Suratlar
+   Habaryň asyl suraty awtomatik ýüklenip alynýar we assets\taze-pikirler\images\habarlar\
+   bukjasynda h-<id>.jpg görnüşinde saklanýar. Surat tapylmasa, şol habara mowzugyna görä
+   Amatly.com-yň öz suraty goýulýar (medal, kubok, kitap, globus, noutbuk, talyp telpegi,
+   atom, grafik, geometrik şekiller, münber).
+   sources.json faýlynyň başyndaky "images" sazlamasy:
+     "save" - surat ýüklenip alynýar (deslapky; internetsiz hem görünýär)
+     "link" - surat çeşmäniň saýtyndan göni görkezilýär (ýer tutmaýar, ýöne internet gerek)
+     "off"  - surat alynmaýar, diňe Amatly.com-yň öz suratlary
+   Bir gezekde iň köp 25 surat alynýar; galanlary indiki gezek alynýar.
+   Surat gözlenýän ýerler: og:image, twitter:image, makaladaky ýüklenen suratlar.
+   Penjiräniň ahyrynda suraty tapylmadyk habarlar sebäbi bilen görkezilýär, meselem:
+     [sahypada surat ýok]        - çeşmäniň özünde surat ýok
+     [surat faýly ýüklenmedi]    - surat salgysy bar, ýöne faýl açylmady
+     [habaryň sahypasy açylmady] - internet ýa-da çeşmäniň saýty işlemedi
+   Suratsyz habarlar her gezek täzeden synanyşylýar.
+   Ýüklenen suratlar h- bilen başlaýar; gerek däl bolanlary skript özi pozýar.
+   Amatly.com-yň öz suratlaryna (medal.svg, kubok.svg ...) degilmeýär - olary öz suratyňyz
+   bilen çalşyp bilersiňiz, diňe ady üýtgemesin.
+   Öz suratyňyzy bir habara goýmak: news-data.js-de şol habara
+   image: "../assets/taze-pikirler/images/habarlar/ady.jpg" setirini goşuň.
+
+5) El bilen habar goşmak (surat, wideo, link bilen)
+   assets\taze-pikirler\js\news-data.js faýlynyň başyndaky nusga boýunça.
+   Ol faýl ýok bolsa (täze bukja), tools\news-data-nusga.js faýlyny şol ýere
+   news-data.js ady bilen göçüriň.
+
+6) Arhiw
+   Köne habarlar tools\news-archive.json faýlynda saklanýar (iň köp 60).
+   Arassalamak üçin şol faýly pozuň (soňra hemme habar täzeden alynýar).
+
+7) Awtorlyk hukugy
+   Awtomatik habarlarda diňe sözbaşy we gysga düşündiriş görkezilýär; doly makala asyl
+   sahypa baglanýar we ol habarlar gözleg motorlaryndan gizlenýär (noindex).

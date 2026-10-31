@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="tk">
+<head>
+<meta charset="UTF-8">
+<script src="../assets/nav/theme.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Amatly.com — san usullary: deňlemäniň kökini tapmak (Ýarpylatma, Ýönekeý gaýtalama, Newton, Sekant), Lagranž we Nýuton interpolýasiýasy, Ýakobi we Gauss–Zeýdel usullary — ädimme-ädim.">
+<title>San usullary — Amatly.com</title>
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tk_TM">
+<meta property="og:site_name" content="Amatly.com">
+<meta property="og:title" content="San usullary — Amatly.com">
+<meta property="og:description" content="Amatly.com — san usullary: deňlemäniň kökini tapmak (Ýarpylatma, Ýönekeý gaýtalama, Newton, Sekant), Lagranž we Nýuton interpolýasiýasy, Ýakobi we Gauss–Zeýdel usullary — ädimme-ädim.">
+<link rel="canonical" href="https://amatly.com/san-usullary/">
+<meta property="og:url" content="https://amatly.com/san-usullary/">
+<meta property="og:image" content="https://amatly.com/assets/og/san-usullary.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Amatly.com — San usullary">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#172e6e" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1a33" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="../assets/san-usullary/css/main.css">
+<link rel="stylesheet" href="../assets/nav/nav.css">
+<script src="../assets/nav/nav.js" defer></script>
+</head>
+<body>
+
+<div class="container">
+  <header class="top" id="top">
+    <div class="logo-row">
+      <a class="logo" href="../index.html">Amatly.com</a>
+      <div style="max-width:420px; width:100%;">
+        <form class="search-row" id="searchForm" data-site-hook>
+          <input type="text" id="searchInput" placeholder="Usul agtaryň: Newton, Ýarpylatma..." aria-label="Gözleg">
+          <button type="submit" aria-label="Gözläň">🔍</button>
+        </form>
+        <div class="search-msg" id="searchMsg" hidden></div>
+      </div>
+    </div>
+  </header>
+</div>
+
+
+<nav class="amx-nav" id="amxNav" aria-label="Esasy menýu"><div class="amx-bar"><button class="amx-burger" type="button" aria-expanded="false" aria-controls="amxPanel" aria-label="Menýuny aç"><span class="amx-burger-lines" aria-hidden="true"><i></i><i></i><i></i></span>Menýu</button><span class="amx-here">San usullary</span><button class="amx-tool amx-bar-tool" type="button" data-theme-toggle aria-label="Gara / açyk temany çalyş" title="Gara / açyk tema"><svg class="amx-ico i-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></svg><svg class="amx-ico i-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6L7 7M17 17l1.4 1.4M18.4 5.6L17 7M7 17l-1.4 1.4"/></svg><span class="amx-lbl">Temany çalyş</span></button><div class="amx-panel" id="amxPanel"><div class="amx-panelhead"><span class="amx-brand">Amatly<em>.com</em></span><button class="amx-close" type="button" aria-label="Menýuny ýap"><svg class="amx-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M5 5l14 14M19 5L5 19"/></svg></button></div><ul class="amx-list"><li><a class="amx-link" href="../index.html"><svg class="amx-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M3.5 11.2L12 4l8.5 7.2M6 9.6V20h12V9.6"/></svg><span>Baş sahypa</span></a></li><li class="amx-has-mega"><button class="amx-link amx-trigger is-current" type="button" aria-expanded="false" aria-controls="amxMega"><svg class="amx-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><rect x="4" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.6"/></svg><span>Bölümler</span><svg class="amx-chev amx-ico" viewBox="0 0 20 20" width="14" height="14" aria-hidden="true" focusable="false"><path d="M5 7.5l5 5 5-5"/></svg></button><div class="amx-mega" id="amxMega"><div class="amx-mega-card"><section class="amx-group"><h3>Algebra we analiz</h3><ul><li><a class="amx-item" href="../on-algebra/index.html"><span class="amx-glyph" aria-hidden="true">½</span><span class="amx-txt"><b>Öň-algebra</b><small>Algebra üçin gerek esasy düşünjeler.</small></span></a></li><li><a class="amx-item" href="../algebra/index.html"><span class="amx-glyph" aria-hidden="true">x²</span><span class="amx-txt"><b>Algebra</b><small>Deňlemeler, deňsizlikler we n×n ulgamlar.</small></span></a></li><li><a class="amx-item" href="../trigonometriya/index.html"><span class="amx-glyph" aria-hidden="true">θ</span><span class="amx-txt"><b>Trigonometriýa</b><small>Birlik töwerek, formulalar we deňlemeler.</small></span></a></li><li><a class="amx-item" href="../matrisa/index.html"><span class="amx-glyph" aria-hidden="true">[ ]</span><span class="amx-txt"><b>Matrisa &amp; Wektor</b><small>Matrisa amallary we wektor hasaplamalary.</small></span></a></li><li><a class="amx-item" href="../kalkulus/index.html"><span class="amx-glyph" aria-hidden="true">∫</span><span class="amx-txt"><b>Kalkulus</b><small>Diferensial we integral hasaplamalar.</small></span></a></li></ul></section><section class="amx-group"><h3>Hasaplama gurallary</h3><ul><li><a class="amx-item" href="../san-usullary/index.html" aria-current="page"><span class="amx-glyph" aria-hidden="true">≈</span><span class="amx-txt"><b>San usullary</b><small>Kökler, interpolýasiýa, Ýakobi we Zeýdel.</small></span></a></li><li><a class="amx-item" href="../statistika/index.html"><span class="amx-glyph" aria-hidden="true">σ</span><span class="amx-txt"><b>Statistika</b><small>Ortaça, ähtimallyk we beýleki statistiki hasaplamalar.</small></span></a></li><li><a class="amx-item" href="../amal-barlagy/index.html"><span class="amx-glyph" aria-hidden="true">→</span><span class="amx-txt"><b>Amal barlagy</b><small>Simpleks, ulag, bellemek, oýunlar, tor meýilnamasy.</small></span></a></li></ul></section><section class="amx-group"><h3>Meseleler we şekiller</h3><ul><li><a class="amx-item" href="../soz-meseleleri/index.html"><span class="amx-glyph" aria-hidden="true">?</span><span class="amx-txt"><b>Söz meseleleri</b><small>Gündelik durmuşdaky matematiki meseleler.</small></span></a></li><li><a class="amx-item" href="../geometriya/index.html"><span class="amx-glyph" aria-hidden="true">△</span><span class="amx-txt"><b>Geometriýa</b><small>Meýdan, göwrüm we şekilleriň häsiýetleri.</small></span></a></li></ul></section><div class="amx-mega-foot"><a class="amx-soon amx-foot-link" href="#" aria-disabled="true" title="Ýakynda goşular">Biz barada <em>ýakynda</em></a></div></div></div></li><li><a class="amx-link" href="../oyunlar/index.html"><svg class="amx-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><rect x="3" y="7.5" width="18" height="10" rx="5"/><path d="M8 10.5v4M6 12.5h4M15.5 11.6h.01M18 13.4h.01"/></svg><span>Oýunlar</span></a></li><li><a class="amx-link" href="../taze/index.html"><svg class="amx-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M11 3.5l1.9 5.1 5.1 1.9-5.1 1.9L11 17.5l-1.9-5.1L4 10.5l5.1-1.9zM18.5 16.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z"/></svg><span>Näme täze</span></a></li><li><a class="amx-link" href="../pikirler/index.html"><svg class="amx-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4.5 5.5h15v10.2h-7.2L8 19v-3.3H4.5z"/></svg><span>Pikirler</span></a></li><li class="amx-end"><button class="amx-tool" type="button" data-theme-toggle aria-label="Gara / açyk temany çalyş" title="Gara / açyk tema"><svg class="amx-ico i-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></svg><svg class="amx-ico i-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6L7 7M17 17l1.4 1.4M18.4 5.6L17 7M7 17l-1.4 1.4"/></svg><span class="amx-lbl">Temany çalyş</span></button></li><li><a class="amx-link amx-gear" href="../sazlamalar/index.html"><svg class="amx-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg><span class="amx-lbl-keep">Sazlamalar</span></a></li></ul></div><div class="amx-scrim"></div></div></nav>
+
+
+
+<div class="container">
+
+  <div class="hero">
+    <h1>San usullary: kökler, interpolýasiýa we çyzykly ulgamlar</h1>
+    <p class="lead">f(x)=0 deňlemesiniň kökini tapmagyň dört usuly, berlen nokatlardan geçýän köpagzany gurmak (Lagranž, Nýuton) we Ax=b ulgamyny iterasiýa bilen çözmek (Ýakobi, Gauss–Zeýdel). Her usul ädimme-ädim hasaplanyp, netije jedwel we grafik bilen görkezilýär.</p>
+  </div>
+
+  <h2 id="usuly-saylan" class="section-title">Usuly saýlaň</h2>
+  <p class="method-group-title" id="grp-roots">f(x) = 0 deňlemesiniň köki</p>
+  <div class="method-tabs" role="tablist" aria-labelledby="grp-roots">
+    <button type="button" class="method-tab active" data-panel="panel-bisection" role="tab" aria-controls="panel-bisection" aria-selected="true">
+      <span class="tab-tag">Interwal usuly</span>
+      <h3 id="yarpylatma-usuly">Ýarpylatma usuly</h3>
+      <p>Aralygy [a,b] yzygider ýarpylatmak</p>
+      <span class="tab-cta">Saýlaň →</span>
+    </button>
+    <button type="button" class="method-tab" data-panel="panel-fixed" role="tab" aria-controls="panel-fixed" aria-selected="false">
+      <span class="tab-tag">Iterasiýa usuly</span>
+      <h3 id="yonekey-gaytalama">Ýönekeý gaýtalama</h3>
+      <p>xₙ₊₁ = g(xₙ) formulasy</p>
+      <span class="tab-cta">Saýlaň →</span>
+    </button>
+    <button type="button" class="method-tab" data-panel="panel-newton" role="tab" aria-controls="panel-newton" aria-selected="false">
+      <span class="tab-tag">Önümli usul</span>
+      <h3 id="newton-usuly">Newton usuly</h3>
+      <p>Galtaşýan çyzyk (tangens) bilen</p>
+      <span class="tab-cta">Saýlaň →</span>
+    </button>
+    <button type="button" class="method-tab" data-panel="panel-secant" role="tab" aria-controls="panel-secant" aria-selected="false">
+      <span class="tab-tag">Önümsiz usul</span>
+      <h3 id="kese-kesimler-sekant">Kese kesimler (Sekant)</h3>
+      <p>Önümsiz, iki nokat bilen</p>
+      <span class="tab-cta">Saýlaň →</span>
+    </button>
+  </div>
+  <p class="method-group-title" id="grp-more">Interpolýasiýa we çyzykly ulgamlar</p>
+  <div class="method-tabs method-tabs--two" role="tablist" aria-labelledby="grp-more">
+    <button type="button" class="method-tab" data-panel="panel-interp" role="tab" aria-controls="panel-interp" aria-selected="false">
+      <span class="tab-tag">Interpolýasiýa</span>
+      <h3 id="interpolyasiya">Lagranž we Nýuton köpagzasy</h3>
+      <p>Berlen nokatlardan geçýän köpagza, bölünen tapawutlar tablisasy we P(x*) bahasy</p>
+      <span class="tab-cta">Saýlaň →</span>
+    </button>
+    <button type="button" class="method-tab" data-panel="panel-iter" role="tab" aria-controls="panel-iter" aria-selected="false">
+      <span class="tab-tag">Çyzykly ulgamlar</span>
+      <h3 id="yakobi-zeydel">Ýakobi we Gauss–Zeýdel</h3>
+      <p>Ax = b ulgamyny iterasiýa bilen: diagonal agdyklyk, ρ(B) we ýygnanyş grafigi</p>
+      <span class="tab-cta">Saýlaň →</span>
+    </button>
+  </div>
+
+  <p class="syntax-note">
+    <strong>Aňlatma ýazuwy:</strong> <code>+ - * /</code> we derece üçin <code>^</code>, ýaýlar <code>( )</code>, üýtgeýän hökmünde <code>x</code>.
+    Funksiýalar: <code>sin(x) cos(x) tan(x) asin(x) acos(x) atan(x) sqrt(x) abs(x) exp(x) ln(x) log(x) log2(x)</code>.
+    Hemişelikler: <code>pi</code>, <code>e</code> (mysal: <code>e^x</code>). Örtük köpeltme goldanýar: <code>2x</code>, <code>3sin(x)</code> ýazyp bolýar.<br>
+    Has amatly ýazuw hem goldanýar: derejeler üçin ýokarky san <code>x²</code>, <code>x³</code> (= <code>x^2</code>, <code>x^3</code>);
+    kwadrat kök üçin <code>√x</code> ýa-da <code>√(x+1)</code> (= <code>sqrt(x)</code>); islendik esasly logarifm üçin
+    <code>log_2(x)</code> ýa-da <code>log₂(x)</code> (= 2 esasly logarifm).
+  </p>
+
+  <!-- ===================== BISECTION ===================== -->
+  <section class="method-panel active" id="panel-bisection" role="tabpanel" aria-labelledby="yarpylatma-usuly">
+    <p class="theory-text">Eger f(x) funksiýasy [a,b] aralykda üznüksiz bolup, f(a) bilen f(b) garşylykly alamaly bolsa (f(a)·f(b) &lt; 0), Bolzano teoremasy boýunça şol aralykda azyndan bir kök bar bolýar. Aralygyň ortasy c=(a+b)/2 hasaplanýar we kök haýsy ýarym aralykda bolsa, şoňa geçilýär. Bu amal ýalňyşlyk berlen çäkden az bolýança gaýtalanýar.</p>
+    <div class="formula-box">c = (a + b) / 2  &nbsp;—&nbsp; f(a)·f(c) &lt; 0 bolsa b = c, ýogsam a = c</div>
+    <p class="stop-note">Duruş şerti: aralygyň ýarpysy |b−a|/2 &lt; ε bolýança gaýtalanýar. Her ädimde f(c) hem hasaplanýar we netijede hakyky galyndy — f(kök) — görkezilýär, ol diňe san taýdan 0-a golaýdyr, elmydama takyk 0 däldir.</p>
+
+    <form class="calc-form" id="bis-form">
+      <div class="calc-field full">
+        <label for="bis-f">f(x) <span class="hint">— mysal: x^3 - x - 2</span></label>
+        <input type="text" id="bis-f" placeholder="x^3 - x - 2" required>
+      </div>
+      <div class="calc-field">
+        <label for="bis-a">Aralygyň başy (a)</label>
+        <input type="text" id="bis-a" placeholder="1" required>
+      </div>
+      <div class="calc-field">
+        <label for="bis-b">Aralygyň soňy (b)</label>
+        <input type="text" id="bis-b" placeholder="2" required>
+      </div>
+      <div class="calc-field">
+        <label for="bis-tol">Ýalňyşlyk çägi (ε)</label>
+        <input type="text" id="bis-tol" placeholder="0.000001" value="0.000001" required>
+      </div>
+      <div class="calc-field">
+        <label for="bis-iter">Iň köp gaýtalama sany</label>
+        <input type="text" id="bis-iter" placeholder="50" value="50" required>
+      </div>
+    </form>
+    <div class="calc-actions">
+      <button type="submit" form="bis-form" class="btn-primary">Hasaplaň</button>
+      <button type="button" class="btn-secondary btn-small" data-example="bisection">Mysal ulanyň</button>
+    </div>
+    <div id="bis-output"></div>
+  </section>
+
+  <!-- ===================== FIXED POINT ===================== -->
+  <section class="method-panel" id="panel-fixed" role="tabpanel" aria-labelledby="yonekey-gaytalama">
+    <p class="theory-text">Deňleme f(x)=0 görnüşinden x=g(x) görnüşine getirilýär. Başlangyç baha x₀ alnyp, xₙ₊₁=g(xₙ) formulasy yzygider ulanylýar. Usul ýygjamlaşar ýaly, gaýtalanýan aralykdaky HER bir nokatda |g'(x)| &lt; 1 bolmaly — diňe başlangyç x₀ nokadynda barlamak ýeterlik däl; ulgam indi ähli geçilen nokatlarda muny barlaýar. Şert bozulsa netije ýaýrap biler (uzaklaşar).</p>
+    <div class="formula-box">xₙ₊₁ = g(xₙ)</div>
+    <p class="stop-note">Duruş şerti: |xₙ₊₁ − xₙ| &lt; ε. f(x) = g(x) − x diýip alnanda, bu aňlatma edil |f(xₙ)| bahasyna deňdir — ýagny bu usulda yzygiderligiň üýtgemesi bilen galyndy gabat gelýär.</p>
+
+    <form class="calc-form" id="fp-form">
+      <div class="calc-field full">
+        <label for="fp-g">g(x) <span class="hint">— x=g(x) görnüşinde ýazyň, mysal: cos(x)</span></label>
+        <input type="text" id="fp-g" placeholder="cos(x)" required>
+      </div>
+      <div class="calc-field">
+        <label for="fp-x0">Başlangyç baha (x₀)</label>
+        <input type="text" id="fp-x0" placeholder="0.5" required>
+      </div>
+      <div class="calc-field">
+        <label for="fp-tol">Ýalňyşlyk çägi (ε)</label>
+        <input type="text" id="fp-tol" placeholder="0.000001" value="0.000001" required>
+      </div>
+      <div class="calc-field full">
+        <label for="fp-iter">Iň köp gaýtalama sany</label>
+        <input type="text" id="fp-iter" placeholder="100" value="100" required>
+      </div>
+    </form>
+    <div class="calc-actions">
+      <button type="submit" form="fp-form" class="btn-primary">Hasaplaň</button>
+      <button type="button" class="btn-secondary btn-small" data-example="fixed">Mysal ulanyň</button>
+    </div>
+    <div id="fp-output"></div>
+  </section>
+
+  <!-- ===================== NEWTON ===================== -->
+  <section class="method-panel" id="panel-newton" role="tabpanel" aria-labelledby="newton-usuly">
+    <p class="theory-text">Funksiýanyň grafigindäki nokatdan geçýän galtaşýan çyzyk (tangens) çekilip, onuň x oky bilen kesişýän nokady indiki baha hökmünde alynýar. Örän çalt ýygjamlaşýar, ýöne f'(x)≠0 bolmaly. f'(x) meýdanyny boş goýsaňyz, önüm awtomatik hasaplanýar: math.js formulany dogry okap bilse — takyk (simwoliki) önüm bilen, ýogsam f'(x) ≈ (f(x+h) − f(x−h)) / (2h) formulasy — ýagny merkezleýin sanly differensirleme (central difference) — bilen.</p>
+    <div class="formula-box">xₙ₊₁ = xₙ − f(xₙ) / f'(xₙ)</div>
+    <p class="stop-note">Duruş şerti: |xₙ₊₁ − xₙ| &lt; ε ýa-da |f(xₙ)| &lt; ε — haýsysy ir ýerine ýetse, hasaplama şonda saklanýar.</p>
+
+    <form class="calc-form" id="nt-form">
+      <div class="calc-field full">
+        <label for="nt-f">f(x) <span class="hint">— mysal: x^3 - x - 2</span></label>
+        <input type="text" id="nt-f" placeholder="x^3 - x - 2" required>
+      </div>
+      <div class="calc-field full">
+        <label for="nt-fprime">f'(x) <span class="hint">— hökman däl, boş goýsaňyz awtomatik hasaplanar</span></label>
+        <input type="text" id="nt-fprime" placeholder="3x^2 - 1 (islege görä)">
+      </div>
+      <div class="calc-field">
+        <label for="nt-x0">Başlangyç baha (x₀)</label>
+        <input type="text" id="nt-x0" placeholder="1.5" required>
+      </div>
+      <div class="calc-field">
+        <label for="nt-tol">Ýalňyşlyk çägi (ε)</label>
+        <input type="text" id="nt-tol" placeholder="0.0000001" value="0.0000001" required>
+      </div>
+      <div class="calc-field full">
+        <label for="nt-iter">Iň köp gaýtalama sany</label>
+        <input type="text" id="nt-iter" placeholder="50" value="50" required>
+      </div>
+    </form>
+    <div class="calc-actions">
+      <button type="submit" form="nt-form" class="btn-primary">Hasaplaň</button>
+      <button type="button" class="btn-secondary btn-small" data-example="newton">Mysal ulanyň</button>
+    </div>
+    <div id="nt-output"></div>
+  </section>
+
+  <!-- ===================== SECANT ===================== -->
+  <section class="method-panel" id="panel-secant" role="tabpanel" aria-labelledby="kese-kesimler-sekant">
+    <p class="theory-text">Newton usulyna meňzeýär, ýöne önümiň ýerine iki soňky nokatdan (xₙ₋₁, xₙ) geçýän kese kesim ulanylýar — şonuň üçin f'(x) hasaplamak hökman däl. Başlangyç iki baha bir-birinden tapawutly bolmaly.</p>
+    <div class="formula-box">xₙ₊₁ = xₙ − f(xₙ)·(xₙ − xₙ₋₁) / (f(xₙ) − f(xₙ₋₁))</div>
+    <p class="stop-note">Duruş şerti: |xₙ₊₁ − xₙ| &lt; ε ýa-da |f(xₙ₊₁)| &lt; ε — haýsysy ir ýerine ýetse, hasaplama şonda saklanýar.</p>
+
+    <form class="calc-form" id="sc-form">
+      <div class="calc-field full">
+        <label for="sc-f">f(x) <span class="hint">— mysal: cos(x) - x</span></label>
+        <input type="text" id="sc-f" placeholder="cos(x) - x" required>
+      </div>
+      <div class="calc-field">
+        <label for="sc-x0">Birinji başlangyç baha (x₀)</label>
+        <input type="text" id="sc-x0" placeholder="0" required>
+      </div>
+      <div class="calc-field">
+        <label for="sc-x1">Ikinji başlangyç baha (x₁)</label>
+        <input type="text" id="sc-x1" placeholder="1" required>
+      </div>
+      <div class="calc-field">
+        <label for="sc-tol">Ýalňyşlyk çägi (ε)</label>
+        <input type="text" id="sc-tol" placeholder="0.0000001" value="0.0000001" required>
+      </div>
+      <div class="calc-field">
+        <label for="sc-iter">Iň köp gaýtalama sany</label>
+        <input type="text" id="sc-iter" placeholder="50" value="50" required>
+      </div>
+    </form>
+    <div class="calc-actions">
+      <button type="submit" form="sc-form" class="btn-primary">Hasaplaň</button>
+      <button type="button" class="btn-secondary btn-small" data-example="secant">Mysal ulanyň</button>
+    </div>
+    <div id="sc-output"></div>
+  </section>
+
+  <!-- ===================== INTERPOLÝASIÝA ===================== -->
+  <section class="method-panel" id="panel-interp" role="tabpanel" aria-labelledby="interpolyasiya">
+    <p class="theory-text">Berlen n nokatdan (x₀, y₀), …, (xₙ₋₁, yₙ₋₁) geçýän we derejesi n − 1-den uly bolmadyk köpagza ýeke-täkdir. Lagranžyň usuly ony bazis köpagzalarynyň jemi hökmünde, Nýutonyň usuly bolsa bölünen tapawutlar arkaly gurýar — ikisi hem şol bir P(x) köpagzany berýär. Nýuton görnüşiniň artykmaçlygy: täze nokat goşulanda öňki koeffisiýentler üýtgemeýär, diňe täze goşulyjy goşulýar.</p>
+    <div class="formula-box">Lagranž: P(x) = Σ yᵢ·ℓᵢ(x), &nbsp; ℓᵢ(x) = Π<sub>j≠i</sub> (x − xⱼ) / (xᵢ − xⱼ)<br>Nýuton: P(x) = f[x₀] + f[x₀, x₁](x − x₀) + f[x₀, x₁, x₂](x − x₀)(x − x₁) + …</div>
+    <p class="stop-note">Bölünen tapawut: f[xᵢ, …, xᵢ₊ₖ] = (f[xᵢ₊₁, …, xᵢ₊ₖ] − f[xᵢ, …, xᵢ₊ₖ₋₁]) / (xᵢ₊ₖ − xᵢ). Eger y bahalary f(x) funksiýadan alnan bolsa, ýalňyşlyk R(x) = f⁽ⁿ⁾(ξ)/n! · (x − x₀)…(x − xₙ₋₁). Deň aralykly köp nokatda aralygyň gyralarynda uly yrgyldy döräp biler (Runge hadysasy) — «Runge mysalyny» synap görüň. Bahalar rasional bolsa (1/3, 0.25), hasaplama takyk droblarda geçirilýär.</p>
+
+    <form class="calc-form" id="ip-form" novalidate>
+      <div class="calc-field full">
+        <label for="ip-x">x bahalary (düwünler) <span class="hint">— otur ýa-da boşluk bilen: 0, 1, 2, 4; onluk otur ulansaňyz «;» bilen bölüň: 0; 0,5; 1</span></label>
+        <input type="text" id="ip-x" placeholder="0, 1, 2, 4" autocomplete="off" spellcheck="false" required>
+      </div>
+      <fieldset class="calc-field full nu-src">
+        <legend>y bahalary</legend>
+        <div class="nu-seg">
+          <label><input type="radio" name="ip-src" value="y" checked><span>Özüm ýazýaryn</span></label>
+          <label><input type="radio" name="ip-src" value="f"><span>f(x) funksiýadan</span></label>
+        </div>
+      </fieldset>
+      <div class="calc-field full" id="ip-y-wrap">
+        <label for="ip-y">y bahalary <span class="hint">— x bahalarynyň tertibinde: 1, 3, 2, 5</span></label>
+        <input type="text" id="ip-y" placeholder="1, 3, 2, 5" autocomplete="off" spellcheck="false">
+      </div>
+      <div class="calc-field full" id="ip-f-wrap" hidden>
+        <label for="ip-f">f(x) <span class="hint">— mysal: sin(x), e^x, 1/(1+x^2)</span></label>
+        <input type="text" id="ip-f" placeholder="sin(x)" autocomplete="off" spellcheck="false">
+      </div>
+      <div class="calc-field">
+        <label for="ip-at">Bahasy gerek nokat (x*) <span class="hint">— hökman däl</span></label>
+        <input type="text" id="ip-at" placeholder="3" autocomplete="off" spellcheck="false">
+      </div>
+      <div class="calc-field">
+        <label for="ip-method">Görkezmeli usul</label>
+        <select id="ip-method">
+          <option value="both">Ikisi hem (deňeşdirmek üçin)</option>
+          <option value="lagrange">Diňe Lagranž</option>
+          <option value="newton">Diňe Nýuton</option>
+        </select>
+      </div>
+    </form>
+    <div class="calc-actions">
+      <button type="submit" form="ip-form" class="btn-primary">Hasaplaň</button>
+      <button type="button" class="btn-secondary btn-small" data-ip-example="table">Mysal: 4 nokat</button>
+      <button type="button" class="btn-secondary btn-small" data-ip-example="frac">Droblar</button>
+      <button type="button" class="btn-secondary btn-small" data-ip-example="sin">sin x</button>
+      <button type="button" class="btn-secondary btn-small" data-ip-example="runge">Runge mysaly</button>
+    </div>
+    <div id="ip-output" aria-live="polite"></div>
+  </section>
+
+  <!-- ===================== ÝAKOBI WE GAUSS–ZEÝDEL ===================== -->
+  <section class="method-panel" id="panel-iter" role="tabpanel" aria-labelledby="yakobi-zeydel">
+    <p class="theory-text">Ax = b ulgamynyň her deňlemesinden diagonal näbelli aňladylyp, xᵢ = (bᵢ − Σ aᵢⱼxⱼ) / aᵢᵢ görnüşe getirilýär we başlangyç x⁽⁰⁾ bahadan ugrap gaýtalanýar. Ýakobi usulynda täze bahalaryň hemmesi öňki ädimiň bahalaryndan hasaplanýar; Gauss–Zeýdel usulynda bolsa şol ädimde tapylan täze bahalar derrew ulanylýar — şonuň üçin ol köplenç has çalt ýygnanýar. Bu usullar uly we seýrek (köp nolly) ulgamlarda Gauss usulyndan amatly bolýar.</p>
+    <div class="formula-box">Ýakobi: xᵢ⁽ᵏ⁺¹⁾ = (bᵢ − Σ<sub>j≠i</sub> aᵢⱼ xⱼ⁽ᵏ⁾) / aᵢᵢ<br>Gauss–Zeýdel: xᵢ⁽ᵏ⁺¹⁾ = (bᵢ − Σ<sub>j&lt;i</sub> aᵢⱼ xⱼ⁽ᵏ⁺¹⁾ − Σ<sub>j&gt;i</sub> aᵢⱼ xⱼ⁽ᵏ⁾) / aᵢᵢ</div>
+    <p class="stop-note">Ýygnanmagyň ýeterlik şerti — diagonal agdyklyk: her setirde |aᵢᵢ| &gt; Σ<sub>j≠i</sub> |aᵢⱼ|. Zerur we ýeterlik şert — iterasiýa matrisasynyň spektral radiusy ρ(B) &lt; 1 (Ýakobi: B = −D⁻¹(L + U), Gauss–Zeýdel: B = −(D + L)⁻¹U); ρ näçe kiçi bolsa, şonça çalt ýygnanýar. Duruş şerti: max |xᵢ⁽ᵏ⁺¹⁾ − xᵢ⁽ᵏ⁾| &lt; ε.</p>
+
+    <form class="calc-form" id="it-form" novalidate>
+      <div class="calc-field">
+        <label for="it-n">Näbellileriň sany (n)</label>
+        <select id="it-n">
+          <option value="2">2</option><option value="3" selected>3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option>
+        </select>
+      </div>
+      <div class="calc-field">
+        <label for="it-method">Usul</label>
+        <select id="it-method">
+          <option value="both">Ikisi hem (deňeşdirmek üçin)</option>
+          <option value="jacobi">Ýakobi</option>
+          <option value="seidel">Gauss–Zeýdel</option>
+        </select>
+      </div>
+      <div class="calc-field full">
+        <span class="nu-label" id="it-grid-label">Ulgamyň koeffisiýentleri [A | b] <span class="hint">— droblar (1/3) we onluk sanlar (0.5) bolup biler</span></span>
+        <div class="nu-grid" id="it-grid" role="group" aria-labelledby="it-grid-label"></div>
+      </div>
+      <div class="calc-field full">
+        <span class="nu-label" id="it-x0-label">Başlangyç baha x⁽⁰⁾ <span class="hint">— boş goýulsa nol alynýar</span></span>
+        <div class="nu-x0row" id="it-x0" role="group" aria-labelledby="it-x0-label"></div>
+      </div>
+      <div class="calc-field">
+        <label for="it-tol">Ýalňyşlyk çägi (ε)</label>
+        <input type="text" id="it-tol" value="0.000001" inputmode="decimal" autocomplete="off">
+      </div>
+      <div class="calc-field">
+        <label for="it-iter">Iň köp gaýtalama sany</label>
+        <input type="text" id="it-iter" value="100" inputmode="numeric" autocomplete="off">
+      </div>
+      <div class="calc-field full">
+        <label class="nu-check" for="it-reorder"><input type="checkbox" id="it-reorder" checked> Gerek bolsa diagonal agdyklyk üçin deňlemeleriň ornuny çalyş</label>
+      </div>
+    </form>
+    <div class="calc-actions">
+      <button type="submit" form="it-form" class="btn-primary">Hasaplaň</button>
+      <button type="button" class="btn-secondary btn-small" data-it-example="d3">Mysal: 3×3</button>
+      <button type="button" class="btn-secondary btn-small" data-it-example="d4">Mysal: 4×4</button>
+      <button type="button" class="btn-secondary btn-small" data-it-example="swap">Ornuny çalyşmaly</button>
+      <button type="button" class="btn-secondary btn-small" data-it-example="div">Ýygnanmaýan ulgam</button>
+    </div>
+    <div id="it-output" aria-live="polite"></div>
+  </section>
+
+  <footer>Amatly.com — matematika kalkulýatorlary we okuw oýunlary bir ýerde. <a href="../index.html">Baş sahypa</a></footer>
+</div>
+
+<script src="../assets/vendor/math.js"></script>
+<script src="../assets/san-usullary/js/main.js"></script>
+<script src="../assets/san-usullary/js/numeric-engine.js"></script>
+<script src="../assets/san-usullary/js/extra.js"></script>
+</body>
+</html>

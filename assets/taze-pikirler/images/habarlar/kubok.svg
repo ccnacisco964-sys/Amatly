@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="640" height="400" role="img" aria-label="Baýrak kubogy">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e8a93f"/><stop offset="1" stop-color="#8a4f00"/></linearGradient>
+<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0v40" fill="none" stroke="#fff" stroke-opacity=".09" stroke-width="1.5"/></pattern>
+</defs>
+<rect width="640" height="400" fill="url(#bg)"/>
+<rect width="640" height="400" fill="url(#grid)"/>
+<path d="M236 96 h168 v56 a84 84 0 0 1 -168 0 z" fill="#fff" fill-opacity=".95"/><path d="M236 112 h-40 a48 48 0 0 0 48 48" fill="none" stroke="#fff" stroke-opacity=".8" stroke-width="14" stroke-linecap="round"/><path d="M404 112 h40 a48 48 0 0 1 -48 48" fill="none" stroke="#fff" stroke-opacity=".8" stroke-width="14" stroke-linecap="round"/><path d="M320.0 120.0 L327.6 139.5 L348.5 140.7 L332.4 154.0 L337.6 174.3 L320.0 163.0 L302.4 174.3 L307.6 154.0 L291.5 140.7 L312.4 139.5 Z" fill="#e8a93f"/><path d="M302 236 h36 v42 h-36 z" fill="#fff" fill-opacity=".9"/><rect x="258" y="276" width="124" height="22" rx="11" fill="#fff" fill-opacity=".9"/><rect x="232" y="304" width="176" height="20" rx="10" fill="#fff" fill-opacity=".75"/><path d="M500.0 104.0 Q504.3 123.7 524.0 128.0 Q504.3 132.3 500.0 152.0 Q495.7 132.3 476.0 128.0 Q495.7 123.7 500.0 104.0 Z" fill="#fff" fill-opacity=".55"/><path d="M148.0 228.0 Q151.2 242.8 166.0 246.0 Q151.2 249.2 148.0 264.0 Q144.8 249.2 130.0 246.0 Q144.8 242.8 148.0 228.0 Z" fill="#fff" fill-opacity=".45"/>
+</svg>

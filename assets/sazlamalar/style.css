@@ -1,0 +1,88 @@
+/* Sazlamalar sahypasy */
+:root{--s-bg:#f3f8fe;--s-card:#fff;--s-line:#cfe0f2;--s-ink:#14233b;--s-muted:#5a6b82;--s-brand:#1a56b4;--s-tint:#eef6fd;--s-amber:#e8a33d;--s-bad:#c0263f}
+html[data-theme=dark]{--s-bg:#191f29;--s-card:#1f2735;--s-line:#2c384d;--s-ink:#e3e9f3;--s-muted:#93a1b7;--s-brand:#8bbcff;--s-tint:#252f42;--s-bad:#ff8a8a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--s-bg);color:var(--s-ink);font:16px/1.6 var(--amx-font)}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.set-top{max-width:780px;margin:0 auto;padding:20px 20px 12px}
+.set-logo{font-size:2rem;font-weight:800;letter-spacing:-.5px;color:var(--s-brand);text-decoration:none}
+.set-logo span{font-weight:600;opacity:.7}
+main.set{max-width:780px;margin:0 auto;padding:14px 20px 60px}
+.crumbs{font-size:.9rem;color:var(--s-muted)}.crumbs a{color:var(--s-brand)}
+h1{font-size:clamp(1.7rem,4vw,2.2rem);line-height:1.2;margin:.5em 0 .25em}
+.lead{margin:0 0 24px;color:var(--s-muted);max-width:60ch}
+.card{background:var(--s-card);border:1px solid var(--s-line);border-radius:14px;padding:20px 22px;margin:0 0 16px;border-left:4px solid var(--s-brand)}
+.card h2{font-size:1.08rem;margin:0 0 4px}
+.card .sub{margin:0 0 14px;color:var(--s-muted);font-size:.92rem}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+.opts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.opt{position:relative;display:block}
+.opt input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
+.opt .box{display:flex;flex-direction:column;gap:3px;height:100%;padding:14px;border:1.5px solid var(--s-line);border-radius:12px;background:var(--s-tint);transition:border-color .15s,box-shadow .15s}
+.opt .box small{color:var(--s-muted);font-size:.8rem;line-height:1.35}
+.opt input:checked+.box{border-color:var(--s-brand);box-shadow:0 0 0 3px rgba(79,138,240,.28)}
+.opt input:focus-visible+.box{outline:2px solid var(--s-amber);outline-offset:2px}
+.sw{display:block;height:26px;margin-bottom:8px;border-radius:7px;border:1px solid var(--s-line)}
+.sw-dark{background:linear-gradient(135deg,#191f29 55%,#8bbcff 55%)}
+.sw-light{background:linear-gradient(135deg,#fff 55%,#1a56b4 55%)}
+.sw-auto{background:linear-gradient(135deg,#fff 50%,#191f29 50%)}
+.aa{font-weight:700;line-height:1.1;margin-bottom:8px;color:var(--s-brand)}.aa-sm{font-size:.95rem}.aa-md{font-size:1.25rem}.aa-lg{font-size:1.55rem}
+.switch{display:flex;align-items:center;gap:14px;cursor:pointer}
+.switch input{position:absolute;opacity:0;width:1px;height:1px}
+.track{flex:none;position:relative;width:46px;height:26px;border-radius:99px;background:var(--s-line);transition:background .2s}
+.track::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.35);transition:transform .2s}
+.switch input:checked+.track{background:var(--s-brand)}
+.switch input:checked+.track::after{transform:translateX(20px)}
+.switch input:focus-visible+.track{outline:2px solid var(--s-amber);outline-offset:2px}
+.switch b{display:block}.switch small{display:block;color:var(--s-muted);font-size:.86rem;line-height:1.4}
+.acts{display:flex;flex-wrap:wrap;gap:10px}
+.btn{padding:10px 16px;border-radius:10px;border:1px solid var(--s-line);background:var(--s-tint);color:var(--s-ink);font:inherit;font-weight:600;font-size:.92rem;cursor:pointer}
+.btn:hover{border-color:var(--s-brand)}
+.btn.danger{color:var(--s-bad)}
+.set-foot{max-width:780px;margin:0 auto;padding:0 20px 40px;color:var(--s-muted);font-size:.85rem}
+.set-toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);padding:10px 18px;border-radius:10px;background:var(--s-brand);color:#0b1220;font-weight:700;font-size:.9rem;box-shadow:0 10px 28px rgba(0,0,0,.35);z-index:2000}
+.set-toast[hidden]{display:none}
+@media (max-width:560px){.opts{grid-template-columns:1fr}.opt .box{flex-direction:row;align-items:center;gap:12px}.sw,.aa{margin:0;flex:none}.sw{width:40px}.opt .box span.t{display:flex;flex-direction:column}}
+/* kämilleşdirme: has uly harp, animasiýa saýlawy, maglumat sanawy, gysga ýollar, tassyklama */
+.opts{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.aa-xl{font-size:1.8rem}
+.mo{font-style:normal;font-weight:700;line-height:1.1;margin-bottom:8px;color:var(--s-brand);font-size:1.25rem}
+.stat{display:flex;flex-wrap:wrap;gap:6px 22px;list-style:none;margin:0 0 14px;padding:0;color:var(--s-muted);font-size:.92rem}.stat b{color:var(--s-ink);font-size:1.1rem}
+.acts+.acts{margin-top:10px}
+.keys{margin:0;display:grid;gap:8px}.keys div{display:flex;justify-content:space-between;gap:16px;padding-bottom:8px;border-bottom:1px solid var(--s-line)}.keys div:last-child{border:0;padding:0}.keys dt{font-weight:600}.keys dd{margin:0;color:var(--s-muted)}
+kbd{font:600 .8rem var(--amx-font);padding:2px 7px;border:1px solid var(--s-line);border-bottom-width:2px;border-radius:6px;background:var(--s-tint)}
+.dlg{border:1px solid var(--s-line);border-radius:14px;background:var(--s-card);color:var(--s-ink);padding:20px 22px;width:min(92vw,380px)}.dlg::backdrop{background:rgba(5,10,20,.55)}.dlg p{margin:0 0 16px}.dlg .acts{justify-content:flex-end}
+@media (max-width:560px){.opts{grid-template-columns:1fr}.mo{margin:0;flex:none}.keys div{flex-direction:column;gap:2px}}
+/* Amatly AI kartasy */
+.card-ai{border-left-color:#e9a23b}
+.ai-state{margin:0 0 14px;padding:10px 12px;border-radius:10px;background:var(--s-tint);font-size:.92rem;color:var(--s-muted)}
+.ai-state.is-on{color:#1f7a4d;background:rgba(31,122,77,.1)}
+.ai-state.is-off{color:var(--s-ink);background:rgba(233,162,59,.14)}
+html[data-theme=dark] .ai-state.is-on{color:#5bd08f;background:rgba(91,208,143,.1)}
+.ai-key{margin:14px 0;padding:12px 14px;border:1px solid var(--s-line);border-radius:12px}
+.ai-key summary{cursor:pointer;font-weight:700}
+.ai-key[open] summary{margin-bottom:8px}
+.ai-key a{color:var(--s-brand)}
+.ai-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:10px 0 0}
+.ai-row label{font-weight:600;font-size:.92rem}
+.ai-input{flex:1 1 220px;min-width:0;height:42px;padding:0 12px;border:1px solid var(--s-line);border-radius:10px;background:var(--s-card);color:var(--s-ink);font:inherit;font-size:.95rem}
+.ai-input:focus{outline:2px solid var(--s-brand);outline-offset:1px}
+.ai-out{margin:12px 0 0;font-size:.92rem}
+.ai-out.is-ok{color:#1f7a4d}
+html[data-theme=dark] .ai-out.is-ok{color:#5bd08f}
+.ai-out.is-warn{color:var(--s-bad)}
+.btn[disabled]{opacity:.6;cursor:progress}
+.opt .box .t{display:flex;flex-direction:column;gap:2px}
+/* Hasap kartasy */
+.card-acct{border-left-color:#1f7a4d}
+html[data-theme=dark] .card-acct{border-left-color:#5bd08f}
+a.btn{display:inline-flex;align-items:center;text-decoration:none}
+.btn[hidden]{display:none}
+/* Programma we offline */
+.card-pwa{border-left-color:#2047c4}
+html[data-theme=dark] .card-pwa{border-left-color:#86a6ff}
+.pwa-bar{height:8px;margin:0 0 14px;border-radius:999px;background:var(--s-tint);overflow:hidden}
+.pwa-bar[hidden]{display:none}
+.pwa-bar i{display:block;height:100%;width:0;border-radius:inherit;background:var(--s-brand);transition:width .2s}
+.pwa-ios{margin:12px 0 0}
+.ai-state code{font-size:.88em}

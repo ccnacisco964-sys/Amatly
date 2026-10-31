@@ -1,0 +1,329 @@
+/* src/styles/pages/hub.css */
+/* kalkulus/index.html (bölümiň baş sahypasy): umumy stiller + diňe şu sahypa degişli bölekler */
+/* src/styles/main.css */
+/* Ähli sahypalara degişli umumy stiller. Tertip möhüm: base → components (cascade özgermesin).
+   Saýtyň umumy menýusy (amx-nav), gözlegiň sanawy we tema saýtyň assets/nav/nav.css faýlynda (her sahypa ony aýratyn ýükleýär).
+   components/dark-theme.css we components/print.css bu ýerde däl: olar her sahypanyň stiliniň (pages/*.css) iň soňky importlary —
+   gara tema we çap düzgünleri hemme komponentden soň gelsin. */
+/* src/styles/base/variables.css */
+/* Dizaýn üýtgeýjileri: reňkler */
+:root{
+  --blue-logo:#1a56b4; --blue-bar:#2f77c9; --blue-bar-dark:#154a92;
+  --blue-light:#cfe6fb; --blue-lighter:#eef6fd; --amber:#e8a33d; --amber-dark:#3a2400;
+  --link:#1155cc; --text:#1a1a1a; --muted:#666; --border:#8a8a8a; --border-light:#c7c7c7;
+  --green-bg:#d9ead3; --red:#b3261e; --red-bg:#fdeceb;
+}
+
+/* src/styles/base/reset.css */
+/* Esasy düzgünler: box-sizing, ýumşak aýlanma, sahypanyň şrifti we reňki */
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;padding:0;font-family:var(--amx-font);color:var(--text);background:#fff;font-size:15px;}
+
+/* src/styles/base/typography.css */
+/* Salgylar, sözbaşylar we kömekçi tekst synpy */
+a{color:var(--link);}
+h1,h2,h3{font-family:var(--amx-font);font-weight:bold;}
+.muted{color:var(--muted);}
+
+/* src/styles/base/layout.css */
+/* Sahypanyň ortadaky çarçuwasy */
+.container{max-width:1000px;margin:0 auto;padding:0 22px;}
+
+/* src/styles/base/focus.css */
+/* Klawiatura fokusy (elýeterlik): ähli gurallar üçin bir görnüş */
+.field input:focus,.field select:focus,.calc-card button:focus-visible,.quiz-opts button:focus-visible,.done-btn:focus-visible,details.exercise summary:focus-visible,a:focus-visible{outline:2px solid var(--blue-bar);outline-offset:1px;}
+
+
+/* src/styles/components/header.css */
+/* Ýokarky başlyk: logo + gözleg meýdany */
+header.top{padding:20px 0 10px;}
+.logo-row{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:14px;}
+.logo{font-size:2.3rem;font-weight:bold;color:var(--blue-logo);letter-spacing:-.5px;}
+.search-row{display:flex;max-width:420px;width:100%;}
+.search-row input{flex:1;padding:8px 10px;border:1px solid var(--border-light);border-radius:3px 0 0 3px;font-size:.9rem;}
+.search-row button{padding:0 14px;border:1px solid var(--blue-bar);background:var(--blue-bar);color:#fff;border-radius:0 3px 3px 0;cursor:pointer;}
+.search-row button:hover{background:var(--blue-bar-dark);}
+@media (max-width:680px){ .logo{font-size:1.7rem;} }
+
+/* src/styles/components/breadcrumb.css */
+/* Çörek ýoly (breadcrumb) we "yza" salgysy */
+.breadcrumb{padding:16px 0 10px;border-bottom:1px solid var(--border-light);font-size:.92rem;margin-bottom:6px;}
+.breadcrumb span{color:var(--muted);}
+.back-link{display:block;font-size:.9rem;margin:16px 0 4px;text-decoration:none;}
+.back-link:hover{text-decoration:underline;}
+
+/* src/styles/components/hero.css */
+/* Sahypanyň başy: sözbaşy, sapak belgisi, derejäniň nyşany (lvl-*) */
+.hero{padding:6px 0 6px;}
+.lesson-meta{margin:12px 0 0;display:flex;flex-wrap:wrap;align-items:center;gap:10px;}
+.lesson-tag{font-size:.8rem;color:var(--muted);}
+.level-badge{display:inline-block;font-size:.78rem;font-weight:bold;padding:3px 11px;border-radius:12px;border:1px solid;}
+.lvl-basic{background:#e6f4e1;border-color:#8fbf72;color:#2f5b1f;}
+.lvl-mid{background:#e3effc;border-color:#8cb4e6;color:#154a92;}
+.lvl-high{background:#eee6fa;border-color:#b9a2e0;color:#4b2a8a;}
+.lvl-univ{background:#fdeceb;border-color:#e0a49f;color:#8c1d16;}
+.lvl-extra{background:#fff4d6;border-color:#e0b84c;color:#6b4a00;}
+.lvl-exam{background:#ececec;border-color:#a0a0a0;color:#333;}
+.hero h1{font-size:1.6rem;margin:10px 0 8px;line-height:1.28;}
+.hero p.lead{font-size:1rem;color:var(--muted);line-height:1.55;margin:0;}
+
+/* src/styles/components/content.css */
+/* Sapagyň mazmuny: bölüm sözbaşysy, düşünje / formula / mysal gutulary, ädimler */
+h2.section-title{font-size:1.08rem;border-bottom:2px solid var(--blue-bar);padding-bottom:6px;margin:30px 0 14px;}
+.concept-box{background:var(--blue-lighter);border:1px solid var(--border-light);border-radius:4px;padding:14px 18px;margin:0 0 18px;font-size:.92rem;line-height:1.6;}
+.formula-box{background:#fff8e1;border:1px solid #e0b84c;border-radius:4px;padding:14px 18px;margin:0 0 18px;font-size:.95rem;line-height:1.9;text-align:center;}
+.example-box{background:var(--green-bg);border:1px solid #8fbf72;border-radius:4px;padding:14px 18px;margin:0 0 10px;font-size:.9rem;line-height:1.6;}
+.steps{margin:10px 0 18px;padding:0;list-style:none;font-size:.9rem;}
+.steps li{padding:6px 0 6px 12px;border-left:2px solid var(--blue-bar);margin-bottom:5px;}
+.steps li .rule{color:var(--muted);font-size:.78rem;}
+
+/* src/styles/components/calculator.css */
+/* Interaktiw kalkulýator: kart, meýdanlar, düwmeler, mysal çipleri, netije gutusy (çözgüdiň ädimleri — solution.css) */
+.calc-card{border:1px solid var(--border-light);border-radius:4px;padding:18px 20px;background:var(--blue-lighter);margin-bottom:18px;}
+.calc-card h3{font-size:.95rem;color:var(--blue-logo);margin:0 0 6px;}
+.calc-card p.desc{margin:0 0 12px;font-size:.88rem;color:var(--muted);line-height:1.5;}
+.field-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px;align-items:flex-end;}
+.field{display:flex;flex-direction:column;gap:4px;}
+.field label{font-size:.78rem;font-weight:bold;color:var(--blue-logo);}
+.field input,.field select{padding:7px 9px;border:1px solid var(--border-light);border-radius:3px;font-size:.9rem;min-width:110px;background:#fff;}
+.field.grow input{width:100%;min-width:220px;}
+.calc-card button.run{padding:8px 18px;border:1px solid var(--blue-bar);background:var(--blue-bar);color:#fff;border-radius:3px;cursor:pointer;font-weight:bold;font-size:.88rem;}
+.calc-card button.run:hover{background:var(--blue-bar-dark);}
+.presets{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:0 0 12px;font-size:.78rem;color:var(--muted);}
+button.preset{padding:4px 11px;border:1px solid var(--border-light);background:#fff;border-radius:12px;font-size:.78rem;cursor:pointer;color:var(--blue-logo);}
+button.preset:hover{background:var(--blue-light);border-color:var(--blue-bar);}
+button.preset:focus-visible{outline:2px solid var(--blue-bar);outline-offset:1px;}
+.hint{font-size:.76rem;color:var(--muted);margin-top:8px;line-height:1.5;}
+.result{margin-top:12px;padding:10px 14px;border-radius:3px;font-size:.9rem;line-height:1.6;display:none;overflow-x:auto;}
+.result.ok{background:var(--green-bg);border:1px solid #8fbf72;display:block;}
+.result.err{background:var(--red-bg);border:1px solid #e0a49f;color:var(--red);display:block;}
+.result strong{color:var(--blue-logo);}
+.result.err strong{color:var(--red);}
+@media (max-width:680px){ .field input,.field select{min-width:90px;} }
+
+/* saýlanan mysal, mysal gutusyndaky "Kalkulýatorda çöz" düwmesi, kalkulýatory ýagtylandyrmak */
+button.preset.active{background:var(--blue-bar);border-color:var(--blue-bar);color:#fff;}
+button.preset.try{margin:8px 0 0;display:inline-block;font-weight:bold;background:#fff;border-color:var(--blue-bar);}
+button.preset.try:hover{background:var(--blue-bar);color:#fff;}
+.example-box button.preset.try{float:none;}
+.calc-card.flash{animation:calcFlash 1.5s ease-out;}
+@keyframes calcFlash{0%{box-shadow:0 0 0 3px rgba(47,119,201,.55);}100%{box-shadow:0 0 0 0 rgba(47,119,201,0);}}
+@media (prefers-reduced-motion: reduce){ .calc-card.flash{animation:none;outline:2px solid var(--blue-bar);} }
+/* formulanyň janly görnüşi */
+.field.grow{position:relative;}
+.fx-preview{position:absolute;left:0;right:0;top:100%;font-size:.78rem;color:var(--muted);margin-top:3px;line-height:1.35;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.fx-preview.err{color:var(--red);white-space:normal;overflow:visible;}
+.fx-preview .fx-lbl{color:var(--blue-logo);font-weight:bold;margin-right:4px;}
+/* meýdanlar ikinji setire geçende janly görnüş indiki setiriň ýazgysynyň üstüne düşmesin */
+.field-row:has(.fx-preview){row-gap:24px;}
+@media (max-width:680px){ .fx-preview{position:static;white-space:normal;} }
+
+/* src/styles/components/solution.css */
+/* Kalkulýatoryň ädimme-ädim çözgüdi (netije gutusynyň içi): ädimler we içki ädimler, barlag setirleri, san barlagy (açylýan),
+   ekstremumyň alamat tablisasy. Çözüjiler (scripts/modules/solvers) şu synplary ulanýar. */
+.result .steps{margin:6px 0 8px;font-size:.87rem;}
+.result .steps li{padding:4px 0 4px 10px;margin-bottom:3px;}
+.result .steps-head{margin-top:8px;font-weight:bold;color:var(--blue-logo);font-size:.86rem;}
+.result .check{margin:4px 0 6px;font-size:.84rem;color:var(--muted);}
+.result .check.ok{color:#2e7d32;}
+.result .check.warn{color:#a1561c;}
+.result details.numcheck{margin-top:4px;}
+.result details.numcheck summary{cursor:pointer;font-size:.84rem;color:var(--blue-logo);}
+.result details.numcheck summary:focus-visible{outline:2px solid var(--blue-bar);outline-offset:1px;}
+.result .steps.sub{margin:4px 0 2px;font-size:.84rem;}
+.result .steps.sub li{border-left-color:var(--border-light);padding:2px 0 2px 10px;margin-bottom:2px;}
+.result .signchart-wrap{overflow-x:auto;margin:6px 0 2px;}
+.result table.signchart{border-collapse:collapse;font-size:.84rem;background:#fff;}
+.result table.signchart th,.result table.signchart td{border:1px solid var(--border-light);padding:4px 9px;text-align:center;white-space:nowrap;}
+.result table.signchart th{background:var(--blue-lighter);color:var(--blue-logo);}
+.result table.signchart td.cp{background:#f7f9fc;font-weight:bold;}
+.result table.signchart td.pos{color:#2e7d32;font-weight:bold;}
+.result table.signchart td.neg{color:#c62828;font-weight:bold;}
+.result table.signchart td.arrow{font-size:1.05rem;}
+
+/* src/styles/components/table.css */
+/* Tablisalar (ýakynlaşma tablisasy, düzgünler) */
+.table-wrap{overflow-x:auto;margin:0 0 18px;}
+table.conv{border-collapse:collapse;font-size:.85rem;margin-top:8px;}
+table.conv th,table.conv td{border:1px solid var(--border-light);padding:4px 10px;text-align:center;}
+table.conv th{background:var(--blue-light);}
+.table-wrap table.conv{width:100%;text-align:left;margin-top:0;}
+.table-wrap table.conv td,.table-wrap table.conv th{text-align:left;}
+@media (max-width:680px){ table.conv th,table.conv td{padding:3px 6px;} }
+
+/* src/styles/components/graph.css */
+/* Grafik (canvas) we legenda */
+canvas.graph{max-width:100%;background:#fff;border:1px solid var(--border-light);border-radius:3px;margin-top:12px;display:block;}
+.legend{font-size:.78rem;margin-top:4px;}
+.legend span{margin-right:14px;}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:4px;}
+
+/* src/styles/components/footer.css */
+/* Aşaky bellik */
+footer{margin-top:40px;padding:18px 0 30px;border-top:1px solid var(--border-light);font-size:.82rem;color:var(--muted);text-align:center;}
+
+/* src/styles/components/progress.css */
+/* Baş sahypa: jemi ösüş zolagy we "Dowam et" düwmesi */
+.progress-wrap{margin:0 0 6px;font-size:.88rem;}
+.pw-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:6px;}
+.progress-bar{height:10px;background:#e2e2e2;border-radius:5px;overflow:hidden;}
+.progress-fill{height:100%;width:0;background:var(--blue-bar);transition:width .4s;}
+.continue-btn{display:inline-block;padding:7px 16px;border:1px solid var(--blue-bar);background:var(--blue-bar);color:#fff;border-radius:3px;font-weight:bold;font-size:.86rem;text-decoration:none;}
+.continue-btn:hover{background:var(--blue-bar-dark);}
+
+/* src/styles/components/topic-grid.css */
+/* Baş sahypa: derejeler we sapak kartalary */
+.level-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:26px 0 10px;padding:6px 12px;border-radius:4px;border:1px solid;font-size:.95rem;font-weight:bold;}
+.level-head span.sub{font-weight:normal;font-size:.8rem;opacity:.85;}
+.topic-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 4px;}
+.topic-card{border:1px solid var(--border-light);border-radius:4px;padding:11px 13px;background:var(--blue-lighter);font-size:.85rem;text-decoration:none;color:var(--text);display:flex;flex-direction:column;gap:6px;}
+a.topic-card:hover{border-color:var(--blue-bar);box-shadow:0 1px 4px rgba(26,86,180,.18);}
+.topic-card .tc-head{display:flex;align-items:center;gap:8px;}
+.topic-card .tc-head b{color:var(--blue-logo);flex:1;line-height:1.3;}
+.topic-card .tc-num{flex:none;width:22px;height:22px;border-radius:50%;background:var(--blue-bar);color:#fff;font-size:.76rem;font-weight:bold;display:flex;align-items:center;justify-content:center;}
+.topic-card .chk{color:#2f5b1f;font-weight:bold;font-size:1rem;}
+.topic-card .tc-desc{font-size:.78rem;color:var(--muted);line-height:1.45;flex:1;}
+.topic-card .tc-bar{height:6px;background:#dfe6ee;border-radius:3px;overflow:hidden;}
+.topic-card .tc-fill{height:100%;background:var(--blue-bar);}
+.topic-card .tc-foot{font-size:.74rem;color:var(--muted);}
+.topic-card.done{background:var(--green-bg);border-color:#8fbf72;}
+.topic-card.done .tc-num{background:#4c8c3a;}
+.topic-card.done .tc-fill{background:#4c8c3a;}
+.topic-card.locked{background:#f2f2f2;color:var(--muted);cursor:default;}
+.topic-card.locked .tc-head b{color:#777;}
+.topic-card.locked .tc-num{background:#9aa5b1;}
+@media (max-width:860px){ .topic-grid{grid-template-columns:1fr 1fr;} }
+@media (max-width:560px){ .topic-grid{grid-template-columns:1fr;} }
+
+/* src/styles/components/viz.css */
+/* Täze grafikler: aýlanýan 3D grafik we onuň düwmeleri, iki grafik ýanaşyk, reňk zolagy, kursoryň astyndaky baha */
+canvas.graph3d{cursor:grab;touch-action:pan-y;}
+canvas.graph3d:active{cursor:grabbing;}
+canvas.graph3d:focus-visible{outline:2px solid var(--blue-bar);outline-offset:1px;}
+.view3d-ctrl{display:flex;flex-wrap:wrap;gap:5px;align-items:center;margin-top:6px;font-size:.76rem;color:var(--muted);}
+.view3d-ctrl button{padding:3px 9px;min-width:32px;border:1px solid var(--border-light);background:#fff;border-radius:3px;cursor:pointer;font-size:.82rem;color:var(--blue-logo);line-height:1.3;}
+.view3d-ctrl button:hover{background:var(--blue-light);border-color:var(--blue-bar);}
+.view3d-ctrl button:focus-visible{outline:2px solid var(--blue-bar);outline-offset:1px;}
+.view3d-ctrl .v3-hint{margin-left:4px;}
+.graph-pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start;}
+.graph-pair > div{min-width:0;}
+.graph-cap{font-size:.78rem;font-weight:bold;color:var(--blue-logo);margin:12px 0 -6px;}
+.colorbar{display:flex;align-items:center;gap:6px;flex-wrap:wrap;font-size:.74rem;color:var(--muted);margin-top:6px;}
+.colorbar .cb-bar{display:inline-block;width:120px;height:9px;border-radius:2px;border:1px solid var(--border-light);}
+.colorbar .cb-mid{margin-left:6px;}
+.plot-readout{font-size:.78rem;color:var(--muted);min-height:1.35em;margin-top:4px;font-variant-numeric:tabular-nums;}
+canvas.graph.clickable{cursor:crosshair;}
+@media (max-width:760px){ .graph-pair{grid-template-columns:1fr;} }
+
+/* src/styles/components/dark-theme.css */
+/* Gara tema: saýtyň tema düwmesi / Sazlamalar sahypasy <html data-theme="dark"> goýanda (assets/nav/theme.js; saýtyň deslapky temasy — gara).
+   Reňkler saýtyň beýleki bölümleriniň gara temasy bilen birmeňzeş. Diňe ekran üçin (@media screen) — çap hemişe açyk temada.
+   Her sahypanyň stilinde (pages/*.css) print.css-den öň import edilýär: ähli komponentlerden soň gelmeli.
+   Grafikleriň (canvas) reňkleri — scripts/modules/graphs/palette.js (fon şu ýerdäki canvas.graph bilen deň bolmaly: #121a26). */
+@media screen {
+  html[data-theme=dark]{
+    color-scheme:dark;
+    --blue-logo:#869ec5; --blue-bar-dark:#3b82e3; --blue-light:#0c1824; --blue-lighter:#101f2c;
+    --link:#7e97c1; --text:#d4dae2; --muted:#94a2b8; --border:#5b6779; --border-light:#2f3c4f;
+    --green-bg:#142317; --red:#ec8f84; --red-bg:#2b120f;
+  }
+  html[data-theme=dark] body{background:#191f29;}
+
+  /* girizme meýdanlary we düwmeler */
+  html[data-theme=dark] .search-row input,
+  html[data-theme=dark] .field input,
+  html[data-theme=dark] .field select{background:#121a26;color:var(--text);border-color:#3a4a60;}
+  html[data-theme=dark] .search-row input::placeholder,
+  html[data-theme=dark] .field input::placeholder{color:#7d8ba1;}
+  html[data-theme=dark] button.preset{background:#152131;border-color:#33445c;color:#a9c2e6;}
+  html[data-theme=dark] button.preset:hover{background:#1d2d44;border-color:var(--blue-bar);}
+  html[data-theme=dark] button.preset.active{background:var(--blue-bar);border-color:var(--blue-bar);color:#fff;}
+  html[data-theme=dark] button.preset.try{background:#152131;border-color:var(--blue-bar);}
+  html[data-theme=dark] button.preset.try:hover{background:var(--blue-bar);color:#fff;}
+  html[data-theme=dark] .view3d-ctrl button{background:#151d29;border-color:#3a4a60;color:#a9c2e6;}
+  html[data-theme=dark] .view3d-ctrl button:hover{background:#1d2d44;border-color:var(--blue-bar);}
+
+  /* mazmun gutulary we netije */
+  html[data-theme=dark] .formula-box{background:#261f0a;border-color:#5f5532;}
+  html[data-theme=dark] .example-box,
+  html[data-theme=dark] .result.ok{border-color:#304733;}
+  html[data-theme=dark] .result.err{border-color:#5a2a26;}
+  html[data-theme=dark] .exercise,
+  html[data-theme=dark] .exam-report{background:#151d29;}
+  html[data-theme=dark] table.conv th{background:#1a2b40;}
+  html[data-theme=dark] .result table.signchart{background:#121a26;}
+  html[data-theme=dark] .result table.signchart th{background:#1a2b40;}
+  html[data-theme=dark] .result table.signchart td.cp{background:#1b2533;}
+  html[data-theme=dark] .result table.signchart td.pos,
+  html[data-theme=dark] .result .check.ok{color:#7fcf86;}
+  html[data-theme=dark] .result table.signchart td.neg{color:#f08c80;}
+  html[data-theme=dark] .result .check.warn{color:#e0a070;}
+  html[data-theme=dark] canvas.graph{background:#121a26;}
+
+  /* derejeler (baş sahypadaky toparlar we sapagyň nyşany) */
+  html[data-theme=dark] .lvl-basic{background:#173322;border-color:#3f7a4f;color:#8fd6a0;}
+  html[data-theme=dark] .lvl-mid{background:#17314f;border-color:#3a6ea8;color:#8bbcff;}
+  html[data-theme=dark] .lvl-high{background:#2a2145;border-color:#6a55a8;color:#c4b0f0;}
+  html[data-theme=dark] .lvl-univ{background:#3a1a18;border-color:#8a3f38;color:#f0a49a;}
+  html[data-theme=dark] .lvl-extra{background:#3a2f10;border-color:#8a7330;color:#f0cf7a;}
+  html[data-theme=dark] .lvl-exam{background:#262c36;border-color:#56627a;color:#c6d0e2;}
+
+  /* sapak kartalary we ösüş */
+  html[data-theme=dark] .progress-bar,
+  html[data-theme=dark] .qs-bar,
+  html[data-theme=dark] .er-bar,
+  html[data-theme=dark] .topic-card .tc-bar{background:#2a3546;}
+  html[data-theme=dark] a.topic-card:hover{box-shadow:0 2px 8px rgba(0,0,0,.45);}
+  html[data-theme=dark] .topic-card .chk{color:#8fd6a0;}
+  html[data-theme=dark] .topic-card.done{border-color:#3f7a4f;}
+  html[data-theme=dark] .topic-card.locked{background:#1a212c;}
+  html[data-theme=dark] .topic-card.locked .tc-head b{color:#8792a3;}
+  html[data-theme=dark] .topic-card.locked .tc-num{background:#4a5568;}
+
+  /* test, "öwrenildi" düwmesi, jemleýji synag */
+  html[data-theme=dark] .quiz-opts button{background:#151d29;border-color:#3a4a60;color:var(--text);}
+  html[data-theme=dark] .quiz-opts button:hover:not(:disabled){background:#1b2a3d;}
+  html[data-theme=dark] .quiz-opts button.correct{background:var(--green-bg);border-color:#3f7a4f;}
+  html[data-theme=dark] .quiz-opts button.wrong{background:var(--red-bg);border-color:#8a3f38;color:var(--red);}
+  html[data-theme=dark] .fb-ok,
+  html[data-theme=dark] .st-ok{color:#8fd6a0;}
+  html[data-theme=dark] .st-part{color:#e0c060;}
+  html[data-theme=dark] .qs-reset{background:#151d29;border-color:#3a4a60;color:var(--text);}
+  html[data-theme=dark] .done-btn{border-color:#3f7a4f;color:#a8dc9a;}
+  html[data-theme=dark] .done-btn.on{background:#3f7a4f;color:#fff;}
+  html[data-theme=dark] .er-grade.g5{background:#173322;border-color:#3f7a4f;color:#8fd6a0;}
+  html[data-theme=dark] .er-grade.g4{background:#17314f;border-color:#3a6ea8;color:#8bbcff;}
+  html[data-theme=dark] .er-grade.g3{background:#3a2f10;border-color:#8a7330;color:#f0cf7a;}
+  html[data-theme=dark] .er-grade.g2{background:#3a1a18;border-color:#8a3f38;color:#f0a49a;}
+}
+
+/* src/styles/components/print.css */
+/* Çap etmek: sapagyň mazmuny, mysallar we kalkulýatoryň ädimme-ädim çözgüdi arassa çap edilýär;
+   nawigasiýa, düwmeler, girizme meýdanlary we interaktiw dolandyryjylar gizlenýär. */
+@media print {
+  @page { margin: 14mm 12mm; }
+  html, body { background: #fff !important; color: #000 !important; }
+  body { font-size: 11pt; line-height: 1.45; }
+  header.top, .amx-nav, footer, .breadcrumb, .back-link, .search-row, .lesson-nav,
+  .presets, .preset, button, .field-row, .view3d-ctrl, .v3-hint, .plot-readout, .fx-preview,
+  .done-btn, .done-msg, .quiz-score, .qs-reset, .quiz-fb { display: none !important; }
+  .container { max-width: none !important; padding: 0 !important; }
+  .calc-card, .result, .concept-box, .formula-box, .example-box, .exercise { box-shadow: none !important; }
+  .result { background: #fff !important; border: 1px solid #999 !important; }
+  .steps > li, .concept-box, .formula-box, .example-box, .exercise, .quiz-q, table, .graph-pair, canvas { break-inside: avoid; page-break-inside: avoid; }
+  h1, h2, h3, .section-title, .steps-head { break-after: avoid; page-break-after: avoid; }
+  canvas, img { max-width: 100% !important; height: auto !important; }
+  a { color: #000 !important; text-decoration: none !important; }
+  details:not([open]) > *:not(summary) { display: none; }
+  details > summary { list-style: none; }
+  .check { color: #1d5e20 !important; }
+  /* test soraglarynyň jogap wariantlary — iş kagyzy hökmünde çap edilýär */
+  .quiz-opts { display: grid !important; grid-template-columns: 1fr 1fr; gap: 4px 10px; }
+  .quiz-opts button { display: block !important; width: 100%; margin: 0; padding: 3px 8px; text-align: left; font-size: 10pt;
+    background: #fff !important; color: #000 !important; border: 1px solid #bbb !important; box-shadow: none !important; }
+}
+
+
+.hero p.lead{max-width:700px;}
+h2.sub-title{font-size:.95rem;color:var(--blue-logo);margin:22px 0 12px;}

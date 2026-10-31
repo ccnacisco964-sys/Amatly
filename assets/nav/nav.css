@@ -1,0 +1,198 @@
+/* Amatly.com — umumy dizaýn ulgamy we nawigasiýa (ähli sahypalarda; açyk we gara tema)
+   Harplar: Latin Modern Roman (matematika kitaplarynyň harpy — sözbaşylar) we Instrument Sans (interfeýs), ikisi hem saýtyň içinde: assets/fonts/.
+   Reňkler: lazurit gök (--amx-lapis), zagpyran sary (--amx-saffron), haly gyzyly (--amx-madder) — türkmen halysynyň gölünden alnan palitra. */
+
+@font-face{font-family:"Amatly Serif";src:url(../fonts/lm-roman-demi.woff2) format("woff2");font-weight:400 700;font-style:normal;font-display:swap}
+@font-face{font-family:"Amatly Serif";src:url(../fonts/lm-roman-italic.woff2) format("woff2");font-weight:400 700;font-style:italic;font-display:swap}
+@font-face{font-family:"Instrument Sans";src:url(../fonts/instrument-sans-400.woff2) format("woff2");font-weight:400 500;font-style:normal;font-display:swap}
+@font-face{font-family:"Instrument Sans";src:url(../fonts/instrument-sans-700.woff2) format("woff2");font-weight:600 800;font-style:normal;font-display:swap}
+@font-face{font-family:"Instrument Sans";src:url(../fonts/instrument-sans-400i.woff2) format("woff2");font-weight:400 700;font-style:italic;font-display:swap}
+
+:root{
+  --amx-font:"Instrument Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --amx-serif:"Amatly Serif","Latin Modern Roman","CMU Serif",Georgia,"Times New Roman",serif;
+  --amx-paper:#f4f7fc;--amx-surface:#fff;--amx-surface-2:#eef3fb;
+  --amx-ink:#13203d;--amx-ink-2:#4a5878;--amx-ink-3:#6f7c99;
+  --amx-line:#dce3f0;--amx-line-2:#c7d2e6;
+  --amx-lapis:#2047c4;--amx-lapis-ink:#1a3a9e;--amx-lapis-soft:#e7edfc;
+  --amx-saffron:#e9a23b;--amx-saffron-soft:#fff1d6;--amx-saffron-ink:#6b4300;
+  --amx-madder:#b23a2e;--amx-ok:#1f7a4d;--amx-warn:#9a5800;
+  --amx-band:#172e6e;--amx-band-2:#13265c;
+  --amx-shadow:0 1px 2px rgba(19,32,61,.06),0 16px 40px -18px rgba(19,32,61,.28);
+}
+html[data-theme=dark]{
+  --amx-paper:#0b1324;--amx-surface:#111c33;--amx-surface-2:#16233f;
+  --amx-ink:#e8edf8;--amx-ink-2:#a9b6d3;--amx-ink-3:#8593b3;
+  --amx-line:#22304f;--amx-line-2:#2e3f64;
+  --amx-lapis:#86a6ff;--amx-lapis-ink:#a9c0ff;--amx-lapis-soft:#1a2a52;
+  --amx-saffron:#f2b04c;--amx-saffron-soft:#3a2c10;--amx-saffron-ink:#ffd99a;
+  --amx-madder:#f07a6a;--amx-ok:#5bd08f;--amx-warn:#f2b04c;
+  --amx-band:#0f1a33;--amx-band-2:#0c1529;
+  --amx-shadow:0 1px 2px rgba(0,0,0,.4),0 18px 44px -16px rgba(0,0,0,.7);
+}
+
+/* ---------------------------------------------------------------- menýu */
+.amx-nav{--lnk:rgba(255,255,255,.84);--lnk-h:rgba(255,255,255,.09);--card:var(--amx-surface);--card-line:var(--amx-line);--ink:var(--amx-ink);--muted:var(--amx-ink-2);--deep:var(--amx-lapis-ink);--brand:var(--amx-lapis);--tint:var(--amx-lapis-soft);--line:var(--amx-line);--amber:var(--amx-saffron);--amber-ink:#3a2400;--amber-bg:var(--amx-saffron-soft);--sh:rgba(10,24,64,.32);--w:1120px;position:sticky;top:0;z-index:900;background:var(--amx-band);color:#fff;border-bottom:1px solid rgba(255,255,255,.07);font:400 15px/1.35 var(--amx-font);-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%;transition:box-shadow .2s}
+html[data-theme=dark] .amx-nav{--lnk:#c4cee4;--lnk-h:rgba(134,166,255,.09);--amber-ink:#1f1500;--sh:rgba(0,0,0,.62);border-bottom-color:var(--amx-line)}
+.amx-nav.is-stuck{box-shadow:0 10px 28px -10px var(--sh)}
+.amx-nav *,.amx-nav *::before,.amx-nav *::after{box-sizing:border-box}
+.amx-nav ul{list-style:none;margin:0;padding:0}
+.amx-nav li{margin:0;padding:0;list-style:none}
+.amx-nav a,.amx-nav a:hover{text-decoration:none}
+.amx-nav button{appearance:none;-webkit-appearance:none;border:0;background:none;margin:0;padding:0;font:inherit;color:inherit;cursor:pointer;text-align:left}
+.amx-ico{flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.amx-bar{position:relative;display:flex;align-items:center;max-width:var(--w);min-height:56px;margin:0 auto;padding:0 16px}
+.amx-panel{flex:1;min-width:0}
+.amx-list{display:flex;align-items:stretch;gap:2px}
+.amx-list>li{display:flex}
+.amx-list>.amx-end{margin-left:auto;align-items:center}
+.amx-nav .amx-link{position:relative;display:inline-flex;align-items:center;gap:8px;height:56px;padding:0 13px;font-weight:400;letter-spacing:.005em;white-space:nowrap;color:var(--lnk);transition:background .15s,color .15s}
+.amx-nav .amx-link .amx-ico{opacity:.85}
+.amx-nav .amx-link:hover,.amx-nav .amx-has-mega.is-open>.amx-link{background:var(--lnk-h);color:#fff}
+.amx-nav .amx-link::after{content:"";position:absolute;left:13px;right:13px;bottom:0;height:3px;border-radius:3px 3px 0 0;background:var(--amber);transform:scaleX(0);transition:transform .2s}
+.amx-nav .amx-link[aria-current],.amx-nav .amx-link.is-current{color:#fff;font-weight:700}
+.amx-nav .amx-link[aria-current]::after,.amx-nav .amx-link.is-current::after{transform:scaleX(1)}
+.amx-chev{transition:transform .2s}
+.amx-has-mega.is-open .amx-chev{transform:rotate(180deg)}
+.amx-nav .amx-tool{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:10px;color:var(--lnk);transition:background .15s,color .15s}
+.amx-nav .amx-tool:hover{background:var(--lnk-h);color:#fff}
+.amx-tool .amx-lbl{display:none}
+.amx-nav .amx-bar-tool{display:none}
+html[data-theme=dark] .i-sun{display:none}
+html:not([data-theme=dark]) .i-moon{display:none}
+
+/* nyşan (Baş sahypada menýuda) — türkmen halysynyň gölünden: sekiz burçly ýyldyz */
+.amx-logo{display:inline-flex;align-items:center;gap:9px;margin-right:14px;padding:6px 4px;color:#fff;white-space:nowrap}
+.amx-logo:hover{color:#fff}
+.amx-logo svg{width:30px;height:30px}
+.amx-logo b{font:400 21px/1 var(--amx-serif);letter-spacing:.005em}
+.amx-logo b em{font-style:normal;color:var(--amx-saffron)}
+
+/* mega menýu */
+.amx-mega{position:absolute;left:16px;right:16px;top:100%;visibility:hidden;opacity:0;transform:translateY(-6px);transition:opacity .16s,transform .16s,visibility 0s .16s}
+.amx-has-mega.is-open>.amx-mega{visibility:visible;opacity:1;transform:none;transition-delay:0s}
+.amx-mega-card{display:grid;grid-template-columns:repeat(3,1fr);gap:6px 26px;padding:22px 22px 14px;background:var(--card);color:var(--ink);border-radius:0 0 18px 18px;box-shadow:0 30px 60px -24px var(--sh),0 0 0 1px var(--card-line)}
+.amx-group h3{margin:0 0 6px;padding:0 10px 10px;font:400 16px/1.2 var(--amx-serif);letter-spacing:.005em;color:var(--muted);border-bottom:1px solid var(--line)}
+.amx-mega-foot{grid-column:1/-1;display:flex;justify-content:flex-end;margin-top:6px;padding:10px 10px 0;border-top:1px solid var(--line)}
+.amx-nav .amx-foot-link{font-size:13px;color:var(--muted);cursor:default}
+.amx-nav .amx-item{display:flex;align-items:flex-start;gap:12px;padding:9px 10px;border-radius:12px;color:var(--ink);transition:background .15s}
+.amx-nav .amx-item:hover,.amx-nav .amx-item:focus-visible{background:var(--amx-surface-2);color:var(--ink)}
+.amx-glyph{flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:11px;background:var(--tint);color:var(--brand);font:italic 400 20px/1 var(--amx-serif);transition:background .15s,color .15s}
+.amx-item:hover .amx-glyph,.amx-item:focus-visible .amx-glyph{background:var(--brand);color:var(--card)}
+.amx-txt{display:flex;flex-direction:column;gap:2px;min-width:0}
+.amx-txt b{font-size:15px;font-weight:700}
+.amx-txt small{font-size:12.5px;line-height:1.35;color:var(--muted)}
+.amx-nav .amx-item[aria-current]{background:var(--amber-bg)}
+.amx-item[aria-current] .amx-glyph{background:var(--amber);color:var(--amber-ink)}
+.amx-soon em{font-style:normal;font-size:11px;font-weight:700;line-height:1;padding:4px 8px;border-radius:99px;background:var(--amber-bg);color:var(--amx-saffron-ink)}
+.amx-burger,.amx-here,.amx-panelhead,.amx-scrim{display:none}
+.amx-nav :focus-visible{outline:2px solid var(--amber);outline-offset:-2px;border-radius:8px}
+.amx-mega :focus-visible{outline-color:var(--brand)}
+html.amx-lock{overflow:hidden}
+
+@media (max-width:899px){
+  .amx-bar{justify-content:space-between;padding:0 8px}
+  .amx-nav .amx-burger{display:inline-flex;align-items:center;gap:10px;height:56px;padding:0 12px;font-weight:700;color:#fff;border-radius:10px}
+  .amx-burger-lines{display:block;width:20px}
+  .amx-burger-lines i{display:block;height:2px;margin:4px 0;border-radius:2px;background:currentColor}
+  .amx-here{display:inline-flex;align-items:center;gap:8px;flex:1;min-width:0;padding:0 8px;font-size:14px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .amx-here::before{content:"";flex:none;width:8px;height:8px;transform:rotate(45deg);border-radius:1px;background:var(--amber)}
+  .amx-nav .amx-bar-tool{display:inline-grid}
+  .amx-logo{margin-right:auto}
+  .amx-logo~.amx-here{display:none}
+  .amx-panel{position:fixed;z-index:2;top:0;bottom:0;left:0;flex:none;width:min(88vw,380px);overflow-y:auto;overscroll-behavior:contain;background:var(--card);color:var(--ink);padding-bottom:calc(20px + env(safe-area-inset-bottom,0px));box-shadow:12px 0 40px var(--sh);transform:translateX(-104%);visibility:hidden;transition:transform .26s ease,visibility 0s .26s}
+  .amx-nav.is-open .amx-panel{transform:none;visibility:visible;transition-delay:0s}
+  .amx-scrim{position:fixed;z-index:1;inset:0;background:rgba(8,14,28,.62)}
+  .amx-nav.is-open .amx-scrim{display:block}
+  .amx-panelhead{position:sticky;top:0;z-index:1;display:flex;align-items:center;justify-content:space-between;padding:calc(12px + env(safe-area-inset-top,0px)) 12px 12px 20px;background:var(--card);border-bottom:1px solid var(--line)}
+  .amx-brand{font:400 21px/1 var(--amx-serif);color:var(--ink)}
+  .amx-brand em{font-style:normal;color:var(--amx-saffron)}
+  .amx-close{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--amx-surface-2);color:var(--ink)}
+  .amx-list{flex-direction:column;gap:2px;padding:10px 10px 0}
+  .amx-list>li{display:block}
+  .amx-list>.amx-end{margin:8px 0 0;padding-top:8px;border-top:1px solid var(--line)}
+  .amx-nav .amx-link,.amx-nav .amx-end .amx-tool{display:flex;align-items:center;gap:12px;width:100%;height:auto;min-height:48px;padding:0 14px;border-radius:12px;color:var(--ink);font-weight:400}
+  .amx-nav .amx-end .amx-tool .amx-lbl{display:inline}
+  .amx-nav .amx-link:hover,.amx-nav .amx-end .amx-tool:hover{background:var(--amx-surface-2);color:var(--ink)}
+  .amx-nav .amx-link::after{display:none}
+  .amx-nav .amx-link[aria-current],.amx-nav .amx-link.is-current{background:var(--tint);color:var(--deep);box-shadow:inset 3px 0 0 var(--amber);font-weight:700}
+  .amx-nav .amx-trigger{display:none}
+  .amx-mega{position:static;visibility:visible;opacity:1;transform:none;transition:none}
+  .amx-mega-card{display:block;padding:4px 0 6px;background:none;box-shadow:none;border-radius:0}
+  .amx-group h3{margin:12px 0 2px;padding:8px 14px 6px;border:0;font-size:15px}
+  .amx-nav .amx-item{align-items:center;min-height:56px}
+  .amx-mega-foot{justify-content:flex-start;padding:10px 14px 0}
+  .amx-nav :focus-visible{outline-offset:2px}
+  .amx-panel :focus-visible{outline-color:var(--brand)}
+}
+@media (prefers-reduced-motion:reduce){.amx-nav,.amx-nav *{transition:none!important}}
+@media print{.amx-nav{display:none}}
+
+/* ---------------------------------------------------------------- umumy tema we sazlamalar (Sazlamalar sahypasyndan dolandyrylýar) */
+html[data-theme=dark]{background:#121a2b;color-scheme:dark}
+html[data-theme=dark] ::selection{background:#2c4f93;color:#fff}
+::selection{background:#cddbff}
+html[data-theme=dark] img:not([src$=".svg"]){filter:brightness(.9)}
+html[data-fs=sm] body{zoom:.92}
+html[data-fs=lg] body{zoom:1.12}
+html[data-fs=xl] body{zoom:1.25}
+html[data-motion=reduce] *,html[data-motion=reduce] *::before,html[data-motion=reduce] *::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+
+/* ---------------------------------------------------------------- saýt gözlegi (ähli sahypalarda) */
+form[data-site-search]{position:relative}
+form[data-site-hook]{position:relative}
+.amx-search{display:flex;flex:1 1 200px;max-width:420px;margin-left:auto}
+.amx-search input{flex:1;min-width:0;padding:9px 12px;border:1px solid var(--amx-line-2);border-right:0;border-radius:10px 0 0 10px;font:inherit;font-size:.92rem;background:var(--amx-surface);color:var(--amx-ink)}
+.amx-search input:focus{outline:0;border-color:var(--amx-lapis);box-shadow:0 0 0 3px rgba(32,71,196,.14)}
+.amx-search button{padding:0 14px;border:1px solid var(--amx-lapis);background:var(--amx-lapis);color:#fff;border-radius:0 10px 10px 0;cursor:pointer}
+.amx-search button:hover{background:var(--amx-lapis-ink)}
+html[data-theme=dark] .amx-search button{background:#3a63e6;border-color:#3a63e6}
+.sr-list{position:absolute;left:0;right:0;top:100%;z-index:1000;margin:6px 0 0;padding:6px;list-style:none;background:var(--amx-surface);border:1px solid var(--amx-line);border-radius:14px;box-shadow:var(--amx-shadow);max-height:360px;overflow:auto;text-align:left}
+.sr-list[hidden]{display:none}
+.sr-list a{display:block;padding:9px 11px;border-radius:9px;color:var(--amx-ink);text-decoration:none;font:400 .92rem/1.3 var(--amx-font)}
+.sr-list a small{display:block;margin-top:1px;color:var(--amx-ink-3);font-size:.78rem}
+.sr-list li.on a,.sr-list a:hover,.sr-list li[aria-selected="true"] a{background:var(--amx-surface-2)}
+.sr-empty{padding:10px;color:var(--amx-ink-2);font:400 .88rem var(--amx-font)}
+.sr-head{padding:6px 11px 4px;color:var(--amx-ink-3);font:700 .76rem var(--amx-font)}
+.sr-list mark{background:none;color:var(--amx-lapis);font-weight:700}
+.sr-list a:focus-visible{outline:2px solid var(--amx-lapis);outline-offset:-2px}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.sr-list .sr-snip{display:block;margin-top:2px;color:var(--amx-ink-3);font:400 .76rem/1.35 var(--amx-font);font-style:normal}
+[id]{scroll-margin-top:84px}
+@keyframes amx-hit{from{background:rgba(233,162,59,.38)}to{background:transparent}}
+h2:target,h3:target,h4:target{animation:amx-hit 1.8s ease-out}
+
+/* ---------------------------------------------------------------- bölümleriň sözbaşysyndaky "Amatly.com" ýazgysy: saýtyň nyşany (göl) we harpy */
+header .logo:not(:has(.mark)),.set-logo{font-family:var(--amx-serif)!important;font-weight:400!important;letter-spacing:0!important;white-space:nowrap}
+header .logo:not(:has(.mark))::before,.set-logo::before{content:"";display:inline-block;vertical-align:-.13em;margin-right:.3em;width:.92em;height:.92em;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 1.5 20.25 5.75 26.25 5.75 26.25 11.75 30.5 16 26.25 20.25 26.25 26.25 20.25 26.25 16 30.5 11.75 26.25 5.75 26.25 5.75 20.25 1.5 16 5.75 11.75 5.75 5.75 11.75 5.75Z' fill='%232f5bd8' fill-opacity='.14' stroke='%232f5bd8' stroke-width='1.9' stroke-linejoin='round'/%3E%3Cpath d='M16 10 22 16 16 22 10 16Z' fill='%23e9a23b'/%3E%3C/svg%3E") center/contain no-repeat}
+html[data-theme=dark] header .logo:not(:has(.mark))::before,html[data-theme=dark] .set-logo::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 1.5 20.25 5.75 26.25 5.75 26.25 11.75 30.5 16 26.25 20.25 26.25 26.25 20.25 26.25 16 30.5 11.75 26.25 5.75 26.25 5.75 20.25 1.5 16 5.75 11.75 5.75 5.75 11.75 5.75Z' fill='%2386a6ff' fill-opacity='.14' stroke='%2386a6ff' stroke-width='1.9' stroke-linejoin='round'/%3E%3Cpath d='M16 10 22 16 16 22 10 16Z' fill='%23e9a23b'/%3E%3C/svg%3E")}
+header .logo a{color:inherit;text-decoration:none}
+
+/* ---------------------------------------------------------------- bitewi tipografiýa (ähli bölümler)
+   Esasy tekst — Instrument Sans (--amx-font), sahypanyň we bölümleriň sözbaşylary — Amatly Serif (--amx-serif), Baş sahypadaky ýaly.
+   nav.css bölümleriň stillerinden soň ýüklenýär; ":root h1" (0,1,1) ".hero h1" ýaly düzgünlerden pes däl, şonuň üçin ýeňýär. */
+body{font-family:var(--amx-font)}
+:root h1,:root h2.section-title,:root h2.sub-title,:root h2.panel-title{font-family:var(--amx-serif);font-weight:400;letter-spacing:0}
+:root h1.tool-title{font-size:1.6rem;line-height:1.2}
+:root h2.section-title{font-size:1.3rem}
+input,select,textarea,button{font-family:inherit}
+
+/* ---------------------------------------------------------------- Amatly AI düwmesi (ai.css gijä galyp ýüklenýär, şonuň üçin düwmäniň stilleri şu ýerde-de bar) */
+.aai-fab,.aai-askchip{--aai-band:var(--amx-band,#172e6e);--aai-saffron:var(--amx-saffron,#e9a23b);font-family:var(--amx-font);-webkit-font-smoothing:antialiased}
+.aai-fab svg,.aai-askchip svg{flex:none;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.aai-fab,.aai-askchip{font:inherit;cursor:pointer}
+.aai-fab{position:fixed;z-index:1100;right:max(18px,env(safe-area-inset-right));bottom:max(18px,env(safe-area-inset-bottom));display:inline-flex;align-items:center;gap:10px;height:50px;padding:0 20px 0 14px;border:0;border-radius:999px;background:var(--aai-band);color:#fff;font-size:15px;font-weight:700;letter-spacing:.005em;box-shadow:0 10px 28px -8px rgba(15,30,80,.55),0 0 0 1px rgba(255,255,255,.08) inset;transition:transform .18s ease,box-shadow .18s ease}
+.aai-fab:hover{transform:translateY(-2px);box-shadow:0 16px 34px -10px rgba(15,30,80,.6),0 0 0 1px rgba(255,255,255,.12) inset}
+.aai-fab:focus-visible{outline:3px solid var(--aai-saffron);outline-offset:3px}
+.aai-fab svg.aai-mark{width:26px;height:26px;color:#cfe0ff}
+.aai-fab.is-loading svg.aai-mark{animation:aai-spin 1s linear infinite}
+@keyframes aai-spin{to{transform:rotate(360deg)}}
+html[data-motion=reduce] .aai-fab.is-loading svg.aai-mark{animation:none;opacity:.6}
+html[data-theme=dark] .aai-fab{background:#1b2c55;box-shadow:0 12px 30px -8px rgba(0,0,0,.7),0 0 0 1px rgba(134,166,255,.28) inset}
+html.aai-on .aai-fab{opacity:0;pointer-events:none;transform:scale(.9)}
+@media (max-width:640px){.aai-fab{height:52px;width:52px;padding:0;justify-content:center}.aai-fab .aai-fab-t{display:none}.aai-fab svg.aai-mark{width:28px;height:28px}}
+.aai-askchip{position:fixed;z-index:1150;display:inline-flex;align-items:center;gap:7px;height:34px;padding:0 13px 0 9px;border:0;border-radius:999px;background:var(--aai-band);color:#fff;font-size:13px;font-weight:700;box-shadow:0 8px 22px -6px rgba(15,30,80,.5)}
+.aai-askchip[hidden]{display:none}
+.aai-askchip svg.aai-mark{width:20px;height:20px;color:#cfe0ff}
+html[data-theme=dark] .aai-askchip{background:#24396d}
+@media print{.aai-fab,.aai-askchip{display:none!important}}

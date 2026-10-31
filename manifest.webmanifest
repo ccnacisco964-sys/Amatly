@@ -1,0 +1,27 @@
+{
+  "id": "./",
+  "name": "Amatly.com — matematika öz diliňde",
+  "short_name": "Amatly",
+  "description": "Türkmen dilinde matematika: ädimme-ädim çözýän kalkulýatorlar, sapaklar, oýunlar we Amatly AI mugallymy. Açan sahypalaryňyz internetsiz hem açylýar.",
+  "lang": "tk",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0b1324",
+  "theme_color": "#172e6e",
+  "categories": ["education", "productivity", "utilities"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ],
+  "shortcuts": [
+    { "name": "Algebra", "short_name": "Algebra", "description": "Deňlemeler, deňsizlikler we n×n ulgamlar", "url": "./algebra/index.html", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" }] },
+    { "name": "Kalkulus", "short_name": "Kalkulus", "description": "Limit, önüm, integral — 15 sapak", "url": "./kalkulus/index.html", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" }] },
+    { "name": "Matematika oýunlary", "short_name": "Oýunlar", "url": "./oyunlar/index.html", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" }] },
+    { "name": "Sazlamalar", "short_name": "Sazlamalar", "url": "./sazlamalar/index.html", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" }] }
+  ]
+}

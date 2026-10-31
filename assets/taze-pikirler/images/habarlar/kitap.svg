@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="640" height="400" role="img" aria-label="Açyk kitap">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#34a765"/><stop offset="1" stop-color="#176239"/></linearGradient>
+<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0v40" fill="none" stroke="#fff" stroke-opacity=".09" stroke-width="1.5"/></pattern>
+</defs>
+<rect width="640" height="400" fill="url(#bg)"/>
+<rect width="640" height="400" fill="url(#grid)"/>
+<path d="M108 126 C180 100 266 110 314 142 L314 320 C266 288 180 278 108 304 Z" fill="#fff"/><path d="M532 126 C460 100 374 110 326 142 L326 320 C374 288 460 278 532 304 Z" fill="#eef7f1"/><path d="M314 142 h12 v178 h-12 z" fill="#cfe6d8"/><rect x="150" y="176" width="128" height="12" rx="6" fill="#bcd9c6"/><rect x="356" y="176" width="120" height="12" rx="6" fill="#bcd9c6"/><rect x="150" y="206" width="112" height="12" rx="6" fill="#bcd9c6"/><rect x="356" y="206" width="104" height="12" rx="6" fill="#bcd9c6"/><rect x="150" y="236" width="136" height="12" rx="6" fill="#bcd9c6"/><rect x="356" y="236" width="128" height="12" rx="6" fill="#bcd9c6"/><rect x="150" y="266" width="96" height="12" rx="6" fill="#bcd9c6"/><rect x="356" y="266" width="88" height="12" rx="6" fill="#bcd9c6"/><path d="M452 112 V232 l-26 -24 -26 24 V104 z" fill="#ffd79a"/><path d="M560.0 132.0 Q563.2 146.8 578.0 150.0 Q563.2 153.2 560.0 168.0 Q556.8 153.2 542.0 150.0 Q556.8 146.8 560.0 132.0 Z" fill="#fff" fill-opacity=".4"/>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="640" height="400" role="img" aria-label="Talyp telpegi">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#34a765"/><stop offset="1" stop-color="#176239"/></linearGradient>
+<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0v40" fill="none" stroke="#fff" stroke-opacity=".09" stroke-width="1.5"/></pattern>
+</defs>
+<rect width="640" height="400" fill="url(#bg)"/>
+<rect width="640" height="400" fill="url(#grid)"/>
+<path d="M320 104 L524 182 L320 260 L116 182 Z" fill="#fff"/><path d="M236 214 L320 246 L404 214 V272 C404 296 236 296 236 272 Z" fill="#dff0e6"/><path d="M524 182 V254" stroke="#ffd79a" stroke-width="7" stroke-linecap="round"/><circle cx="524" cy="266" r="15" fill="#ffd79a"/><path d="M320.0 156.0 L326.5 173.1 L344.7 174.0 L330.5 185.4 L335.3 203.0 L320.0 193.0 L304.7 203.0 L309.5 185.4 L295.3 174.0 L313.5 173.1 Z" fill="#176239" fill-opacity=".35"/><path d="M132.0 280.0 Q135.6 296.4 152.0 300.0 Q135.6 303.6 132.0 320.0 Q128.4 303.6 112.0 300.0 Q128.4 296.4 132.0 280.0 Z" fill="#fff" fill-opacity=".45"/><path d="M560.0 94.0 Q562.9 107.1 576.0 110.0 Q562.9 112.9 560.0 126.0 Q557.1 112.9 544.0 110.0 Q557.1 107.1 560.0 94.0 Z" fill="#fff" fill-opacity=".4"/>
+</svg>

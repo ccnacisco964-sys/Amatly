@@ -1,0 +1,114 @@
+/* Amatly.com — umumy stiller (ähli sahypalar üçin).
+   Sahypa stilleri: styles/pages/ */
+
+/* base */
+/* src/styles/base/variables.css */
+:root{
+  --blue-logo:#1a56b4;
+  --blue-bar:#2f77c9;
+  --blue-bar-dark:#154a92;
+  --blue-light:#cfe6fb;
+  --blue-lighter:#eef6fd;
+  --amber:#e8a33d;
+  --amber-dark:#3a2400;
+  --link:#1155cc;
+  --text:#1a1a1a;
+  --muted:#666;
+  --border:#8a8a8a;
+  --border-light:#c7c7c7;
+  --yellow-bg:#fff2cc;
+}
+/* src/styles/base/reset.css */
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0; padding:0;
+  font-family:var(--amx-font);
+  color:var(--text);
+  background:var(--dk-bg-ffffff,#fff);
+  font-size:15px;
+}
+/* src/styles/base/typography.css */
+a{color:var(--link);}
+h1,h2,h3{font-family:var(--amx-font); font-weight:bold;}
+
+/* components */
+/* src/styles/components/container.css */
+.container{max-width:1000px; margin:0 auto; padding:0 22px;}
+/* src/styles/components/header.css */
+/* ---- header ---- */
+header.top{padding:20px 0 10px;}
+.logo-row{display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:14px;}
+.logo{font-size:2.3rem; font-weight:bold; color:var(--blue-logo); letter-spacing:-.5px;}
+.logo a{color:inherit; text-decoration:none;}
+.search-row{display:flex; max-width:420px; width:100%;}
+.search-row input{flex:1; padding:8px 10px; border:1px solid var(--border-light); border-radius:3px 0 0 3px; font-size:.9rem;}
+.search-row button{padding:0 14px; border:1px solid var(--blue-bar); background:var(--blue-bar); color:#fff; border-radius:0 3px 3px 0; cursor:pointer;}
+.search-row button:hover{background:var(--blue-bar-dark);}
+
+@media (max-width:680px){
+  .logo{font-size:1.7rem;}
+}
+/* src/styles/components/nav.css */
+/* ---- nav ---- */
+nav.primary{background:var(--blue-bar); margin-top:14px;}
+nav.secondary{background:var(--blue-light); border-bottom:1px solid var(--border-light);}
+nav ul{list-style:none; display:flex; margin:0 auto; padding:0; max-width:1000px; flex-wrap:wrap;}
+nav.primary li{flex:1; text-align:center; min-width:100px;}
+nav.secondary li{flex:1; text-align:center; min-width:90px;}
+nav.primary a{display:block; padding:11px 6px; color:#fff; text-decoration:none; font-weight:bold; font-size:.92rem;}
+nav.primary li:hover a{background:var(--blue-bar-dark);}
+nav.primary li.active a{background:var(--amber); color:var(--amber-dark);}
+nav.secondary a{display:block; padding:8px 6px; color:var(--blue-logo); text-decoration:none; font-weight:bold; font-size:.82rem;}
+nav.secondary li:hover a{text-decoration:underline;}
+nav.secondary li.active a{background:var(--dk-bg-ffffff,#fff);}
+
+@media (max-width:680px){
+  nav.primary li, nav.secondary li{flex:1 1 33%;}
+}
+/* src/styles/components/calc-section.css */
+/* ---- calculator sections ---- */
+h2.section-title{font-size:1.15rem; border-bottom:2px solid var(--blue-bar); padding-bottom:6px; margin:10px 0 14px;}
+.calc-section{padding:26px 0 6px; border-top:1px solid var(--border-light); scroll-margin-top:16px;}
+.calc-section:first-of-type{border-top:none; padding-top:6px;}
+.calc-desc{color:var(--muted); font-size:.9rem; line-height:1.55; margin:0 0 16px; max-width:660px;}
+h3.calc-sub{font-size:.95rem; margin:22px 0 10px; color:var(--blue-logo);}
+.note-box{background:var(--dk-bg-fafafa,#fafafa); border:1px dashed var(--border-light); border-radius:4px; padding:10px 14px; font-size:.84rem; color:var(--muted); margin:0 0 16px; max-width:660px;}
+/* src/styles/components/calc-form.css */
+.calc-form{display:flex; flex-wrap:wrap; align-items:flex-end; gap:14px; margin:0 0 4px;}
+.calc-form label{display:flex; flex-direction:column; font-size:.8rem; font-weight:bold; color:var(--text); gap:5px;}
+.calc-form input[type=number], .calc-form input[type=text], .calc-form select{
+  padding:8px 9px; border:1px solid var(--border-light); border-radius:3px; font-size:.95rem; min-width:96px; font-family:inherit;
+}
+.calc-form input[type=text].expr{min-width:280px; flex:1 1 280px;}
+.frac-pair{display:flex; align-items:center; gap:6px;}
+.frac-pair .slash{font-weight:bold; font-size:1.15rem; padding-bottom:7px;}
+.eq-sign{font-weight:bold; font-size:1.1rem; padding-bottom:7px;}
+
+.calc-form button{
+  display:inline-block; text-decoration:none; font-weight:bold; font-size:.9rem;
+  padding:9px 20px; border-radius:3px; border:1px solid #154a92; cursor:pointer;
+  background:linear-gradient(#4f97e6,#2f77c9); color:#fff;
+}
+.calc-form button:hover{background:linear-gradient(#5aa3f2,#3a82d1);}
+
+@media (max-width:680px){
+  .calc-form{gap:10px;}
+}
+@media (max-width:500px){
+  .frac-pair{width:100%;}
+  .frac-pair label{flex:1 1 0; min-width:0;}
+  .frac-pair input[type=number]{width:100%; min-width:0;}
+}
+/* src/styles/components/steps-box.css */
+.steps-box{background:var(--blue-lighter); border:1px solid var(--border-light); border-radius:4px; padding:14px 18px; margin:16px 0 30px; max-width:660px;}
+.steps-box ol{margin:0; padding-left:20px;}
+.steps-box li{margin:0 0 7px; font-size:.92rem; line-height:1.45;}
+.steps-box li:last-child{margin-bottom:0;}
+.steps-box .result-line{margin-top:12px; padding-top:12px; border-top:1px dashed var(--border-light); font-weight:bold; font-size:1.02rem;}
+.steps-box .error-line{color:var(--dk-tx-b00020,#b00020); font-weight:bold; font-size:.9rem; margin:0;}
+/* src/styles/components/footer.css */
+footer{margin-top:40px; padding:18px 0 30px; border-top:1px solid var(--border-light); font-size:.82rem; color:var(--muted); text-align:center;}
+
+/* ---- Gara tema (awtomatik döredildi) ---- */
+html[data-theme=dark]{color-scheme:dark;--blue-logo:#869ec5;--blue-light:#0c1824;--blue-lighter:#101f2c;--link:#7e97c1;--text:#d4dae2;--muted:#94a2b8;--border-light:#2f3c4f;--dk-bg-fafafa:#171e27;--dk-bg-ffffff:#191f29;--dk-tx-b00020:#cb949e;--dk-white:22 27 40}
